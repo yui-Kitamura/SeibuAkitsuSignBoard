@@ -1,16 +1,19 @@
 //OS・ブラウザを判別する
-/*
- * if.useragent.js v0.1
- * info: http://company.miyanavi.net/archives/808
+let fontTopAdjustment = 0;
+/**
+ * if.useragent.js v0.9
+ * info: http://company.miyanavi.net/archives/987
  * auther: miyanavi
  * licence: MIT
  *
  */
 function judgeUA()
 {
-    uaName = 'unknown';
-    userAgent = window.navigator.userAgent.toLowerCase();
-    appVersion = window.navigator.appVersion.toLowerCase();
+    const userAgent = window.navigator.userAgent.toLowerCase();
+    const appVersion = window.navigator.appVersion.toLowerCase();
+    let uaName = 'unknown';
+    let ios = '';
+    let ios_ver = '';
 
     if (userAgent.indexOf('msie') != -1) {
         uaName = 'ie';
@@ -27,72 +30,77 @@ function judgeUA()
         }
     } else if (userAgent.indexOf('chrome') != -1) {
         uaName = 'chrome';
+    } else if (userAgent.indexOf('iphone') != -1) {
+        uaName = 'iphone';
+        ios = (navigator.appVersion).match(/OS (\d+)_(\d+)_?(\d+)?/);
+        ios_ver = [parseInt(ios[1], 10), parseInt(ios[2], 10), parseInt(ios[3] || 0, 10)];
     } else if (userAgent.indexOf('ipad') != -1) {
         uaName = 'ipad';
     } else if (userAgent.indexOf('ipod') != -1) {
         uaName = 'ipod';
-    } else if (userAgent.indexOf('iphone') != -1) {
-        uaName = 'iphone';
-        var ios = (navigator.appVersion).match(/OS (\d+)_(\d+)_?(\d+)?/);
-        uaName = [parseInt(ios[1], 10), parseInt(ios[2], 10), parseInt(ios[3] || 0, 10)];
     } else if (userAgent.indexOf('safari') != -1) {
         uaName = 'safari';
     } else if (userAgent.indexOf('gecko') != -1) {
-        uaName = 'gecko';
+        uaName = 'firefox';
     } else if (userAgent.indexOf('opera') != -1) {
         uaName = 'opera';
     } else if (userAgent.indexOf('android') != -1) {
         uaName = 'android';
     } else if (userAgent.indexOf('mobile') != -1) {
         uaName = 'mobile';
-    };
+    }
 
     ///// OSの判定
     //  http://www9.plala.or.jp/oyoyon/html/script/platform.html
-    //os;
-    var ua = navigator.userAgent;
-    if (ua.match(/Win(dows )?NT 6\.2/)) {
-        os = "Windows 8";				// Windows 8 の処理
-        os = "Windows"
+    let os;
+    const ua = navigator.userAgent;
+    if (ua.match(/Win(dows )?NT 10\.0/)) {
+        os = "Windows 10";				// Windows 10&11 の処理 (Windows Server 2016 / 2019)
+    }
+    else if (ua.match(/Win(dows )?NT 6\.3/)) {
+        os = "Windows 8.1";				// Windows 8.1 の処理 (Windows Server 2012 R2)
+    }
+    else if (ua.match(/Win(dows )?NT 6\.2/)) {
+        os = "Windows 8";				// Windows 8 の処理 (Windows Server 2012)
     }
     else if (ua.match(/Win(dows )?NT 6\.1/)) {
-        os = "Windows 7";				// Windows 7 の処理
-        os = "Windows"
+        os = "Windows 7";				// Windows 7 の処理 (Windows Server 2008 R2, Windows Home Server 2011)
     }
     else if (ua.match(/Win(dows )?NT 6\.0/)) {
-        os = "Windows Vista";				// Windows Vista の処理
-        os = "Windows"
+        os = "Windows Vista";				// Windows Vista の処理 (Windows Server 2008)
     }
     else if (ua.match(/Win(dows )?NT 5\.2/)) {
-        os = "Windows Server 2003";			// Windows Server 2003 の処理
-        os = "Windows"
+        os = "Windows Server 2003";			// Windows Server 2003 の処理 (Windows XP x64, Windows Server 2003 / 2003 R2, Windows Home Server)
     }
     else if (ua.match(/Win(dows )?(NT 5\.1|XP)/)) {
         os = "Windows XP";				// Windows XP の処理
-        os = "Windows"
     }
     else if (ua.match(/Win(dows)? (9x 4\.90|ME)/)) {
         os = "Windows ME";				// Windows ME の処理
-        os = "Windows"
     }
     else if (ua.match(/Win(dows )?(NT 5\.0|2000)/)) {
         os = "Windows 2000";				// Windows 2000 の処理
-        os = "Windows"
     }
     else if (ua.match(/Win(dows )?98/)) {
         os = "Windows 98";				// Windows 98 の処理
-        os = "Windows"
     }
     else if (ua.match(/Win(dows )?NT( 4\.0)?/)) {
         os = "Windows NT";				// Windows NT の処理
-        os = "Windows"
     }
     else if (ua.match(/Win(dows )?95/)) {
         os = "Windows 95";				// Windows 95 の処理
-        os = "Windows"
+    }
+    else if (ua.match(/Windows Phone/)) {
+        os = "Windows Phone";         	// Windows Phone (Windows 10 Mobile) の処理
+    }
+    else if (ua.match(/iPhone|iPad/)) {
+        os = "iOS";					// iOS (iPhone, iPod touch, iPad) の処理
     }
     else if (ua.match(/Mac|PPC/)) {
         os = "Mac OS";					// Macintosh の処理
+    }
+    else if (ua.match(/Android ([\.\d]+)/)) {
+        os = "Android " + RegExp.$1;			// Android の処理
     }
     else if (ua.match(/Linux/)) {
         os = "Linux";					// Linux の処理
@@ -106,7 +114,6 @@ function judgeUA()
     else {
         os = "N/A";					// 上記以外 OS の処理
     }
-
     //////////位置調整
     if(uaName == "gecko" || os == "Windows")
     {
@@ -120,13 +127,9 @@ function judgeUA()
     }
 }
 
-var fontTopAdjustment = 0;
 
-
-
-
-//4桁までの数を桁ごとに分解して返す
-//numは数、digitには1か10か100か1000、nullTextは先頭の桁がゼロの場合の対処
+/** 4桁までの数を桁ごとに分解して返す
+ * numは数、digitには1か10か100か1000、nullTextは先頭の桁がゼロの場合の対処 */
 function digitDivision(num, digit, nullText)
 {
     //数値じゃない場合
@@ -138,14 +141,13 @@ function digitDivision(num, digit, nullText)
         return 10;
 
     //マイナスの場合、ゼロにする
-    if(num < 0)
-        num = 0;
+    if(num < 0) num = 0;
 
     //桁に分解
-    var num3 = Math.floor(num % 10000 / 1000)
-    var num2 = Math.floor(num % 1000 / 100)
-    var num1 = Math.floor(num % 100 / 10)
-    var num0 = num % 10;
+    const num3 = Math.floor(num % 10000 / 1000)
+    const num2 = Math.floor(num % 1000 / 100)
+    const num1 = Math.floor(num % 100 / 10)
+    const num0 = num % 10;
 
     //返す値
     if(digit==1)	out = num0;
@@ -160,20 +162,20 @@ function digitDivision(num, digit, nullText)
     return out;
 }
 
-//バイト数を求める
+/** バイト数を求める */
 function getByte(text)
 {
-    count = 0;
-    for (i=0; i<text.length; i++)
+    let count = 0;
+    for (let i=0; i<text.length; i++)
     {
-        n = escape(text.charAt(i));
+        const n = escape(text.charAt(i));
         if (n.length < 4) count++; else count+=2;
     }
     return count;
 }
 
-//テキストボックスに入力されたものが数値かどうかチェックする
-//引数：チェックする値、例外の場合の戻り値
+/** テキストボックスに入力されたものが数値かどうかチェックする
+ * 引数：チェックする値、例外の場合の戻り値 */
 function inputTextNumCheck(value, exception)
 {
     //0未満が入ったら、無限大に
@@ -185,5 +187,3 @@ function inputTextNumCheck(value, exception)
 
     return value;
 }
-
-
