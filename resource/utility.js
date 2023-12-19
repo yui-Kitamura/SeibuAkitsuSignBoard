@@ -56,42 +56,55 @@ function judgeUA()
     const ua = navigator.userAgent;
     if (ua.match(/Win(dows )?NT 10\.0/)) {
         os = "Windows 10";				// Windows 10&11 の処理 (Windows Server 2016 / 2019)
+        os = "Windows";
     }
     else if (ua.match(/Win(dows )?NT 6\.3/)) {
         os = "Windows 8.1";				// Windows 8.1 の処理 (Windows Server 2012 R2)
+        os = "Windows";
     }
     else if (ua.match(/Win(dows )?NT 6\.2/)) {
         os = "Windows 8";				// Windows 8 の処理 (Windows Server 2012)
+        os = "Windows";
     }
     else if (ua.match(/Win(dows )?NT 6\.1/)) {
         os = "Windows 7";				// Windows 7 の処理 (Windows Server 2008 R2, Windows Home Server 2011)
+        os = "Windows";
     }
     else if (ua.match(/Win(dows )?NT 6\.0/)) {
         os = "Windows Vista";				// Windows Vista の処理 (Windows Server 2008)
+        os = "Windows";
     }
     else if (ua.match(/Win(dows )?NT 5\.2/)) {
         os = "Windows Server 2003";			// Windows Server 2003 の処理 (Windows XP x64, Windows Server 2003 / 2003 R2, Windows Home Server)
+        os = "Windows";
     }
     else if (ua.match(/Win(dows )?(NT 5\.1|XP)/)) {
         os = "Windows XP";				// Windows XP の処理
+        os = "Windows";
     }
     else if (ua.match(/Win(dows)? (9x 4\.90|ME)/)) {
         os = "Windows ME";				// Windows ME の処理
+        os = "Windows";
     }
     else if (ua.match(/Win(dows )?(NT 5\.0|2000)/)) {
         os = "Windows 2000";				// Windows 2000 の処理
+        os = "Windows";
     }
     else if (ua.match(/Win(dows )?98/)) {
         os = "Windows 98";				// Windows 98 の処理
+        os = "Windows";
     }
     else if (ua.match(/Win(dows )?NT( 4\.0)?/)) {
         os = "Windows NT";				// Windows NT の処理
+        os = "Windows";
     }
     else if (ua.match(/Win(dows )?95/)) {
         os = "Windows 95";				// Windows 95 の処理
+        os = "Windows";
     }
     else if (ua.match(/Windows Phone/)) {
         os = "Windows Phone";         	// Windows Phone (Windows 10 Mobile) の処理
+        os = "Windows";
     }
     else if (ua.match(/iPhone|iPad/)) {
         os = "iOS";					// iOS (iPhone, iPod touch, iPad) の処理
@@ -115,13 +128,10 @@ function judgeUA()
         os = "N/A";					// 上記以外 OS の処理
     }
     //////////位置調整
-    if(uaName == "gecko" || os == "Windows")
-    {
+    if(uaName == "gecko" || os == "Windows"){
         //FirefoxまたはWindowsなら
         fontTopAdjustment = 0;
-    }
-    else
-    {
+    }else{
         //chromeなど
         fontTopAdjustment = -4;
     }
