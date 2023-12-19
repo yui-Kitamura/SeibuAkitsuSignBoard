@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="author" content="" />
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+    <title>西武 日本信号24ドット(所沢を除く池袋線各駅、下山口、西武球場前ほか) LED電光掲示板 発車標シミュレーター</title>
+
+    <link rel="stylesheet" href="/resource/style.css" type="text/css">
+
+    <script type="text/javascript" src="/resource/main.js" charset="UTF-8"></script>
+    <script type="text/javascript" src="/resource/utility.js" charset="UTF-8"></script>
+    <script type="text/javascript" src="/resource/imgList.js" charset="UTF-8"></script>
+
+    <script type="text/javascript">
+        //OS・ユーザエージェントを判別
+        judgeUA();
+    </script>
+
+</head>
+
+<body>
+発車標シミュレーター　&gt; 西武 日本信号24ドット(所沢を除く池袋線各駅、下山口、西武球場前ほか)
+<hr />
+<!--発車標描画部-->
+<div id="LEDUnitDiv"></div>
+<hr />
+
+<select size='1' id='lineCountInput' >
+    <option value='1'>1段表示</option>
+    <option value='2'>2段表示</option>
+    <option value='3' selected>3段表示</option>
+    <option value='4'>4段表示</option>
+    <option value='5'>5段表示</option>
+    <option value='6'>6段表示</option>
+    <option value='7'>7段表示</option>
+    <option value='8'>8段表示</option>
+    <option value='9'>9段表示</option>
+    <option value='10'>10段表示</option>
+    <option value='15'>15段表示</option>
+    <option value='20'>20段表示</option>
+    <option value='30'>30段表示</option>
+    <option value='40'>40段表示</option>
+    <option value='50'>50段表示</option>
+    <option value='100'>100段表示</option>
+</select>
+<input type='button' value='段数変更&ランダム設定' onclick='setUnitLine()' />
+
+　　　日本語 <input id='intervalInput0' type='text' value='7.0' size='4' style='text-align:right; ' onkeyup='intervalTimeSet()' /> 秒
+　英語 <input id='intervalInput1' type='text' value='3.0' size='4' style='text-align:right; ' onkeyup='intervalTimeSet()' /> 秒
+　　点滅間隔 <input id='switchIntervalInput' type='text' value='0.5' size='4' style='text-align:right; ' onkeyup='intervalTimeSet()' /> 秒
+
+<br />
+<hr />
+
+<!--入力部-->
+<div id='inputFormDiv' style=""></div>
+
+<script type="text/javascript">
+    main();
+</script>
+
+<h2>このシミュレーターについて</h2>
+<img src="img/picture/1.jpg" alt="" width="450" /><br />
+西武池袋線に設置されている発車標(発車案内、3色LED電光掲示板)の表示を自由に変更できるシミュレーターを作りました。<br />
+<ul>
+    <li>池袋線タイプの発車標を再現しています。新宿線タイプとはフォントが異なります。</li>
+    <li><a href="https://ameblo.jp/223ys/entry-12501548984.html" target="_blank">現地での写真や各駅設置状況はこちらをご覧ください。</a></li>
+    <li>元町・中華街行きは、「元町・中華街」→「渋谷・横浜方面」→「Motomachi-Chukagai」というように「渋谷・横浜方面」も途中で表示されますが、ここでは対応していません。</li>
+    <li>西武池袋駅の筐体をモデルとしています。なお、段数変更機能で1段や2段も設定可能ですが、筐体のラベルが乱れます。</li>
+    <li>各ドロップダウンリストやテキストフォームに値を入力・変更すると、即表示に反映されます。</li>
+    <li>日本語/英語の切り替えのほか、テロップ表示、到着点滅表示に対応しています。</li>
+    <li>ドロップダウンリストから任意の段数に変更することもできます。ただし、段数を多くすると負荷がかかり処理が遅くなりますのでご注意ください。</li>
+    <li>本シミュレーターはJavaScript・CSS等が正常に動作するブラウザでご覧いただけます。JavaScriptが動作しない環境では動きません。</li>
+    <li>動作確認は MacBookのGoogle Chrome バージョン 45.0.2454.101 で行なっています。他の大体のOS・ブラウザでも正常に動作すると思われますが、一部ではレイアウトや挙動が異なったり、エラーなどで正常に動作しない環境もあるかもしれません。</li>
+</ul>
+
+<h2>変更履歴</h2>
+
+</body>
+</html>
