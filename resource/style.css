@@ -65,3 +65,11 @@ h5{
 strong{
     color:#f00;
 }
+
+footer table,
+footer table th,
+footer table td {
+    border-collapse: collapse;
+    border: 1px solid gray;
+    padding: 3px;
+}
