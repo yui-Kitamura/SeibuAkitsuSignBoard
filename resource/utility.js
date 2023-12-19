@@ -1,5 +1,7 @@
 //OS・ブラウザを判別する
 let fontTopAdjustment = 0;
+let os;
+let uaName = 'unknown';
 /**
  * if.useragent.js v0.9
  * info: http://company.miyanavi.net/archives/987
@@ -11,7 +13,6 @@ function judgeUA()
 {
     const userAgent = window.navigator.userAgent.toLowerCase();
     const appVersion = window.navigator.appVersion.toLowerCase();
-    let uaName = 'unknown';
     let ios = '';
     let ios_ver = '';
 
@@ -52,7 +53,6 @@ function judgeUA()
 
     ///// OSの判定
     //  http://www9.plala.or.jp/oyoyon/html/script/platform.html
-    let os;
     const ua = navigator.userAgent;
     if (ua.match(/Win(dows )?NT 10\.0/)) {
         os = "Windows 10";				// Windows 10&11 の処理 (Windows Server 2016 / 2019)
