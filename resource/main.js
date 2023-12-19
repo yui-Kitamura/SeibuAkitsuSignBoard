@@ -11,8 +11,6 @@ function setUnitLine(){
     //段数を読み込む
     lineSum = 2;
 
-    //筐体を段数分描く
-    writeUnitHTML();
     //入力部を段数分つくる
     writeFormHTML();
 
@@ -28,55 +26,6 @@ function setUnitLine(){
     for(let unit=0 ; unit<unitSum ; unit++){
         updateStatus(unit);
     }
-}
-
-//筐体のHTMLを出力する
-function writeUnitHTML()
-{
-    let out = "";
-    out += "<div id='' style='position:relative; top:0; left:0; height:"+(130+lineSum*24)+"px; width:1050px; '>";
-    for(let unit=0 ; unit<unitSum ; unit++) {
-        out += "<div id='' style='position:absolute; top:20px; left:"+(20+unit*550)+"px; width:550px; '>";
-        out += "  <div id='kyotaiMainDiv"+unit+"' style='position:absolute; '>";
-        out += "    <div id='' style='position:absolute; top:0; left:0; width:500px; height:"+(98+lineSum*24)+"px; background-color:#777; '>";
-        //方面ラベル
-        out += "      <img id='' style='position:absolute; top:0; left:0; width:500px; height:43px; ' src='/resource/img/label/title-"+unit+".png' alt='' />";
-        out += "      <div id='' style='position:absolute; top:43px; left:11px; width:479px; height:"+(47+lineSum*24)+"px; background-color:#222; '>";
-        //項目名ラベル
-        out += "        <img id='' style='position:absolute; top:0; left:81px; width:384px; height:14px; ' src='/resource/img/label/header.png' alt='' />";
-        out += "        <img id='' style='position:absolute; top:14px; left:0; width:81px; height:96px; ' src='/resource/img/label/order.png' alt='' />";
-        //LED描画部
-        out += "        <div id='mainLEDDiv"+unit+"' " +
-            "               style='position:absolute; top:14px; left:81px; width:384px; height:"+(24+lineSum*24)+"px; background-color:#000; '>";
-        out += "          <div id='mainLEDDiv"+unit+"' " +
-        "                   style='position:absolute; top:0; left:0; width:384px; height:"+(24+lineSum*24)+"px; background-color:#000; '>";
-        for(let line=0 ; line<lineSum ; line++) {
-            //縦位置
-            let topBuff;
-            if (line == 0) {
-                topBuff = 0;
-            } else {
-                topBuff = (line + 1) * 24;
-            }
-            //発車時刻、種別、行き先、両数
-            out += "                <div id='' style='position:absolute; top:"+topBuff+"px; left:0; width:384px; height:24px; overflow:hidden; '>";
-            out += writeLineHTML(unit, line);
-            //out += "              </div>";
-            out += "                </div>";
-        }
-        //最下段のテロップor到着表示
-        out += "            <div id='bottomLineDiv"+unit+"' style='position:absolute; top:24px; left:0; width:384px; height:24px; background-color:#000; z-index:1; '>";
-        out += "            </div>";
-        out += "          </div>";
-        out += "        </div>";
-        out += "      </div>";
-        out += "    </div>";
-        out += "  </div>";
-        out += "</div>";
-    }
-    out += "</div>";
-
-    document.getElementById("LEDUnitDiv").innerHTML = out;
 }
 
 //LEDの1段分のHTMLを出力する
