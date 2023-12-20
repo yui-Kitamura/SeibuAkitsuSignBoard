@@ -46,6 +46,13 @@ jobs:
         with:
           name: github-pages
           path: _site
+      - name: TarAndLogDeployFileList
+        shell: bash
+        run: |
+          cd ${{steps.download.outputs.download-path}}
+          tar xvf artifact.tar
+          cd ${{steps.download.outputs.download-path}}/./
+          ls -R -l -h
       - name: Sync files FTP
         id: ftp_sync
         uses: SamKirkland/FTP-Deploy-Action@v4.3.4
