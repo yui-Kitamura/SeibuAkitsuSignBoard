@@ -36,8 +36,16 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v2
         with:
-          # Upload entire repository
           path: '.'
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v3
+      - name: Sync files FTP
+        id: ftp_sync
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.4
+        with:
+          server: yui-kitamura.eng.pro
+          username: ${{ secrets.ftp_user }}
+          password: ${{ secrets.ftp_password }}
+          local-dir: ${{steps.download.outputs.download-path}}/./
+          server-dir: ./private/railway/sim/seibu/akitsu/
