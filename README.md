@@ -1,5 +1,6 @@
 # 秋津駅発車標
-西武鉄道池袋線秋津駅の電光掲示板を再現
+西武鉄道池袋線秋津駅の電光掲示板を再現  
+![OurTech](https://skillicons.dev/icons?i=html,css,js,github,githubactions,idea)
 
 ## 権利表示
 プログラムは、yoshi様(Twitter [@rk113](https://twitter.com/rk113))に許可をいただき、
