@@ -33,37 +33,37 @@ function writeLineHTML(unit, line){
     let out = "";
     //種別
     out += "<div id='typeDiv"+unit+line+"' style='position:absolute; left:0; top:0; width:48px; height:24px; overflow:hidden; background-color:#000; z-index:1;'>";
-    out += "  <img id='typeImg"+unit+line+"' style='position:absolute; left:0; top:-0px; ' src='/resource/img/main.png' alt='' />";
+    out += "  <img id='typeImg"+unit+line+"' style='position:absolute; left:0; top:-0px; ' src='./resource/img/main.png' alt='' />";
     out += "</div>";
     //行き先
     out += "<div id='destinationDiv"+unit+line+"' style='position:absolute; left:60px; top:0; width:120px; height:24px; overflow:hidden; background-color:#000; z-index:1;'>";
-    out += "  <img id='destinationImg"+unit+line+"' style='position:absolute; left:0; top:-0px; ' src='/resource/img/main.png' alt='' />";
+    out += "  <img id='destinationImg"+unit+line+"' style='position:absolute; left:0; top:-0px; ' src='./resource/img/main.png' alt='' />";
     out += "</div>";
     //時刻
     out += "<div id='timeDiv"+unit+line+"' style='position:absolute; left:180px; top:0; width:96px; height:24px; overflow:hidden; background-color:#000; z-index:1;' >";
     out += "  <div style='position:absolute; left:0; top:0; width:96px; height:24px; overflow:hidden;' id='' >";
-    out += "    <img style='position:absolute; left:-580px; top:-0px; ' id='departureTime0Img"+unit+line+"' src='/resource/img/main.png' alt='' />";
+    out += "    <img style='position:absolute; left:-580px; top:-0px; ' id='departureTime0Img"+unit+line+"' src='./resource/img/main.png' alt='' />";
     out += "  </div>";
     out += "  <div style='position:absolute; left:10px; top:0; width:15px; height:24px; overflow:hidden;' id='' >";
-    out += "    <img style='position:absolute; left:-700px; top:-0px; ' id='departureTime4Img"+unit+line+"' src='/resource/img/main.png' alt='' />";
+    out += "    <img style='position:absolute; left:-700px; top:-0px; ' id='departureTime4Img"+unit+line+"' src='./resource/img/main.png' alt='' />";
     out += "  </div>";
     out += "  <div style='position:absolute; left:26px; top:0; width:15px; height:24px; overflow:hidden;' id='' >";
-    out += "    <img style='position:absolute; left:-732px; top:-0px; ' id='departureTime3Img"+unit+line+"' src='/resource/img/main.png' alt='' />";
+    out += "    <img style='position:absolute; left:-732px; top:-0px; ' id='departureTime3Img"+unit+line+"' src='./resource/img/main.png' alt='' />";
     out += "  </div>";
     out += "  <div style='position:absolute; left:54px; top:0; width:15px; height:24px; overflow:hidden;' id='' >";
-    out += "    <img style='position:absolute; left:-700px; top:-0px; ' id='departureTime2Img"+unit+line+"' src='/resource/img/main.png' alt='' />";
+    out += "    <img style='position:absolute; left:-700px; top:-0px; ' id='departureTime2Img"+unit+line+"' src='./resource/img/main.png' alt='' />";
     out += "  </div>";
     out += "  <div style='position:absolute; left:70px; top:0; width:15px; height:24px; overflow:hidden;' id='' >";
-    out += "    <img style='position:absolute; left:-732px; top:-0px; ' id='departureTime1Img"+unit+line+"' src='/resource/img/main.png' alt='' />";
+    out += "    <img style='position:absolute; left:-732px; top:-0px; ' id='departureTime1Img"+unit+line+"' src='./resource/img/main.png' alt='' />";
     out += "  </div>";
     out += "</div>";
     //両数
     out += "<div id='carCountDiv"+unit+line+"' style='position:absolute; left:288px; top:0; width:48px; height:24px; overflow:hidden; background-color:#000; z-index:1;'>";
-    out += "  <img style='position:absolute; left:-0px; top:-0px; ' id='carCountImg"+unit+line+"' src='/resource/img/main.png' alt='' />";
+    out += "  <img style='position:absolute; left:-0px; top:-0px; ' id='carCountImg"+unit+line+"' src='./resource/img/main.png' alt='' />";
     out += "</div>";
     //ドア数
     out += "<div id='doorCountDiv"+unit+line+"' style='position:absolute; left:336px; top:0; width:48px; height:24px; overflow:hidden; background-color:#000; z-index:1;'>";
-    out += "  <img style='position:absolute; left:-464px; top:-0px; ' id='doorCountImg"+unit+line+"' src='/resource/img/main.png' alt='' />";
+    out += "  <img style='position:absolute; left:-464px; top:-0px; ' id='doorCountImg"+unit+line+"' src='./resource/img/main.png' alt='' />";
     out += "</div>";
 
     out += "";
@@ -356,23 +356,23 @@ function updateStatus(unit){
         let out = "";
         //当駅
         out += "<div id='approachPosition0Div"+unit+"' style='position:absolute; left:0; top:0; width:48px; height:24px; overflow:hidden; background-color:#000; z-index:1;'>";
-        out += "  <img id='approachPosition0Img"+unit+"' style='position:absolute; left:"+(approachBaseLeft)+"px; top:"+approachBaseTop+"px; ' src='/resource/img/main.png' alt='' />";
+        out += "  <img id='approachPosition0Img"+unit+"' style='position:absolute; left:"+(approachBaseLeft)+"px; top:"+approachBaseTop+"px; ' src='./resource/img/main.png' alt='' />";
         out += "</div>";
         //当駅〜前駅
         out += "<div id='approachPosition1Div"+unit+"' style='position:absolute; left:48px; top:0; width:120px; height:24px; overflow:hidden; background-color:#000; z-index:1;'>";
-        out += "  <img id='approachPosition1Img"+unit+"' style='position:absolute; left:"+(approachBaseLeft-147)+"px; top:"+approachBaseTop+"px; ' src='/resource/img/main.png' alt='' />";
+        out += "  <img id='approachPosition1Img"+unit+"' style='position:absolute; left:"+(approachBaseLeft-147)+"px; top:"+approachBaseTop+"px; ' src='./resource/img/main.png' alt='' />";
         out += "</div>";
         //前駅
         out += "<div id='approachPosition2Div"+unit+"' style='position:absolute; left:168px; top:0; width:48px; height:24px; overflow:hidden; background-color:#000; z-index:1;'>";
-        out += "  <img id='approachPosition2Img"+unit+"' style='position:absolute; left:"+(approachBaseLeft-49)+"px; top:"+approachBaseTop+"px; ' src='/resource/img/main.png' alt='' />";
+        out += "  <img id='approachPosition2Img"+unit+"' style='position:absolute; left:"+(approachBaseLeft-49)+"px; top:"+approachBaseTop+"px; ' src='./resource/img/main.png' alt='' />";
         out += "</div>";
         //前駅〜前々駅
         out += "<div id='approachPosition3Div"+unit+"' style='position:absolute; left:216px; top:0; width:120px; height:24px; overflow:hidden; background-color:#000; z-index:1;'>";
-        out += "  <img id='approachPosition3Img"+unit+"' style='position:absolute; left:"+(approachBaseLeft-147)+"px; top:"+approachBaseTop+"px; ' src='/resource/img/main.png' alt='' />";
+        out += "  <img id='approachPosition3Img"+unit+"' style='position:absolute; left:"+(approachBaseLeft-147)+"px; top:"+approachBaseTop+"px; ' src='./resource/img/main.png' alt='' />";
         out += "</div>";
         //前々駅
         out += "<div id='approachPosition4Div"+unit+"' style='position:absolute; left:336px; top:0; width:48px; height:24px; overflow:hidden; background-color:#000; z-index:1;'>";
-        out += "  <img id='approachPosition4Img"+unit+"' style='position:absolute; left:"+(approachBaseLeft-98)+"px; top:"+approachBaseTop+"px; ' src='/resource/img/main.png' alt='' />";
+        out += "  <img id='approachPosition4Img"+unit+"' style='position:absolute; left:"+(approachBaseLeft-98)+"px; top:"+approachBaseTop+"px; ' src='./resource/img/main.png' alt='' />";
         out += "</div>";
 
         document.getElementById("bottomLineDiv"+unit).innerHTML = out;
@@ -384,7 +384,7 @@ function updateStatus(unit){
     if(statusData[unit] == 2){
         let out = "";
         out += "<div id='arrivingDiv"+unit+"' style='position:absolute; left:0; top:0; width:384px; height:24px; overflow:hidden; background-color:#000; z-index:1;'>";
-        out += "  <img id='arrivingImg"+unit+"' style='position:absolute; left:"+(approachBaseLeft)+"px; top:"+(approachBaseTop-25*3)+"px; ' src='/resource/img/main.png' alt='' />";
+        out += "  <img id='arrivingImg"+unit+"' style='position:absolute; left:"+(approachBaseLeft)+"px; top:"+(approachBaseTop-25*3)+"px; ' src='./resource/img/main.png' alt='' />";
         out += "</div>";
 
         document.getElementById("bottomLineDiv"+unit).innerHTML = out;
@@ -396,7 +396,7 @@ function updateStatus(unit){
     if(statusData[unit] == 3){
         let out = "";
         out += "<div id='arrivingDiv"+unit+"' style='position:absolute; left:0; top:0; width:384px; height:24px; overflow:hidden; background-color:#000; z-index:1;'>";
-        out += "  <img id='arrivingImg"+unit+"' style='position:absolute; left:"+(approachBaseLeft)+"px; top:"+(approachBaseTop-25*4)+"px; ' src='/resource/img/main.png' alt='' />";
+        out += "  <img id='arrivingImg"+unit+"' style='position:absolute; left:"+(approachBaseLeft)+"px; top:"+(approachBaseTop-25*4)+"px; ' src='./resource/img/main.png' alt='' />";
         out += "</div>";
 
         document.getElementById("bottomLineDiv"+unit).innerHTML = out;
