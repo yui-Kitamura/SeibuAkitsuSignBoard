@@ -48,4 +48,4 @@ jobs:
           username: ${{ secrets.ftp_user }}
           password: ${{ secrets.ftp_password }}
           local-dir: ${{steps.download.outputs.download-path}}/./
-          server-dir: private/railway/sim/seibu/akitsu/
+          server-dir: ./private/railway/sim/seibu/akitsu
