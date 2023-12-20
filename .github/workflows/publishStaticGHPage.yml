@@ -40,6 +40,12 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v3
+      - name: DL artifact
+        id: download
+        uses: actions/download-artifact@v3
+        with:
+          name: github-pages
+          path: _site
       - name: Sync files FTP
         id: ftp_sync
         uses: SamKirkland/FTP-Deploy-Action@v4.3.4
