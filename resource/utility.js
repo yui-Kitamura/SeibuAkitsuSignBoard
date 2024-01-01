@@ -147,27 +147,24 @@ function digitDivision(num, digit, nullText)
     //return "null";
 
     //空欄の場合
-    if(num == "")
+    if(!num) {
         return 10;
+    }
 
     //マイナスの場合、ゼロにする
     if(num < 0) num = 0;
 
-    //桁に分解
-    const num3 = Math.floor(num % 10000 / 1000)
-    const num2 = Math.floor(num % 1000 / 100)
-    const num1 = Math.floor(num % 100 / 10)
-    const num0 = num % 10;
-
-    //返す値
-    if(digit==1)	out = num0;
-    if(digit==10)	out = num1;
-    if(digit==100)	out = num2;
-    if(digit==1000)	out = num3;
+    //桁に分解して返す
+    let out = 0;
+    if(digit==1)	    out = num % 10;
+    else if(digit==10)	out = Math.floor(num % 100 / 10);
+    else if(digit==100)	out = Math.floor(num % 1000 / 100);
+    else if(digit==1000)out = Math.floor(num % 10000 / 1000);
 
     //ゼロの場合、空欄に
-    if(out == 0)
+    if(out == 0) {
         out = nullText;
+    }
 
     return out;
 }
