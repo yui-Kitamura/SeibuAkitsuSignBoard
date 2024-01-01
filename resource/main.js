@@ -145,48 +145,42 @@ function writeFormHTML(){
     document.getElementById("inputFormDiv").innerHTML = out;
 }
 
-
-
-//デフォルトでの列車データをセットする、引数numに0だったら、ランダム、1か2か3だったらデフォルトデータ挿入
+/**
+ * 初期表示する既定データを設定
+ */
 function setDefaultData() {
-    for(let unit=0 ; unit<unitSum ; unit++){
-        for(let line=0 ; line<lineSum ; line++){
-            ////////ドロップダウンリストにランダムな値をセットする
-            let id = "typeInput"+unit+line;
-            let randomNum = Math.floor(Math.random() * (document.getElementById(id).options.length - 2));
-            document.getElementById(id).options[randomNum].selected = true;
+    document.getElementById("typeInput00").options[0].selected = true;
+    document.getElementById("destinationInput00").options[13].selected = true;
+    document.getElementById("departureHourInput00").value = "9";
+    document.getElementById("departureMinuteInput00").value = "40";
+    document.getElementById("carCountInput00").options[3].selected = true;
+    document.getElementById("doorCountInput00").options[1].selected = true;
 
-            id = "destinationInput"+unit+line;
-            randomNum = Math.floor(Math.random() * (document.getElementById(id).options.length - 4));
-            document.getElementById(id).options[randomNum].selected = true;
+    document.getElementById("typeInput01").options[13].selected = true;
+    document.getElementById("destinationInput01").options[42].selected = true;
+    document.getElementById("departureHourInput01").value = "";
+    document.getElementById("departureMinuteInput01").value = "";
+    document.getElementById("carCountInput01").options[4].selected = true;
+    document.getElementById("doorCountInput01").options[3].selected = true;
 
-            id = "carCountInput"+unit+line;
-            randomNum = Math.floor(Math.random() * (document.getElementById(id).options.length - 1));
-            document.getElementById(id).options[randomNum].selected = true;
+    document.getElementById("bottomTelopInput0").value = "<span style='color:#f80'>西所沢</span>で<span style='color:#f80'>各停西武球場前</span>ゆきに、<span style='color:#f80'>飯能</span>で<span style='color:#f80'>各停西武秩父</span>ゆきに接続します。";
+    document.getElementById("statusInput0").options[2].selected = true;
 
-            id = "doorCountInput"+unit+line;
-            randomNum = Math.floor(Math.random() * (document.getElementById(id).options.length - 1));
-            document.getElementById(id).options[randomNum].selected = true;
+    document.getElementById("typeInput10").options[2].selected = true;
+    document.getElementById("destinationInput10").options[0].selected = true;
+    document.getElementById("departureHourInput10").value = 9;
+    document.getElementById("departureMinuteInput10").value = 39;
+    document.getElementById("carCountInput10").options[3].selected = true;
+    document.getElementById("doorCountInput10").options[1].selected = true;
 
-            ///////今より少し進んだ時刻を計算
-            const nowDate = new Date(); //現在日時
-            let baseSecond = nowDate.getTime(); //秒に変換
-            baseSecond += line*7*60*1000 + Math.floor(Math.random() * 3*60*1000) ; //7分間隔(3分の揺らぎ付き)
-            nowDate.setTime(baseSecond); //Date型に変換
-            const hour = nowDate.getHours(); //時
-            const minute = nowDate.getMinutes(); //分
+    document.getElementById("typeInput11").options[0].selected = true;
+    document.getElementById("destinationInput11").options[30].selected = true;
+    document.getElementById("departureHourInput11").value = 9;
+    document.getElementById("departureMinuteInput11").value = 46;
+    document.getElementById("carCountInput11").options[2].selected = true;
+    document.getElementById("doorCountInput11").options[1].selected = true;
 
-            document.getElementById("departureHourInput"+unit+line).value = hour;
-            document.getElementById("departureMinuteInput"+unit+line).value = minute;
-        }
-    }
-
-    //テロップ文章
-    document.getElementById("bottomTelopInput0").value = "<span style='color:#f80'>西所沢</span>で<span style='color:#f80'>西武球場前</span>ゆきに、<span style='color:#f80'>飯能</span>で<span style='color:#f80'>西武秩父</span>ゆきに接続します。";
-    document.getElementById("bottomTelopInput1").value = "<span style='color:#f80'>練馬</span>で準急<span style='color:#f80'>飯能</span>ゆきにお乗継ぎができます。";
-
-    //2行目の表示内容
-    document.getElementById("statusInput0").options[0].selected = true;
+    document.getElementById("bottomTelopInput1").value = "<span style='color:#f80'>練馬</span>で準急<span style='color:#f80'>池袋</span>ゆきにお乗継ぎができます。";
     document.getElementById("statusInput1").options[1].selected = true;
 
 }
