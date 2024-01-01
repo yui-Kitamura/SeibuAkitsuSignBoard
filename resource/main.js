@@ -44,8 +44,8 @@ function writeLineHTML(unit, line){
     out += "  <div style='position:absolute; left:0; top:0; width:288px; height:72px; overflow:hidden;' id='' >";
     out += "    <img class='led' style='position:absolute; left:-4640px; top:-0px;' id='departureTime0Img"+unit+line+"' src='./resource/img/mainx8.png' alt='' />";
     out += "  </div>";
-    out += "  <div style='position:absolute; left:15px; top:0; width:45px; height:72px; overflow:hidden;' id='' >";
-    out += "    <img class='led' style='position:absolute; left:-11200px; top:-0px;' id='departureTime4Img"+unit+line+"' src='./resource/img/mainx8.png' alt='' />";
+    out += "  <div style='position:absolute; left:30px; top:0; width:45px; height:72px; overflow:hidden;' id='' >";
+    out += "    <img class='led' style='position:absolute; left:-5600px; top:-0px;' id='departureTime4Img"+unit+line+"' src='./resource/img/mainx8.png' alt='' />";
     out += "  </div>";
     out += "  <div style='position:absolute; left:78px; top:0; width:45px; height:72px; overflow:hidden;' id='' >";
     out += "    <img class='led' style='position:absolute; left:-5856px; top:-0px;' id='departureTime3Img"+unit+line+"' src='./resource/img/mainx8.png' alt='' />";
@@ -338,7 +338,7 @@ function updateStatus(unit){
 
         let out = "";
         out += "  <div style=\"position:absolute; top:"+topBuff+"px; left:0; width:1152px; height:72px; font-size:72px; color:#0f0; font-family:'ＭＳ ゴシック', 'Hiragino Kaku Gothic ProN', 'ヒラギノ角ゴ ProN W3', sans-serif; \">";
-        out += "    <marquee scrollamount='6' >"; //現地のテロップは6.2秒
+        out += "    <marquee scrollamount='5' >"; //現地のテロップは6.2秒
         out += bottomTelopData[unit];
         out += "    </marquee>";
         out += "  </div>";
