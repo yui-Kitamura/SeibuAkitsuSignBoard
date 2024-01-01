@@ -73,3 +73,7 @@ footer table td {
     border: 1px solid gray;
     padding: 3px;
 }
+
+img.led {
+    filter: brightness(175%);
+}
