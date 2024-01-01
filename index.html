@@ -23,23 +23,25 @@
     <section id="main">
         <!--発車標描画部-->
         <div id="LEDUnitDiv">
-            <div style="position:relative; top:0; left:0; height:178px; width:1050px;">
+            <div style="position:relative; top:0; left:0; height:930px; width:fit-content;">
                 <!-- 1台め -->
-                <div style="position:absolute; top:20px; left:20px; width:469px;">
+                <div style="position:absolute; top:5px; left:40px; width:1407px;">
                     <div id="kyotaiMainDiv0" style="position:absolute; ">
-                        <div style="position:absolute; top:0; left:0; width:419px; height:146px; background-color:#777; ">
-                            <!-- 方面ラベル --><img style="position:absolute; top:0; left:0; width:419px; height:43px;" src="./resource/img/label/title-0.png" alt="" />
-                            <div style="position:absolute; top:43px; left:11px; width:398px; height:95px; background-color:#222;">
-                                <!-- 項目名ラベル --><img style='position:absolute; top:0; left:0; width:384px; height:14px; ' src='./resource/img/label/header.png' alt='' />
+                        <div style="position:absolute; top:0; left:0; width:1257px; height:438px; background-color:#777; ">
+                            <!-- 方面ラベル -->
+                            <img style="position:absolute; top:0; left:0; width:1257px; height:129px;" src="./resource/img/label/title-0.png" alt="" />
+                            <div style="position:absolute; top:129px; left:33px; width:1194px; height:285px; background-color:#222;">
+                                <!-- 項目名ラベル -->
+                                <img style='position:absolute; top:0; left:0; width:1152px; height:42px; ' src='./resource/img/label/header.png' alt='' />
                                 <!-- LED描画部 -->
-                                <div id="mainLEDDiv0" style="position:absolute; top:14px; left:0; width:384px; height:72px; background-color:#000;">
-                                    <div style="position:absolute; top:0; left:0; width:383px; height:72px; background-color:#000;">
-                                        <div id="mainLEDRow00" style="position:absolute; top:0; left:0; width:384px; height:24px; overflow:hidden;">
+                                <div id="mainLEDDiv0" style="position:absolute; top:42px; left:0; width:1152px; height:216px; background-color:#000;">
+                                    <div style="position:absolute; top:0; left:0; width:1149px; height:216px; background-color:#000;">
+                                        <div id="mainLEDRow00" style="position:absolute; top:0; left:0; width:1152px; height:72px; overflow:hidden;">
                                             <script>document.getElementById("mainLEDRow00").innerHTML = writeLineHTML(0, 0)</script>
                                         </div>
-                                        <div id="bottomLineDiv0" style="position:absolute; top:24px; left:0; width:384px; height:24px; background-color:#000; z-index:1;">
+                                        <div id="bottomLineDiv0" style="position:absolute; top:72px; left:0; width:1152px; height:72px; background-color:#000; z-index:1;">
                                         </div>
-                                        <div id="mainLEDRow01" style="position:absolute; top:48px; left:0; width:384px; height:24px; overflow:hidden;">
+                                        <div id="mainLEDRow01" style="position:absolute; top:144px; left:0; width:1152px; height:72px; overflow:hidden;">
                                             <script>document.getElementById("mainLEDRow01").innerHTML = writeLineHTML(0, 1)</script>
                                         </div>
                                     </div>
@@ -49,21 +51,23 @@
                     </div>
                 </div>
                 <!-- 2台め -->
-                <div style="position:absolute; top:20px; left:570px; width:469px;">
+                <div style="position:absolute; top:455px; left:40px; width:1407px;">
                     <div id="kyotaiMainDiv1" style="position:absolute; ">
-                        <div style="position:absolute; top:0; left:0; width:419px; height:146px; background-color:#777; ">
-                            <!-- 方面ラベル --><img style="position:absolute; top:0; left:0; width:419px; height:43px;" src="./resource/img/label/title-1.png" alt="" />
-                            <div style="position:absolute; top:43px; left:11px; width:398px; height:95px; background-color:#222;">
-                                <!-- 項目名ラベル --><img style='position:absolute; top:0; left:0; width:384px; height:14px; ' src='./resource/img/label/header.png' alt='' />
+                        <div style="position:absolute; top:0; left:0; width:1257px; height:438px; background-color:#777; ">
+                            <!-- 方面ラベル -->
+                            <img style="position:absolute; top:0; left:0; width:1257px; height:129px;" src="./resource/img/label/title-1.png" alt="" />
+                            <div style="position:absolute; top:129px; left:33px; width:1194px; height:285px; background-color:#222;">
+                                <!-- 項目名ラベル -->
+                                <img style='position:absolute; top:0; left:0; width:1152px; height:42px; ' src='./resource/img/label/header.png' alt='' />
                                 <!-- LED描画部 -->
-                                <div id="mainLEDDiv1" style="position:absolute; top:14px; left:0; width:384px; height:72px; background-color:#000;">
-                                    <div style="position:absolute; top:0; left:0; width:384px; height:72px; background-color:#000;">
-                                        <div id="mainLEDRow10" style="position:absolute; top:0; left:0; width:384px; height:24px; overflow:hidden;">
+                                <div id="mainLEDDiv1" style="position:absolute; top:42px; left:0; width:1152px; height:216px; background-color:#000;">
+                                    <div style="position:absolute; top:0; left:0; width:1152px; height:216px; background-color:#000;">
+                                        <div id="mainLEDRow10" style="position:absolute; top:0; left:0; width:1152px; height:72px; overflow:hidden;">
                                             <script>document.getElementById("mainLEDRow10").innerHTML = writeLineHTML(1, 0)</script>
                                         </div>
-                                        <div id="bottomLineDiv1" style="position:absolute; top:24px; left:0; width:384px; height:24px; background-color:#000; z-index:1;">
+                                        <div id="bottomLineDiv1" style="position:absolute; top:72px; left:0; width:1152px; height:72px; background-color:#000; z-index:1;">
                                         </div>
-                                        <div id="mainLEDRow11" style="position:absolute; top:48px; left:0; width:384px; height:24px; overflow:hidden;">
+                                        <div id="mainLEDRow11" style="position:absolute; top:144px; left:0; width:1152px; height:72px; overflow:hidden;">
                                             <script>document.getElementById("mainLEDRow11").innerHTML = writeLineHTML(1, 1)</script>
                                         </div>
                                     </div>

@@ -75,5 +75,6 @@ footer table td {
 }
 
 img.led {
+    zoom: 0.375; /* 3÷8 */
     filter: brightness(175%);
 }
