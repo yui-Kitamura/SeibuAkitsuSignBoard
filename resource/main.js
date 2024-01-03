@@ -4,6 +4,7 @@ let lineSum = 2; //ホーム発車標の段数
 function main() {
     //発車標の段数を設定する
     setUnitLine();
+    drawClock();
 }
 
 //発車標の段数を設定する
@@ -440,5 +441,27 @@ function switchImg(unit){
 
     //点滅間隔
     switchImgTimeout[unit] = setTimeout("switchCount["+unit+"]++; switchImg("+unit+")", 500);
+}
+
+
+/** 時計の描画 */
+function drawClock() {
+    /* デジタル */
+    //：
+    document.getElementById("currentTime0Img").style.top = -25 * 8 + "px";
+
+    updateClock();
+    setInterval(updateClock, 1000);
+}
+
+function updateClock(){
+    //時
+    const departureHourBuff = new Date().getHours();
+    document.getElementById("currentTime4Img").style.top = -25 * 8 * digitDivision(departureHourBuff, 10, 10) + "px";
+    document.getElementById("currentTime3Img").style.top = -25 * 8 * digitDivision(departureHourBuff, 1, 0) + "px";
+    //分
+    const departureMinuteBuff = new Date().getMinutes();
+    document.getElementById("currentTime2Img").style.top = -25 * 8 * digitDivision(departureMinuteBuff, 10, 0) + "px";
+    document.getElementById("currentTime1Img").style.top = -25 * 8 * digitDivision(departureMinuteBuff, 1, 0) + "px";
 }
 

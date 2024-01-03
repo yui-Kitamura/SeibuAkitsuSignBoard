@@ -76,6 +76,35 @@
                         </div>
                     </div>
                 </div>
+                <!-- 時計 -->
+                <div id="clocks" style="position:absolute; top:0; left:1315px;">
+                    <!-- デジタル -->
+                    <div style="position:absolute; top:5px; left:0; height:102px; width:318px; background-color:#777; ">
+                        <div id="digitClock" style="position:relative; margin:15px; background-color:black; width:calc(100% - 30px); height:calc(100% - 15px);">
+                            <div id='clockNum' style='position:absolute; left:0; top:0; width:288px; height:72px; overflow:hidden; background-color:#000; z-index:1;' >
+                                <div style='position:absolute; left:0; top:0; width:288px; height:72px; overflow:hidden;' >
+                                    <img class='led' style='position:absolute; left:-4640px; top:-0px;' id='currentTime0Img' src='./resource/img/mainx8.png' alt='' />
+                                </div>
+                                <div style='position:absolute; left:30px; top:0; width:45px; height:72px; overflow:hidden;'>
+                                    <img class='led' style='position:absolute; left:-5600px; top:-0px;' id='currentTime4Img' src='./resource/img/mainx8.png' alt='' />
+                                </div>
+                                <div style='position:absolute; left:78px; top:0; width:45px; height:72px; overflow:hidden;'>
+                                    <img class='led' style='position:absolute; left:-5856px; top:-0px;' id='currentTime3Img' src='./resource/img/mainx8.png' alt='' />
+                                </div>
+                                <div style='position:absolute; left:162px; top:0; width:45px; height:72px; overflow:hidden;'>
+                                    <img class='led' style='position:absolute; left:-5600px; top:-0px;' id='currentTime2Img' src='./resource/img/mainx8.png' alt='' />
+                                </div>
+                                <div style='position:absolute; left:210px; top:0; width:45px; height:72px; overflow:hidden;'>
+                                    <img class='led' style='position:absolute; left:-5856px; top:-0px;' id='currentTime1Img' src='./resource/img/mainx8.png' alt='' />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- アナログ -->
+                    <div style="position:absolute; top:107px; height:260px; width:318px; background-color:#777;">
+                        <canvas id="analogClock" style="margin:15px;background-color:darkgreen; width:calc(100% - 30px); height:calc(100% - 30px); border-radius: 15px;"></canvas>
+                    </div>
+                </div>
             </div>
         </div>
         <hr />
