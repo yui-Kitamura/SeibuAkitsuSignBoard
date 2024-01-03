@@ -147,7 +147,7 @@ function digitDivision(num, digit, nullText)
     //return "null";
 
     //空欄の場合
-    if(!num) {
+    if(num == "") {
         return 10;
     }
 
