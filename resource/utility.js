@@ -183,14 +183,15 @@ function getByte(text)
 
 /** テキストボックスに入力されたものが数値かどうかチェックする
  * 引数：チェックする値、例外の場合の戻り値 */
-function inputTextNumCheck(value, exception)
-{
-    //0未満が入ったら、無限大に
-    if(value < 0)
-        value = exception;
-    //数字以外が入ったら、無限大に
-    if ( isNaN( parseInt( value ) ) )
-        value = exception;
-
-    return value;
+function inputTextNumCheck(value, exception) {
+    let result = value;
+    //0未満が入ったら、指定の例外値に
+    if (value < 0){
+        result = exception;
+    }
+    //数字以外が入ったら、指定の例外値に
+    if ( isNaN(parseInt(value)) ) {
+        result = exception;
+    }
+    return result;
 }
