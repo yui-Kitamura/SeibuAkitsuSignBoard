@@ -502,7 +502,7 @@ function updateClock(isInit){
         const hhRad = (360 * now.getHours() / 12 + (360 / 12) * (now.getMinutes() / 60)) * Math.PI / 180;
         analogClock.context.beginPath();
         analogClock.context.moveTo(analogClock.o.x, analogClock.o.y);
-        analogClock.context.lineTo(calcDrawPoint(hhRad).x, calcDrawPoint(hhRad).y);
+        analogClock.context.lineTo(calcDrawPoint(hhRad, 0.6).x, calcDrawPoint(hhRad, 0.6).y);
         analogClock.context.stroke();
         const mmRad = (360 * now.getMinutes() / 60 + (360 / 60) * (now.getSeconds() / 60)) * Math.PI / 180;
         analogClock.context.beginPath();
@@ -514,10 +514,10 @@ function updateClock(isInit){
 
 }
 
-function calcDrawPoint(rad){
+function calcDrawPoint(rad, length=1){
     return {
-        x: analogClock.o.x + analogClock.r * Math.sin(rad),
-        y: analogClock.o.y - analogClock.r * Math.cos(rad)
+        x: analogClock.o.x + analogClock.r * length * Math.sin(rad),
+        y: analogClock.o.y - analogClock.r * length * Math.cos(rad)
     };
 }
 
