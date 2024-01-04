@@ -491,12 +491,22 @@ function updateClock(isInit){
     if(isInit || 58 < curSec || curSec === 0 || (28 < curSec && curSec <= 30) ) {
         //clear
         analogClock.context.clearRect(0, 0, analogClock.w, analogClock.h);
+        analogClock.context.lineWidth = 1;
         //number
-        for(let num=1; num<=12; num++){
-            const rad = (360/12) * num / 180 * Math.PI ;
-            const posX = analogClock.o.x + analogClock.r * Math.sin(rad);
-            let posY = analogClock.o.y - analogClock.r * Math.cos(rad);
-            analogClock.context.fillText(""+num, posX, posY);
+        for(let i=1; i<=60; i++){
+            const r = 6 * Math.PI / 180 * i - Math.PI;
+            analogClock.context.save();
+            analogClock.context.translate(analogClock.o.x, analogClock.o.y);
+            analogClock.context.rotate(r);
+            if(i % 5 === 0) {
+                analogClock.context.fillText(i/5 + "", -6, 6+analogClock.r);
+            }else {
+                analogClock.context.beginPath();
+                analogClock.context.moveTo(0, analogClock.r);
+                analogClock.context.lineTo(0, analogClock.r + 4);
+                analogClock.context.stroke();
+            }
+            analogClock.context.restore();
         }
         //clock
         const hhRad = (360 * now.getHours() / 12 + (360 / 12) * (now.getMinutes() / 60)) * Math.PI / 180;
