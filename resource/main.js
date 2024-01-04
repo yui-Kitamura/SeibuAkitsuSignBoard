@@ -469,7 +469,7 @@ function drawClock() {
 
     analogClock.context.fillStyle = "#99ff33";
     analogClock.context.strokeStyle = "#99ff33";
-    analogClock.context.font = "18px 'メイリオ'";
+    analogClock.context.font = "24px 'メイリオ'";
 
     updateClock(true);
     setInterval(updateClock, 1000);
@@ -498,19 +498,24 @@ function updateClock(isInit){
             analogClock.context.translate(analogClock.o.x, analogClock.o.y);
             analogClock.context.rotate(r);
             if(i % 5 === 0) {
-                analogClock.context.save();
-                analogClock.context.translate(2, analogClock.r);
-                analogClock.context.rotate(-r)
-                analogClock.context.fillText(i/5 + "", -8, analogClock.o.y - analogClock.r - 12 );
-                analogClock.context.restore();
+                analogClock.context.lineWidth = 4;
             }else {
                 analogClock.context.lineWidth = 2;
-                analogClock.context.beginPath();
-                analogClock.context.moveTo(0, analogClock.r);
-                analogClock.context.lineTo(0, analogClock.r + 4);
-                analogClock.context.stroke();
             }
+            analogClock.context.beginPath();
+            analogClock.context.moveTo(0, analogClock.r);
+            analogClock.context.lineTo(0, analogClock.r + 4);
+            analogClock.context.stroke();
             analogClock.context.restore();
+        }
+        analogClock.context.moveTo(analogClock.o.x, analogClock.o.y);
+        for(let num=1; num<=12; num++){
+            const nRad = (360/12) * num * Math.PI / 180;
+            let dx = 8;
+            if(num === 10){ dx += 2; }
+            if(num === 11){ dx += 4; }
+            if(num === 12){ dx += 6; }
+            analogClock.context.fillText(""+num, calcDrawPoint(nRad, 0.85).x - dx, calcDrawPoint(nRad, 0.85).y + 8);
         }
         //clock
         const hhRad = (360 * now.getHours() / 12 + (360 / 12) * (now.getMinutes() / 60)) * Math.PI / 180;
