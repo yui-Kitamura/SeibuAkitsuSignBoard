@@ -502,7 +502,7 @@ function updateClock(isInit){
         const hhRad = (360 * now.getHours() / 12 + (360 / 12) * (now.getMinutes() / 60)) * Math.PI / 180;
         analogClock.context.beginPath();
         analogClock.context.moveTo(analogClock.o.x, analogClock.o.y);
-        analogClock.context.lineTo(calcDrawPoint(hhRad).x * 0.8, calcDrawPoint(hhRad).y); //短針0.8
+        analogClock.context.lineTo(calcDrawPoint(hhRad).x, calcDrawPoint(hhRad).y);
         analogClock.context.stroke();
         const mmRad = (360 * now.getMinutes() / 60 + (360 / 60) * (now.getSeconds() / 60)) * Math.PI / 180;
         analogClock.context.beginPath();
