@@ -456,11 +456,12 @@ function drawClock() {
 
 function updateClock(){
     //時
-    const departureHourBuff = new Date().getHours();
+    const now = new Date();
+    const departureHourBuff = now.getHours();
     document.getElementById("currentTime4Img").style.top = -25 * 8 * digitDivision(departureHourBuff, 10, 10,10) + "px";
     document.getElementById("currentTime3Img").style.top = -25 * 8 * digitDivision(departureHourBuff, 1, 10,0) + "px";
     //分
-    const departureMinuteBuff = new Date().getMinutes();
+    const departureMinuteBuff = now.getMinutes();
     document.getElementById("currentTime2Img").style.top = -25 * 8 * digitDivision(departureMinuteBuff, 10, 10,0) + "px";
     document.getElementById("currentTime1Img").style.top = -25 * 8 * digitDivision(departureMinuteBuff, 1, 10,0) + "px";
 }
