@@ -211,10 +211,10 @@ function readForm()
             //////////テキストボックスから読み込み
             //時
             const inHour = document.getElementById("departureHourInput"+unit+line).value;
-            departureHourData[unit][line] = inputTextNumCheck(inHour, 0); //値が数値かどうかチェック
+            departureHourData[unit][line] = inputTextNumCheck(inHour, ""); //値が数値かどうかチェック
             //分
             const inMinute = document.getElementById("departureMinuteInput"+unit+line).value;
-            departureMinuteData[unit][line] = inputTextNumCheck(inMinute, 0); //値が数値かどうかチェック
+            departureMinuteData[unit][line] = inputTextNumCheck(inMinute, ""); //値が数値かどうかチェック
         }
     }
 
@@ -242,12 +242,12 @@ function updateLED(){
             //////////時刻を変更する
             //時
             const departureHourBuff = departureHourData[unit][line];
-            document.getElementById("departureTime4Img"+unit+line).style.top = -25 * 8 * digitDivision(departureHourBuff,   10, 10) + "px";
-            document.getElementById("departureTime3Img"+unit+line).style.top = -25 * 8 * digitDivision(departureHourBuff,    1, 0) + "px";
+            document.getElementById("departureTime4Img"+unit+line).style.top = -25 * 8 * digitDivision(departureHourBuff,10, 10, 10) + "px";
+            document.getElementById("departureTime3Img"+unit+line).style.top = -25 * 8 * digitDivision(departureHourBuff,1, 10, 0) + "px";
             //分
             const departureMinuteBuff = departureMinuteData[unit][line];
-            document.getElementById("departureTime2Img"+unit+line).style.top = -25 * 8 * digitDivision(departureMinuteBuff,   10, 0) + "px";
-            document.getElementById("departureTime1Img"+unit+line).style.top = -25 * 8 * digitDivision(departureMinuteBuff,    1, 0) + "px";
+            document.getElementById("departureTime2Img"+unit+line).style.top = -25 * 8 * digitDivision(departureMinuteBuff,10, 10,0) + "px";
+            document.getElementById("departureTime1Img"+unit+line).style.top = -25 * 8 * digitDivision(departureMinuteBuff,1, 10, 0) + "px";
 
             //コロンの有無
             if(departureHourBuff == "" && departureMinuteBuff == ""){
@@ -457,11 +457,11 @@ function drawClock() {
 function updateClock(){
     //時
     const departureHourBuff = new Date().getHours();
-    document.getElementById("currentTime4Img").style.top = -25 * 8 * digitDivision(departureHourBuff, 10, 10) + "px";
-    document.getElementById("currentTime3Img").style.top = -25 * 8 * digitDivision(departureHourBuff, 1, 0) + "px";
+    document.getElementById("currentTime4Img").style.top = -25 * 8 * digitDivision(departureHourBuff, 10, 10,10) + "px";
+    document.getElementById("currentTime3Img").style.top = -25 * 8 * digitDivision(departureHourBuff, 1, 10,0) + "px";
     //分
     const departureMinuteBuff = new Date().getMinutes();
-    document.getElementById("currentTime2Img").style.top = -25 * 8 * digitDivision(departureMinuteBuff, 10, 0) + "px";
-    document.getElementById("currentTime1Img").style.top = -25 * 8 * digitDivision(departureMinuteBuff, 1, 0) + "px";
+    document.getElementById("currentTime2Img").style.top = -25 * 8 * digitDivision(departureMinuteBuff, 10, 10,0) + "px";
+    document.getElementById("currentTime1Img").style.top = -25 * 8 * digitDivision(departureMinuteBuff, 1, 10,0) + "px";
 }
 

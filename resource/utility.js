@@ -140,15 +140,15 @@ function judgeUA()
 
 /** 4桁までの数を桁ごとに分解して返す
  * numは数、digitには1か10か100か1000、nullTextは先頭の桁がゼロの場合の対処 */
-function digitDivision(num, digit, nullText)
+function digitDivision(num, digit, nullText, zeroText)
 {
     //数値じゃない場合
     //if(num.match(/[^0-9]+/))
     //return "null";
 
     //空欄の場合
-    if(num == "") {
-        return 10;
+    if(num === "") {
+        return nullText;
     }
 
     //マイナスの場合、ゼロにする
@@ -163,7 +163,7 @@ function digitDivision(num, digit, nullText)
 
     //ゼロの場合、空欄に
     if(out == 0) {
-        out = nullText;
+        out = zeroText;
     }
 
     return out;
