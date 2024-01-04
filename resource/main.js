@@ -445,16 +445,37 @@ function switchImg(unit){
 
 
 /** 時計の描画 */
+let analogClock = {
+    canvas: null,
+    context: null,
+    w: null,
+    h: null,
+    o: {x: null, y: null},
+    r: null
+}
 function drawClock() {
     /* デジタル */
     //：
     document.getElementById("currentTime0Img").style.top = -25 * 8 + "px";
 
-    updateClock();
+    /* アナログ */ //ref https://www.yoheim.net/blog.php?q=20111122
+    analogClock.canvas = document.getElementById("analogClock");
+    analogClock.context = analogClock.canvas.getContext("2d");
+    analogClock.w = analogClock.canvas.clientWidth;
+    analogClock.h = analogClock.canvas.clientHeight;
+    analogClock.o.x = analogClock.w/2 +3;
+    analogClock.o.y = analogClock.h/2 - 3;
+    analogClock.r= analogClock.h * 0.8 / 2;
+
+    analogClock.context.fillStyle = "#99ff33";
+    analogClock.context.strokeStyle = "#99ff33";
+    analogClock.context.font = "12px 'Noto-Sans'";
+
+    updateClock(true);
     setInterval(updateClock, 1000);
 }
 
-function updateClock(){
+function updateClock(isInit){
     //時
     const now = new Date();
     const departureHourBuff = now.getHours();
@@ -464,5 +485,39 @@ function updateClock(){
     const departureMinuteBuff = now.getMinutes();
     document.getElementById("currentTime2Img").style.top = -25 * 8 * digitDivision(departureMinuteBuff, 10, 10,0) + "px";
     document.getElementById("currentTime1Img").style.top = -25 * 8 * digitDivision(departureMinuteBuff, 1, 10,0) + "px";
+
+    /* アナログ時計 */
+    const curSec = now.getSeconds();
+    if(isInit || 58 < curSec || curSec === 0 || (28 < curSec && curSec <= 30) ) {
+        //clear
+        analogClock.context.clearRect(0, 0, analogClock.w, analogClock.h);
+        //number
+        for(let num=1; num<=12; num++){
+            const rad = (360/12) * num / 180 * Math.PI ;
+            const posX = analogClock.o.x + analogClock.r * Math.sin(rad);
+            let posY = analogClock.o.y - analogClock.r * Math.cos(rad);
+            analogClock.context.fillText(""+num, posX, posY);
+        }
+        //clock
+        const hhRad = (360 * now.getHours() / 12 + (360 / 12) * (now.getMinutes() / 60)) * Math.PI / 180;
+        analogClock.context.beginPath();
+        analogClock.context.moveTo(analogClock.o.x, analogClock.o.y);
+        analogClock.context.lineTo(calcDrawPoint(hhRad).x * 0.8, calcDrawPoint(hhRad).y); //短針0.8
+        analogClock.context.stroke();
+        const mmRad = (360 * now.getMinutes() / 60 + (360 / 60) * (now.getSeconds() / 60)) * Math.PI / 180;
+        analogClock.context.beginPath();
+        analogClock.context.moveTo(analogClock.o.x, analogClock.o.y);
+        analogClock.context.lineTo(calcDrawPoint(mmRad).x, calcDrawPoint(mmRad).y);
+        analogClock.context.stroke();
+    }
+
+
+}
+
+function calcDrawPoint(rad){
+    return {
+        x: analogClock.o.x + analogClock.r * Math.sin(rad),
+        y: analogClock.o.y - analogClock.r * Math.cos(rad)
+    };
 }
 
