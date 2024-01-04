@@ -469,7 +469,7 @@ function drawClock() {
 
     analogClock.context.fillStyle = "#99ff33";
     analogClock.context.strokeStyle = "#99ff33";
-    analogClock.context.font = "12px 'Noto-Sans'";
+    analogClock.context.font = "18px 'メイリオ'";
 
     updateClock(true);
     setInterval(updateClock, 1000);
@@ -491,7 +491,6 @@ function updateClock(isInit){
     if(isInit || 58 < curSec || curSec === 0 || (28 < curSec && curSec <= 30) ) {
         //clear
         analogClock.context.clearRect(0, 0, analogClock.w, analogClock.h);
-        analogClock.context.lineWidth = 1;
         //number
         for(let i=1; i<=60; i++){
             const r = 6 * Math.PI / 180 * i - Math.PI;
@@ -499,8 +498,13 @@ function updateClock(isInit){
             analogClock.context.translate(analogClock.o.x, analogClock.o.y);
             analogClock.context.rotate(r);
             if(i % 5 === 0) {
-                analogClock.context.fillText(i/5 + "", -6, 6+analogClock.r);
+                analogClock.context.save();
+                analogClock.context.translate(2, analogClock.r);
+                analogClock.context.rotate(-r)
+                analogClock.context.fillText(i/5 + "", -8, analogClock.o.y - analogClock.r - 12 );
+                analogClock.context.restore();
             }else {
+                analogClock.context.lineWidth = 2;
                 analogClock.context.beginPath();
                 analogClock.context.moveTo(0, analogClock.r);
                 analogClock.context.lineTo(0, analogClock.r + 4);
