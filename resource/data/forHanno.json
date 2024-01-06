@@ -1,0 +1,17 @@
+{
+  "date": {
+    "begin": "2023-03-18",
+    "expire": null,
+    "on": "平日",
+    "domeEvent": false
+  },
+  "timeTable": {
+    "dist": {
+      "id": 18,
+      "name": "飯能"
+    },
+    "list": [
+
+    ]
+  }
+}
