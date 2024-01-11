@@ -158,7 +158,7 @@ function setDefaultData() {
     document.getElementById("doorCountInput00").options[1].selected = true;
 
     document.getElementById("typeInput01").options[13].selected = true;
-    document.getElementById("destinationInput01").options[42].selected = true;
+    document.getElementById("destinationInput01").options[43].selected = true;
     document.getElementById("departureHourInput01").value = "";
     document.getElementById("departureMinuteInput01").value = "";
     document.getElementById("carCountInput01").options[4].selected = true;
