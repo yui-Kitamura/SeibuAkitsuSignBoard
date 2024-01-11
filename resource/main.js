@@ -125,9 +125,9 @@ function writeFormHTML(){
 
         out += "在線位置:<br />";
         out += "　<input id='approachPosition4Checkbox"+unit+"' type='checkbox' value='' onclick='updateStatus("+unit+")'><label for='approachPosition4Checkbox"+unit+"'>前々駅</label>　";
-        out += "　<input id='approachPosition3Checkbox"+unit+"' type='checkbox' value='' onclick='updateStatus("+unit+")' checked><label for='approachPosition3Checkbox"+unit+"'>前々駅〜前駅</label><br />";
+        out += "　<input id='approachPosition3Checkbox"+unit+"' type='checkbox' value='' onclick='updateStatus("+unit+")'><label for='approachPosition3Checkbox"+unit+"'>前々駅〜前駅</label><br />";
         out += "　<input id='approachPosition2Checkbox"+unit+"' type='checkbox' value='' onclick='updateStatus("+unit+")'><label for='approachPosition2Checkbox"+unit+"'>前駅　</label>　";
-        out += "　<input id='approachPosition1Checkbox"+unit+"' type='checkbox' value='' onclick='updateStatus("+unit+")'><label for='approachPosition1Checkbox"+unit+"'>前駅〜当駅　</label><br />";
+        out += "　<input id='approachPosition1Checkbox"+unit+"' type='checkbox' value='' onclick='updateStatus("+unit+")' checked><label for='approachPosition1Checkbox"+unit+"'>前駅〜当駅　</label><br />";
 
         out += "<select size='1' id='statusInput"+unit+"' style='' onChange='updateStatus("+unit+")'>";
         out += "<option value=''>テロップ表示</option>";
@@ -182,7 +182,7 @@ function setDefaultData() {
     document.getElementById("doorCountInput11").options[1].selected = true;
 
     document.getElementById("bottomTelopInput1").value = "<span style='color:#f80'>練馬</span>で準急<span style='color:#f80'>池袋</span>ゆきにお乗継ぎができます。";
-    document.getElementById("statusInput1").options[3].selected = true;
+    document.getElementById("statusInput1").options[1].selected = true;
 
 }
 
