@@ -175,14 +175,14 @@ function setDefaultData() {
     document.getElementById("doorCountInput10").options[1].selected = true;
 
     document.getElementById("typeInput11").options[0].selected = true;
-    document.getElementById("destinationInput11").options[30].selected = true;
+    document.getElementById("destinationInput11").options[31].selected = true;
     document.getElementById("departureHourInput11").value = 9;
     document.getElementById("departureMinuteInput11").value = 46;
     document.getElementById("carCountInput11").options[2].selected = true;
     document.getElementById("doorCountInput11").options[1].selected = true;
 
     document.getElementById("bottomTelopInput1").value = "<span style='color:#f80'>練馬</span>で準急<span style='color:#f80'>池袋</span>ゆきにお乗継ぎができます。";
-    document.getElementById("statusInput1").options[1].selected = true;
+    document.getElementById("statusInput1").options[3].selected = true;
 
 }
 
