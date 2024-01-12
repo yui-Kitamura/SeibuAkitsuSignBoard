@@ -25,75 +25,75 @@
       },
       {
         "id": 1003,
-        "time":
-        "type":
-        "goto":
+        "time": 521,
+        "type": "各停",
+        "goto": "池袋"
       },
       {
-        "id":
-        "time":
-        "type":
-        "goto":
+        "id": 1004,
+        "time": 527,
+        "type": "各停",
+        "goto": "新木場"
       },
       {
-        "id":
-        "time":
-        "type":
-        "goto":
+        "id": 1005,
+        "time": 531,
+        "type": "快速",
+        "goto": "池袋"
       },
       {
-        "id":
-        "time":
-        "type":
-        "goto":
+        "id": 1006,
+        "time": 544,
+        "type": "各停",
+        "goto": "元町・中華街"
       },
       {
-        "id":
-        "time":
-        "type":
-        "goto":
+        "id": 1007,
+        "time": 549,
+        "type": "通過",
+        "goto": null
       },
       {
-        "id":
-        "time":
-        "type":
-        "goto":
+        "id": 1008,
+        "time": 552,
+        "type": "各停",
+        "goto": "池袋"
       },
       {
-        "id":
-        "time":
-        "type":
-        "goto":
+        "id": 1009,
+        "time": 556,
+        "type": "各停",
+        "goto": "新木場"
       },
       {
-        "id":
-        "time":
-        "type":
-        "goto":
+        "id": 1010,
+        "time": 601,
+        "type": "通過",
+        "goto": null
       },
       {
-        "id":
-        "time":
-        "type":
-        "goto":
+        "id": 1011,
+        "time": 604,
+        "type": "快速",
+        "goto": "池袋"
       },
       {
-        "id":
-        "time":
-        "type":
-        "goto":
+        "id": 1012,
+        "time": 608,
+        "type": "各停",
+        "goto": "池袋"
       },
       {
-        "id":
-        "time":
-        "type":
-        "goto":
+        "id": 1013,
+        "time": 612,
+        "type": "各停",
+        "goto": "元町・中華街"
       },
       {
-        "id":
-        "time":
-        "type":
-        "goto":
+        "id": 1014,
+        "time": 615,
+        "type": "通過",
+        "goto": null
       },
       {
         "id":
