@@ -45,13 +45,17 @@
         "id": 1006,
         "time": 544,
         "type": "各停",
-        "goto": "元町・中華街"
+        "goto": "元町・中華街",
+        "info": {
+          "f": "exp"
+        }
       },
       {
         "id": 1007,
         "time": 549,
         "type": "通過",
-        "goto": null
+        "goto": null,
+        "note": "急行池袋"
       },
       {
         "id": 1008,
@@ -69,7 +73,8 @@
         "id": 1010,
         "time": 601,
         "type": "通過",
-        "goto": null
+        "goto": null,
+        "note": "特急池袋"
       },
       {
         "id": 1011,
@@ -87,13 +92,17 @@
         "id": 1013,
         "time": 612,
         "type": "各停",
-        "goto": "元町・中華街"
+        "goto": "元町・中華街",
+        "info": {
+          "f": "exp"
+        }
       },
       {
         "id": 1014,
         "time": 615,
         "type": "通過",
-        "goto": null
+        "goto": null,
+        "note": "急行池袋"
       },
       {
         "id":
