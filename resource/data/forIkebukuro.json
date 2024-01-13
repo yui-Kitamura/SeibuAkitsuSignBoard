@@ -105,70 +105,75 @@
         "note": "急行池袋"
       },
       {
-        "id":
-        "time":
-        "type":
-        "goto":
+        "id": 1015,
+        "time": 619,
+        "type": "通過",
+        "goto": null,
+        "note": "特急池袋"
       },
       {
-        "id":
-        "time":
-        "type":
-        "goto":
+        "id": 1016,
+        "time": 622,
+        "type": "準急",
+        "goto": "池袋"
       },
       {
-        "id":
-        "time":
-        "type":
-        "goto":
+        "id": 1017,
+        "time": 626,
+        "type": "通過",
+        "goto": null,
+        "note": "STRAIN豊洲"
       },
       {
-        "id":
-        "time":
-        "type":
-        "goto":
+        "id": 1018,
+        "time": 629,
+        "type": "快速",
+        "goto": "池袋"
       },
       {
-        "id":
-        "time":
-        "type":
-        "goto":
+        "id": 1019,
+        "time": 632,
+        "type": "通過",
+        "goto": null,
+        "note": "特急池袋"
       },
       {
-        "id":
-        "time":
-        "type":
-        "goto":
+        "id": 1020,
+        "time": 635,
+        "type": "準急",
+        "goto": "池袋"
       },
       {
-        "id":
-        "time":
-        "type":
-        "goto":
+        "id": 1021,
+        "time": 640,
+        "type": "快速",
+        "goto": "池袋"
       },
       {
-        "id":
-        "time":
-        "type":
-        "goto":
+        "id": 1022,
+        "time": 642,
+        "type": "各停",
+        "goto": "新木場"
       },
       {
-        "id":
-        "time":
-        "type":
-        "goto":
+        "id": 1023,
+        "time": 645,
+        "type": "通過",
+        "goto": null,
+        "note": "特急池袋"
       },
       {
-        "id":
-        "time":
-        "type":
-        "goto":
+        "id": 1024,
+        "time": 648,
+        "type": "通過",
+        "goto": null,
+        "note": "急行池袋"
       },
       {
-        "id":
-        "time":
-        "type":
-        "goto":
+        "id": 1025,
+        "time": 651,
+        "type": "各停",
+        "goto": "新木場"
       },
       {
         "id":
