@@ -12,3 +12,7 @@
 
 ## Thanks To
 [<img alt="Website Deployed for Free with FTP Deploy Action" src="https://img.shields.io/badge/Website deployed for free with-FTP DEPLOY ACTION-%3CCOLOR%3E?style=for-the-badge&color=297FA9">](https://github.com/SamKirkland/FTP-Deploy-Action)
+### tool
+- 画像変換ツール [yui-Kitamura/EditDottedPicture](https://github.com/yui-Kitamura/EditDottedPicture)
+  - [@tsutoringo](https://github.com/tsutoringo)
+  - 本変換ツールにより、`mainx8.png` を取得する
