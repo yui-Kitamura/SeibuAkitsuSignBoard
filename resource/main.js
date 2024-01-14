@@ -191,20 +191,18 @@ function setDefaultData() {
 }
 
 function setTimeTableData(){
-    fetch('/resource/data/forHanno.json')
+    fetch('./resource/data/forHanno.json')
         .then(response => response.json())
         .then(data => {
             kudariTimeTable = data;
         })
         .catch(error => console.error(error));
-    fetch('/resource/data/forIkebukuro.json')
+    fetch('./resource/data/forIkebukuro.json')
         .then(response => response.json())
         .then(data => {
             noboriTimeTable = data;
         })
         .catch(error => console.error(error));
-
-    debugger;
 }
 
 let typeData = [[null, null, null], [null, null, null]];
