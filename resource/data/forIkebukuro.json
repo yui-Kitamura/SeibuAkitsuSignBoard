@@ -1,0 +1,30 @@
+{
+  "date": {
+    "begin": "2023-03-18",
+    "expire": null,
+    "on": "平日",
+    "domeEvent": false
+  },
+  "timeTable": {
+    "dist": {
+      "id": 1,
+      "name": "池袋"
+    },
+    "list": [
+      {
+        "id": 9901,
+        "time": 939,
+        "type": "準急",
+        "goto": "池袋",
+        "cars": 10
+      },
+      {
+        "id": 9902,
+        "time": 946,
+        "type": "各停",
+        "goto": "元町・中華街",
+        "cars": 8
+      }
+    ]
+  }
+}

@@ -1,6 +1,9 @@
 let unitSum = 2; //ホーム発車標の台数
 let lineSum = 2; //ホーム発車標の段数
 
+let kudariTimeTable;
+let noboriTimeTable;
+
 function main() {
     //発車標の段数を設定する
     setUnitLine();
@@ -17,6 +20,7 @@ function setUnitLine(){
 
     //デフォルトでデータをセットする
     setDefaultData();
+    setTimeTableData();
 
     //入力を読み込む
     readForm();
@@ -184,6 +188,23 @@ function setDefaultData() {
     document.getElementById("bottomTelopInput1").value = "<span style='color:#f80'>練馬</span>で準急<span style='color:#f80'>池袋</span>ゆきにお乗継ぎができます。";
     document.getElementById("statusInput1").options[1].selected = true;
 
+}
+
+function setTimeTableData(){
+    fetch('/resource/data/forHanno.json')
+        .then(response => response.json())
+        .then(data => {
+            kudariTimeTable = data;
+        })
+        .catch(error => console.error(error));
+    fetch('/resource/data/forIkebukuro.json')
+        .then(response => response.json())
+        .then(data => {
+            noboriTimeTable = data;
+        })
+        .catch(error => console.error(error));
+
+    debugger;
 }
 
 let typeData = [[null, null, null], [null, null, null]];

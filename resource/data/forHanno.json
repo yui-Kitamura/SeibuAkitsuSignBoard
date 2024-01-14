@@ -1,0 +1,31 @@
+{
+  "date": {
+    "begin": "2023-03-18",
+    "expire": null,
+    "on": "平日",
+    "domeEvent": false
+  },
+  "timeTable": {
+    "dist": {
+      "id": 28,
+      "name": "飯能"
+    },
+    "list": [
+      {
+        "id": 9911,
+        "time": 940,
+        "type": "各停",
+        "goto": "小手指",
+        "cars": 10
+      },
+      {
+        "id": 9912,
+        "time": 943,
+        "type": "通過",
+        "goto": null,
+        "cars": null,
+        "note": "急行飯能"
+      }
+    ]
+  }
+}
