@@ -85,24 +85,40 @@ const getDestI = function(name){
 }
 
 //両数
-carCountList = [
-    ["4両",	""],
-    ["7両",	""],
-    ["8両",	""],
-    ["10両",	""],
-    ["----",	""]
+const carCountList = [
+    {i:0, v:4, t:"4両"},
+    {i:1, v:7, t:"7両"},
+    {i:2, v:8, t:"8両"},
+    {i:3, v:10, t:"10両"},
+    {i:4, v:null, t:"----"}
 ];
+const getCarI = function(value){
+    for(const obj of carCountList){
+        if(obj.v === value){
+            return obj.i;
+        }
+    }
+    return getCarI("----");
+}
 
 //ドア数
-doorCountList = [
-    ["2ドア",	""],
-    ["4ドア",	""],
-    ["全席指定",	""],
-    ["----",	""]
+const doorCountList = [
+    {i:0, v:2, t:"2ドア"},
+    {i:1, v:4, t:"4ドア"},
+    {i:2, v:9, t:"全席指定"},
+    {i:3, v:null, t:"----"}
 ];
+const getDoorI = function(value){
+    for(const obj of doorCountList){
+        if(obj.v === value){
+            return obj.i;
+        }
+    }
+    return getDoorI("----");
+}
 
 //のりば
-platformList = [
+const platformList = [
     ["1", ""],
     ["2", ""],
     ["3", ""],

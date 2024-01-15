@@ -108,14 +108,14 @@ function writeFormHTML(){
             //両数
             out += "<select size='1' id='carCountInput"+unit+line+"' style='' onChange='readForm()'>";
             for(let i=0 ; i<carCountList.length ; i++){
-                out += "<option value='"+i+"'>"+carCountList[i][0]+"</option>";
+                out += "<option value='"+carCountList[i].i+"'>"+carCountList[i].t+"</option>";
             }
             out += "</select>";
             out += " ";
             //ドア数
             out += "<select size='1' id='doorCountInput"+unit+line+"' style='' onChange='readForm()'>";
             for(let i=0 ; i<doorCountList.length ; i++){
-                out += "<option value='"+i+"'>"+doorCountList[i][0]+"</option>";
+                out += "<option value='"+doorCountList[i].i+"'>"+doorCountList[i].t+"</option>";
             }
             out += "</select>";
             out += " ";
