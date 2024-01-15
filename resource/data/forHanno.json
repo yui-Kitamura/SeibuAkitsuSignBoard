@@ -16,7 +16,8 @@
         "time": 940,
         "type": "各停",
         "goto": "小手指",
-        "cars": 10
+        "cars": 10,
+        "doors": 4
       },
       {
         "id": 9912,
@@ -24,6 +25,7 @@
         "type": "通過",
         "goto": null,
         "cars": null,
+        "doors": null,
         "note": "急行飯能"
       }
     ]

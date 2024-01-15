@@ -16,14 +16,16 @@
         "time": 939,
         "type": "準急",
         "goto": "池袋",
-        "cars": 10
+        "cars": 10,
+        "doors": 4
       },
       {
         "id": 9902,
         "time": 946,
         "type": "各停",
         "goto": "元町・中華街",
-        "cars": 8
+        "cars": 8,
+        "doors": 4
       }
     ]
   }
