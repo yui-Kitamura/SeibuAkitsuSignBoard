@@ -281,12 +281,12 @@ function updateFromTimeTableData(hour, minute){
     console.log(noboriTwo);
 }
 
-let typeData = [[null, null, null], [null, null, null]];
-let destinationData = [[null, null, null], [null, null, null]];
-let departureHourData = [[null, null, null], [null, null, null]];
-let departureMinuteData = [[null, null, null], [null, null, null]];
-let carCountData = [[null, null, null], [null, null, null]];
-let doorCountData = [[null, null, null], [null, null, null]];
+let typeData = [[null, null], [null, null]];
+let destinationData = [[null, null], [null, null]];
+let departureHourData = [[null, null], [null, null]];
+let departureMinuteData = [[null, null], [null, null]];
+let carCountData = [[null, null], [null, null]];
+let doorCountData = [[null, null], [null, null]];
 
 //フォームから入力を読み込む
 function readForm()
