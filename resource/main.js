@@ -147,46 +147,46 @@ function writeFormHTML(){
     }
     out += "<br style='clear:both;' />";
 
-    document.getElementById("inputFormDiv").innerHTML = out;
+    eleId("inputFormDiv").innerHTML = out;
 }
 
 /**
  * 初期表示する既定データを設定
  */
 function setDefaultData() {
-    document.getElementById("typeInput00").options[0].selected = true;
-    document.getElementById("destinationInput00").options[13].selected = true;
-    document.getElementById("departureHourInput00").value = "9";
-    document.getElementById("departureMinuteInput00").value = "40";
-    document.getElementById("carCountInput00").options[3].selected = true;
-    document.getElementById("doorCountInput00").options[1].selected = true;
+    eleId("typeInput00").options[0].selected = true;
+    eleId("destinationInput00").options[13].selected = true;
+    eleId("departureHourInput00").value = "9";
+    eleId("departureMinuteInput00").value = "40";
+    eleId("carCountInput00").options[3].selected = true;
+    eleId("doorCountInput00").options[1].selected = true;
 
-    document.getElementById("typeInput01").options[13].selected = true;
-    document.getElementById("destinationInput01").options[43].selected = true;
-    document.getElementById("departureHourInput01").value = "";
-    document.getElementById("departureMinuteInput01").value = "";
-    document.getElementById("carCountInput01").options[4].selected = true;
-    document.getElementById("doorCountInput01").options[3].selected = true;
+    eleId("typeInput01").options[13].selected = true;
+    eleId("destinationInput01").options[43].selected = true;
+    eleId("departureHourInput01").value = "";
+    eleId("departureMinuteInput01").value = "";
+    eleId("carCountInput01").options[4].selected = true;
+    eleId("doorCountInput01").options[3].selected = true;
 
-    document.getElementById("bottomTelopInput0").value = "<span style='color:#f80'>西所沢</span>で<span style='color:#f80'>各停西武球場前</span>ゆきに、<span style='color:#f80'>飯能</span>で<span style='color:#f80'>各停西武秩父</span>ゆきに接続します。";
-    document.getElementById("statusInput0").options[2].selected = true;
+    eleId("bottomTelopInput0").value = "<span style='color:#f80'>西所沢</span>で<span style='color:#f80'>各停西武球場前</span>ゆきに、<span style='color:#f80'>飯能</span>で<span style='color:#f80'>各停西武秩父</span>ゆきに接続します。";
+    eleId("statusInput0").options[2].selected = true;
 
-    document.getElementById("typeInput10").options[2].selected = true;
-    document.getElementById("destinationInput10").options[0].selected = true;
-    document.getElementById("departureHourInput10").value = 9;
-    document.getElementById("departureMinuteInput10").value = 39;
-    document.getElementById("carCountInput10").options[3].selected = true;
-    document.getElementById("doorCountInput10").options[1].selected = true;
+    eleId("typeInput10").options[2].selected = true;
+    eleId("destinationInput10").options[0].selected = true;
+    eleId("departureHourInput10").value = 9;
+    eleId("departureMinuteInput10").value = 39;
+    eleId("carCountInput10").options[3].selected = true;
+    eleId("doorCountInput10").options[1].selected = true;
 
-    document.getElementById("typeInput11").options[0].selected = true;
-    document.getElementById("destinationInput11").options[31].selected = true;
-    document.getElementById("departureHourInput11").value = 9;
-    document.getElementById("departureMinuteInput11").value = 46;
-    document.getElementById("carCountInput11").options[2].selected = true;
-    document.getElementById("doorCountInput11").options[1].selected = true;
+    eleId("typeInput11").options[0].selected = true;
+    eleId("destinationInput11").options[31].selected = true;
+    eleId("departureHourInput11").value = 9;
+    eleId("departureMinuteInput11").value = 46;
+    eleId("carCountInput11").options[2].selected = true;
+    eleId("doorCountInput11").options[1].selected = true;
 
-    document.getElementById("bottomTelopInput1").value = "<span style='color:#f80'>練馬</span>で準急<span style='color:#f80'>池袋</span>ゆきにお乗継ぎができます。";
-    document.getElementById("statusInput1").options[1].selected = true;
+    eleId("bottomTelopInput1").value = "<span style='color:#f80'>練馬</span>で準急<span style='color:#f80'>池袋</span>ゆきにお乗継ぎができます。";
+    eleId("statusInput1").options[1].selected = true;
 
 }
 
@@ -219,20 +219,20 @@ function readForm()
         for(let line=0 ; line<lineSum ; line++){
             //////////ドロップダウンリストから選択状態を読み込み
             //種別
-            typeData[unit][line] = document.getElementById("typeInput"+unit+line).selectedIndex;
+            typeData[unit][line] = eleId("typeInput"+unit+line).selectedIndex;
             //行先
-            destinationData[unit][line] = document.getElementById("destinationInput"+unit+line).selectedIndex;
+            destinationData[unit][line] = eleId("destinationInput"+unit+line).selectedIndex;
             //両数
-            carCountData[unit][line] = document.getElementById("carCountInput"+unit+line).selectedIndex;
+            carCountData[unit][line] = eleId("carCountInput"+unit+line).selectedIndex;
             //ドア数
-            doorCountData[unit][line] = document.getElementById("doorCountInput"+unit+line).selectedIndex;
+            doorCountData[unit][line] = eleId("doorCountInput"+unit+line).selectedIndex;
 
             //////////テキストボックスから読み込み
             //時
-            const inHour = document.getElementById("departureHourInput"+unit+line).value;
+            const inHour = eleId("departureHourInput"+unit+line).value;
             departureHourData[unit][line] = inputTextNumCheck(inHour, ""); //値が数値かどうかチェック
             //分
-            const inMinute = document.getElementById("departureMinuteInput"+unit+line).value;
+            const inMinute = eleId("departureMinuteInput"+unit+line).value;
             departureMinuteData[unit][line] = inputTextNumCheck(inMinute, ""); //値が数値かどうかチェック
         }
     }
@@ -250,29 +250,29 @@ function updateLED(){
 
             //////////画像を変更する
             //種別
-            document.getElementById("typeImg"+unit+line).style.top = -25 * 8 * typeData[unit][line] + "px";
+            eleId("typeImg"+unit+line).style.top = -25 * 8 * typeData[unit][line] + "px";
             //行き先
-            document.getElementById("destinationImg"+unit+line).style.top = -25 * 8 * destinationData[unit][line] + "px";
+            eleId("destinationImg"+unit+line).style.top = -25 * 8 * destinationData[unit][line] + "px";
             //両数
-            document.getElementById("carCountImg"+unit+line).style.top = -25 * 8 * carCountData[unit][line] + "px";
+            eleId("carCountImg"+unit+line).style.top = -25 * 8 * carCountData[unit][line] + "px";
             //ドア数
-            document.getElementById("doorCountImg"+unit+line).style.top = -25 * 8 * doorCountData[unit][line] + "px";
+            eleId("doorCountImg"+unit+line).style.top = -25 * 8 * doorCountData[unit][line] + "px";
 
             //////////時刻を変更する
             //時
             const departureHourBuff = departureHourData[unit][line];
-            document.getElementById("departureTime4Img"+unit+line).style.top = -25 * 8 * digitDivision(departureHourBuff,10, 10, 10) + "px";
-            document.getElementById("departureTime3Img"+unit+line).style.top = -25 * 8 * digitDivision(departureHourBuff,1, 10, 0) + "px";
+            eleId("departureTime4Img"+unit+line).style.top = -25 * 8 * digitDivision(departureHourBuff,10, 10, 10) + "px";
+            eleId("departureTime3Img"+unit+line).style.top = -25 * 8 * digitDivision(departureHourBuff,1, 10, 0) + "px";
             //分
             const departureMinuteBuff = departureMinuteData[unit][line];
-            document.getElementById("departureTime2Img"+unit+line).style.top = -25 * 8 * digitDivision(departureMinuteBuff,10, 10,0) + "px";
-            document.getElementById("departureTime1Img"+unit+line).style.top = -25 * 8 * digitDivision(departureMinuteBuff,1, 10, 0) + "px";
+            eleId("departureTime2Img"+unit+line).style.top = -25 * 8 * digitDivision(departureMinuteBuff,10, 10,0) + "px";
+            eleId("departureTime1Img"+unit+line).style.top = -25 * 8 * digitDivision(departureMinuteBuff,1, 10, 0) + "px";
 
             //コロンの有無
             if(departureHourBuff == "" && departureMinuteBuff == ""){
-                document.getElementById("departureTime0Img"+unit+line).style.top = -0 * 8 + "px";
+                eleId("departureTime0Img"+unit+line).style.top = -0 * 8 + "px";
             } else {
-                document.getElementById("departureTime0Img"+unit+line).style.top = -25 * 8 + "px";
+                eleId("departureTime0Img"+unit+line).style.top = -25 * 8 + "px";
             }
 
             ////////日本語/英語を切り替える
@@ -282,13 +282,13 @@ function updateLED(){
             const doorCountImgLeft = [-868 * 8, -917 * 8];
 
             //種別
-            document.getElementById("typeImg"+unit+line).style.left = typeImgLeft[langId] + "px";
+            eleId("typeImg"+unit+line).style.left = typeImgLeft[langId] + "px";
             //行き先
-            document.getElementById("destinationImg"+unit+line).style.left = destinationImgLeft[langId] + "px";
+            eleId("destinationImg"+unit+line).style.left = destinationImgLeft[langId] + "px";
             //両数
-            document.getElementById("carCountImg"+unit+line).style.left = carCountImgLeft[langId] + "px";
+            eleId("carCountImg"+unit+line).style.left = carCountImgLeft[langId] + "px";
             //ドア数
-            document.getElementById("doorCountImg"+unit+line).style.left = doorCountImgLeft[langId] + "px";
+            eleId("doorCountImg"+unit+line).style.left = doorCountImgLeft[langId] + "px";
 
         }
 
@@ -296,6 +296,7 @@ function updateLED(){
 }
 
 //表示切り替え間隔の設定
+let LEDUpdateTimeout;
 function intervalTimeSet(){
     //表示更新
     updateLED();
@@ -314,7 +315,6 @@ function intervalTimeSet(){
     clearTimeout(LEDUpdateTimeout);
     LEDUpdateTimeout = setTimeout("updateLEDCount++; intervalTimeSet();", nextTime);
 }
-let LEDUpdateTimeout;
 
 let timeOrderSelectData = [null, null];
 let statusData = [null, null];
@@ -334,11 +334,11 @@ function updateStatus(unit){
     //点滅している場合は止める
     clearTimeout(switchImgTimeout[unit]);
 
-    statusData[unit] = document.getElementById("statusInput"+unit).selectedIndex;
+    statusData[unit] = eleId("statusInput"+unit).selectedIndex;
 
     //テロップ
     if(statusData[unit] == 0) {
-        bottomTelopData[unit] = document.getElementById("bottomTelopInput"+unit).value;
+        bottomTelopData[unit] = eleId("bottomTelopInput"+unit).value;
 
         //環境によってフォントの縦位置を設定
         let topBuff;
@@ -357,15 +357,15 @@ function updateStatus(unit){
         out += "    </marquee>";
         out += "  </div>";
 
-        document.getElementById("bottomLineDiv"+unit).innerHTML = out;
+        eleId("bottomLineDiv"+unit).innerHTML = out;
     }
     //接近位置表示
     if(statusData[unit] == 1){
         //接近位置を読み込む
-        approachPosition4Data[unit] = document.getElementById("approachPosition4Checkbox"+unit).checked
-        approachPosition3Data[unit] = document.getElementById("approachPosition3Checkbox"+unit).checked
-        approachPosition2Data[unit] = document.getElementById("approachPosition2Checkbox"+unit).checked
-        approachPosition1Data[unit] = document.getElementById("approachPosition1Checkbox"+unit).checked
+        approachPosition4Data[unit] = eleId("approachPosition4Checkbox"+unit).checked
+        approachPosition3Data[unit] = eleId("approachPosition3Checkbox"+unit).checked
+        approachPosition2Data[unit] = eleId("approachPosition2Checkbox"+unit).checked
+        approachPosition1Data[unit] = eleId("approachPosition1Checkbox"+unit).checked
 
         let out = "";
         //当駅
@@ -394,7 +394,7 @@ function updateStatus(unit){
                 "style='position:absolute; left:"+(approachBaseLeft-784)+"px; top:"+approachBaseTop+"px;' src='./resource/img/mainx8.png' alt='' />";
         out += "</div>";
 
-        document.getElementById("bottomLineDiv"+unit).innerHTML = out;
+        eleId("bottomLineDiv"+unit).innerHTML = out;
 
         //点滅表示スタート
         switchImg(unit);
@@ -406,7 +406,7 @@ function updateStatus(unit){
         out += "  <img id='arrivingImg"+unit+"' class='led' style='position:absolute; left:"+(approachBaseLeft)+"px; top:"+(approachBaseTop-25*3*8)+"px;' src='./resource/img/mainx8.png' alt='' />";
         out += "</div>";
 
-        document.getElementById("bottomLineDiv"+unit).innerHTML = out;
+        eleId("bottomLineDiv"+unit).innerHTML = out;
 
         //点滅表示スタート
         switchImg(unit);
@@ -418,7 +418,7 @@ function updateStatus(unit){
         out += "  <img id='arrivingImg"+unit+"' class='led' style='position:absolute; left:"+(approachBaseLeft)+"px; top:"+(approachBaseTop-25*4*8)+"px;' src='./resource/img/mainx8.png' alt='' />";
         out += "</div>";
 
-        document.getElementById("bottomLineDiv"+unit).innerHTML = out;
+        eleId("bottomLineDiv"+unit).innerHTML = out;
 
         //点滅表示スタート
         switchImg(unit);
@@ -434,28 +434,28 @@ function switchImg(unit){
     if(statusData[unit] == 1){
         //前々駅
         if(approachPosition4Data[unit]){
-            document.getElementById("approachPosition4Img"+unit).style.top =  approachBaseTop-25*8 - 25*8*switchStatus + "px";
+            eleId("approachPosition4Img"+unit).style.top =  approachBaseTop-25*8 - 25*8*switchStatus + "px";
         }
         //前々駅〜前駅
         if(approachPosition3Data[unit]){
-            document.getElementById("approachPosition3Img"+unit).style.top =  approachBaseTop-25*8 - 25*8*switchStatus + "px";
+            eleId("approachPosition3Img"+unit).style.top =  approachBaseTop-25*8 - 25*8*switchStatus + "px";
         }
         //前駅
         if(approachPosition2Data[unit]){
-            document.getElementById("approachPosition2Img"+unit).style.top =  approachBaseTop-25*8 - 25*8*switchStatus + "px";
+            eleId("approachPosition2Img"+unit).style.top =  approachBaseTop-25*8 - 25*8*switchStatus + "px";
         }
         //前駅〜当駅
         if(approachPosition1Data[unit]){
-            document.getElementById("approachPosition1Img"+unit).style.top =  approachBaseTop-25*8 - 25*8*switchStatus + "px";
+            eleId("approachPosition1Img"+unit).style.top =  approachBaseTop-25*8 - 25*8*switchStatus + "px";
         }
     }
     //「電車がまいります。ご注意下さい。」
     if(statusData[unit] == 2){
-        document.getElementById("arrivingImg"+unit).style.left =  approachBaseLeft - 1000*8*switchStatus + "px";
+        eleId("arrivingImg"+unit).style.left =  approachBaseLeft - 1000*8*switchStatus + "px";
     }
     //「電車が通過します。ご注意下さい。」
     if(statusData[unit] == 3){
-        document.getElementById("arrivingImg"+unit).style.left =  approachBaseLeft - 1000*8*switchStatus + "px";
+        eleId("arrivingImg"+unit).style.left =  approachBaseLeft - 1000*8*switchStatus + "px";
     }
 
     //点滅間隔
@@ -475,10 +475,10 @@ let analogClock = {
 function drawClock() {
     /* デジタル */
     //：
-    document.getElementById("currentTime0Img").style.top = -25 * 8 + "px";
+    eleId("currentTime0Img").style.top = -25 * 8 + "px";
 
     /* アナログ */ //ref https://www.yoheim.net/blog.php?q=20111122
-    analogClock.canvas = document.getElementById("analogClock");
+    analogClock.canvas = eleId("analogClock");
     analogClock.context = analogClock.canvas.getContext("2d");
     analogClock.w = analogClock.canvas.clientWidth;
     analogClock.h = analogClock.canvas.clientHeight;
@@ -498,12 +498,12 @@ function updateClock(isInit){
     //時
     const now = new Date();
     const departureHourBuff = now.getHours();
-    document.getElementById("currentTime4Img").style.top = -25 * 8 * digitDivision(departureHourBuff, 10, 10,10) + "px";
-    document.getElementById("currentTime3Img").style.top = -25 * 8 * digitDivision(departureHourBuff, 1, 10,0) + "px";
+    eleId("currentTime4Img").style.top = -25 * 8 * digitDivision(departureHourBuff, 10, 10,10) + "px";
+    eleId("currentTime3Img").style.top = -25 * 8 * digitDivision(departureHourBuff, 1, 10,0) + "px";
     //分
     const departureMinuteBuff = now.getMinutes();
-    document.getElementById("currentTime2Img").style.top = -25 * 8 * digitDivision(departureMinuteBuff, 10, 10,0) + "px";
-    document.getElementById("currentTime1Img").style.top = -25 * 8 * digitDivision(departureMinuteBuff, 1, 10,0) + "px";
+    eleId("currentTime2Img").style.top = -25 * 8 * digitDivision(departureMinuteBuff, 10, 10,0) + "px";
+    eleId("currentTime1Img").style.top = -25 * 8 * digitDivision(departureMinuteBuff, 1, 10,0) + "px";
 
     /* アナログ時計 */
     const curSec = now.getSeconds();

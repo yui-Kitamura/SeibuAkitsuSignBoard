@@ -195,3 +195,8 @@ function inputTextNumCheck(value, exception) {
     }
     return result;
 }
+
+/** シノニム */
+function eleId(id){
+    return document.getElementById(id);
+}
