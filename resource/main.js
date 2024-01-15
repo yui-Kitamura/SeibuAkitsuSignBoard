@@ -96,7 +96,7 @@ function writeFormHTML(){
             //行き先
             out += "<select size='1' id='destinationInput"+unit+line+"' style='' onChange='readForm()'>";
             for(let i=0 ; i<destinationList.length ; i++){
-                out += "<option value='"+i+"'>"+destinationList[i][0]+"</option>";
+                out += "<option value='"+destinationList[i].i+"'>"+destinationList[i].t+"</option>";
             }
             out += "</select>";
             out += " ";
