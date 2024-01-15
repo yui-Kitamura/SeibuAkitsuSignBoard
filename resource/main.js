@@ -89,7 +89,7 @@ function writeFormHTML(){
             //種別
             out += "<select size='1' id='typeInput"+unit+line+"' style='' onChange='readForm()'>";
             for(let i=0 ; i<typeList.length ; i++){
-                out += "<option value='"+i+"'>"+typeList[i][0]+"</option>";
+                out += "<option value='"+typeList[i].i+"'>"+typeList[i].t+"</option>";
             }
             out += "</select>";
             out += " ";
