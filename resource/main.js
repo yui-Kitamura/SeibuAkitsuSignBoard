@@ -205,6 +205,82 @@ function setTimeTableData(){
         .catch(error => console.error(error));
 }
 
+function updateFromTimeTableData(hour, minute){
+    const now = hour +""+ minute;
+    const nowObj = getHhMm(100*hour+minute);
+    const plcHld = {time: hour*100+minute, type:"----", goto:"----", cars:"----", doors:"----"};
+    let kudariOne = null;
+    let kudariTwo = null;
+    let noboriOne = null;
+    let noboriTwo = null;
+
+    //kudari
+    const kudariTT = kudariTimeTable.timeTable.list;
+    for(const tt of kudariTT){
+        const hhMm = getHhMm(tt.time);
+        if(hhMm.h > nowObj.h || hhMm.h == nowObj.h && hhMm.m >= nowObj.m){
+            //指定時刻より後の列車データ
+            if(kudariOne == null) {
+                kudariOne = tt;
+            }else{
+                //既に行データが存在している場合の比較と投入
+                if(kudariOne.time > tt.time){
+                    //1行目より前の列車なので、ずらして挿入
+                    kudariTwo = kudariOne;
+                    kudariOne = tt;
+                }else{
+                    if(kudariTwo == null || kudariTwo.time > tt.time){
+                        //2行目より前の列車なので挿入
+                        kudariTwo = tt;
+                    }
+                }
+            }
+        }
+    }
+    if(!kudariOne){
+        kudariOne = plcHld;
+    }
+    if(!kudariTwo){
+        kudariTwo = plcHld;
+    }
+
+    //nobori
+    const noboriTT = noboriTimeTable.timeTable.list;
+    for(const tt of noboriTT){
+        const hhMm = getHhMm(tt.time);
+        if(hhMm.h > nowObj.h || hhMm.h == nowObj.h && hhMm.m >= nowObj.m){
+            //指定時刻より後の列車データ
+            if(noboriOne == null) {
+                noboriOne = tt;
+            }else{
+                //既に行データが存在している場合の比較と投入
+                if(noboriOne.time > tt.time){
+                    //1行目より前の列車なので、ずらして挿入
+                    noboriTwo = noboriOne;
+                    noboriOne = tt;
+                }else{
+                    if(noboriTwo == null || noboriTwo.time > tt.time){
+                        //2行目より前の列車なので挿入
+                        noboriTwo = tt;
+                    }
+                }
+            }
+        }
+    }
+    if(!noboriOne){
+        noboriOne = plcHld;
+    }
+    if(!noboriTwo){
+        noboriTwo = plcHld;
+    }
+
+    //result
+    console.log(kudariOne);
+    console.log(kudariTwo);
+    console.log(noboriOne);
+    console.log(noboriTwo);
+}
+
 let typeData = [[null, null, null], [null, null, null]];
 let destinationData = [[null, null, null], [null, null, null]];
 let departureHourData = [[null, null, null], [null, null, null]];
