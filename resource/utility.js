@@ -202,8 +202,8 @@ function eleId(id){
 }
 
 /** 3-4桁の数値から時分分解 */
-function getHhMm(inNum){
-    if(inNum == null){
+function getHhMm(inNum, passing){
+    if(inNum == null || passing == true){
         return {h: null, m: null};
     }
     let h = inNum / 100 | 0; //整数のみ取得

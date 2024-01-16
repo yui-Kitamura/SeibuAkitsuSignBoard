@@ -279,6 +279,19 @@ function updateFromTimeTableData(hour, minute){
     console.log(kudariTwo);
     console.log(noboriOne);
     console.log(noboriTwo);
+
+/** 時刻表JSONデータをフォームindex値に変換 */
+function convertTtDataToDispData(jsonTtDataItem){
+    const isPassingTrain = jsonTtDataItem.type==="通過";
+    return {
+        type: getTypeI(jsonTtDataItem.type),
+        dest: getDestI(jsonTtDataItem.goto, isPassingTrain),
+        onHh: getHhMm(jsonTtDataItem.time, isPassingTrain).h,
+        onMm: getHhMm(jsonTtDataItem.time, isPassingTrain).m,
+        car: getCarI(jsonTtDataItem.cars),
+        door: getDoorI(jsonTtDataItem.doors)
+    };
+}
 }
 
 let typeData = [[null, null], [null, null]];

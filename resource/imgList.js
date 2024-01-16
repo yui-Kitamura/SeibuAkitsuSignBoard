@@ -75,7 +75,10 @@ const destinationList = [
     {i:46,t:"降車専用"},
     {i:47,t:"----"}
 ];
-const getDestI = function(name){
+const getDestI = function(name, passing){
+    if(passing == true){
+        name = "通過";
+    }
     for(const obj of destinationList){
         if(obj.t === name){
             return obj.i;
