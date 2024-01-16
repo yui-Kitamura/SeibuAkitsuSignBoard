@@ -280,6 +280,19 @@ function updateFromTimeTableData(hour, minute){
     console.log(noboriOne);
     console.log(noboriTwo);
 
+    //into form
+    const dispVal00 = convertTtDataToDispData(kudariOne);
+    const dispVal01 = convertTtDataToDispData(kudariTwo);
+    const dispVal10 = convertTtDataToDispData(noboriOne);
+    const dispVal11 = convertTtDataToDispData(noboriTwo);
+    writeForm(0, 0, dispVal00);
+    writeForm(0, 1, dispVal01);
+    writeForm(1, 0, dispVal10);
+    writeForm(1, 1, dispVal11);
+
+    readForm();
+}
+
 /** 時刻表JSONデータをフォームindex値に変換 */
 function convertTtDataToDispData(jsonTtDataItem){
     const isPassingTrain = jsonTtDataItem.type==="通過";
@@ -292,6 +305,14 @@ function convertTtDataToDispData(jsonTtDataItem){
         door: getDoorI(jsonTtDataItem.doors)
     };
 }
+
+function writeForm(unit, line, dataObj){
+    eleId("typeInput"+unit+line).selectedIndex = dataObj.type;
+    eleId("destinationInput"+unit+line).selectedIndex = dataObj.dest;
+    eleId("carCountInput"+unit+line).selectedIndex = dataObj.car;
+    eleId("doorCountInput"+unit+line).selectedIndex = dataObj.door;
+    eleId("departureHourInput"+unit+line).value = dataObj.onHh;
+    eleId("departureMinuteInput"+unit+line).value = dataObj.onMm;
 }
 
 let typeData = [[null, null], [null, null]];
