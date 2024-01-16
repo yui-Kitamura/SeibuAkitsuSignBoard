@@ -69,9 +69,9 @@ const destinationList = [
     {i:40,t:"新習志野"},
     {i:41,t:"海浜幕張"},
     {i:42,t:"当駅止まり"},
-    {i:43,t:"通過(Passing)"},
-    {i:44,t:"通過(Passing)(旧)"},
-    {i:45,t:"通過(Non-Stop)"},
+    {i:43,t:"通過", e: "Passing"},
+    {i:44,t:"通過(旧)", e: "Passing"},
+    {i:45,t:"通過(旧英)", e: "Non-Stop"},
     {i:46,t:"降車専用"},
     {i:47,t:"----"}
 ];
