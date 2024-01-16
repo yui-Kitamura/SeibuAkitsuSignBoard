@@ -208,7 +208,7 @@ function setTimeTableData(){
 function updateFromTimeTableData(hour, minute){
     const now = hour +""+ minute;
     const nowObj = getHhMm(100*hour+minute);
-    const plcHld = {time: hour*100+minute, type:"----", goto:"----", cars:"----", doors:"----"};
+    const plcHld = {time: null, type:"----", goto:"----", cars:"----", doors:"----"};
     let kudariOne = null;
     let kudariTwo = null;
     let noboriOne = null;
