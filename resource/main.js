@@ -288,7 +288,7 @@ let departureMinuteData = [[null, null], [null, null]];
 let carCountData = [[null, null], [null, null]];
 let doorCountData = [[null, null], [null, null]];
 
-//フォームから入力を読み込む
+/** フォームから入力を読み込む */
 function readForm()
 {
     for(let unit=0 ; unit<unitSum ; unit++){
