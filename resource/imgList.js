@@ -94,7 +94,7 @@ const carCountList = [
 ];
 const getCarI = function(value){
     for(const obj of carCountList){
-        if(obj.v === value){
+        if(obj.v === value || obj.t === value){
             return obj.i;
         }
     }
@@ -110,7 +110,7 @@ const doorCountList = [
 ];
 const getDoorI = function(value){
     for(const obj of doorCountList){
-        if(obj.v === value){
+        if(obj.v === value || obj.t === value){
             return obj.i;
         }
     }
