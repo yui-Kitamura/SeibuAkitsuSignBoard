@@ -210,12 +210,12 @@
       },
       {
         "id": 2123,
-        "time": ,
+        "time": , ??
         "type": "通過",
         "goto": null,
-        "note": "特急池袋"
         "cars": null,
         "doors": null,
+        "note": "特急池袋" ??
       },
       {
         "id": 2124,
