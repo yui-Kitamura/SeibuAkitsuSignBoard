@@ -195,3 +195,21 @@ function inputTextNumCheck(value, exception) {
     }
     return result;
 }
+
+/** シノニム */
+function eleId(id){
+    return document.getElementById(id);
+}
+
+/** 3-4桁の数値から時分分解 */
+function getHhMm(inNum, passing){
+    if(inNum == null || passing == true){
+        return {h: null, m: null};
+    }
+    let h = inNum / 100 | 0; //整数のみ取得
+    if(h > 24){
+        h -= 24; //24～27時対応
+    }
+    const m = inNum % 100;
+    return {h:h, m:m};
+}
