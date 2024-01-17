@@ -8,6 +8,16 @@ function main() {
     //発車標の段数を設定する
     setUnitLine();
     drawClock();
+    //データをセットする
+    setTimeTableData().then(r => {
+        updateFromTimeTableData(6,30); //データ入力済みのAM6:30を仮指定
+        //日本語と英語の交互表示スタート
+        intervalTimeSet();
+        //2段目の設定反映
+        for(let unit=0 ; unit<unitSum ; unit++){
+            updateStatus(unit);
+        }
+    });
 }
 
 //発車標の段数を設定する
@@ -18,19 +28,6 @@ function setUnitLine(){
     //入力部を段数分つくる
     writeFormHTML();
 
-    //デフォルトでデータをセットする
-    setDefaultData();
-    setTimeTableData();
-
-    //入力を読み込む
-    readForm();
-
-    //日本語と英語の交互表示スタート
-    intervalTimeSet();
-    //2段目の設定反映
-    for(let unit=0 ; unit<unitSum ; unit++){
-        updateStatus(unit);
-    }
 }
 
 //LEDの1段分のHTMLを出力する
@@ -150,54 +147,14 @@ function writeFormHTML(){
     eleId("inputFormDiv").innerHTML = out;
 }
 
-/**
- * 初期表示する既定データを設定
- */
-function setDefaultData() {
-    eleId("typeInput00").options[0].selected = true;
-    eleId("destinationInput00").options[13].selected = true;
-    eleId("departureHourInput00").value = "9";
-    eleId("departureMinuteInput00").value = "40";
-    eleId("carCountInput00").options[3].selected = true;
-    eleId("doorCountInput00").options[1].selected = true;
-
-    eleId("typeInput01").options[13].selected = true;
-    eleId("destinationInput01").options[43].selected = true;
-    eleId("departureHourInput01").value = "";
-    eleId("departureMinuteInput01").value = "";
-    eleId("carCountInput01").options[4].selected = true;
-    eleId("doorCountInput01").options[3].selected = true;
-
-    eleId("bottomTelopInput0").value = "<span style='color:#f80'>西所沢</span>で<span style='color:#f80'>各停西武球場前</span>ゆきに、<span style='color:#f80'>飯能</span>で<span style='color:#f80'>各停西武秩父</span>ゆきに接続します。";
-    eleId("statusInput0").options[2].selected = true;
-
-    eleId("typeInput10").options[2].selected = true;
-    eleId("destinationInput10").options[0].selected = true;
-    eleId("departureHourInput10").value = 9;
-    eleId("departureMinuteInput10").value = 39;
-    eleId("carCountInput10").options[3].selected = true;
-    eleId("doorCountInput10").options[1].selected = true;
-
-    eleId("typeInput11").options[0].selected = true;
-    eleId("destinationInput11").options[31].selected = true;
-    eleId("departureHourInput11").value = 9;
-    eleId("departureMinuteInput11").value = 46;
-    eleId("carCountInput11").options[2].selected = true;
-    eleId("doorCountInput11").options[1].selected = true;
-
-    eleId("bottomTelopInput1").value = "<span style='color:#f80'>練馬</span>で準急<span style='color:#f80'>池袋</span>ゆきにお乗継ぎができます。";
-    eleId("statusInput1").options[1].selected = true;
-
-}
-
-function setTimeTableData(){
-    fetch('./resource/data/forHanno.json')
+async function setTimeTableData(){
+    await fetch('./resource/data/forHanno.json')
         .then(response => response.json())
         .then(data => {
             kudariTimeTable = data;
         })
         .catch(error => console.error(error));
-    fetch('./resource/data/forIkebukuro.json')
+    await fetch('./resource/data/forIkebukuro.json')
         .then(response => response.json())
         .then(data => {
             noboriTimeTable = data;
