@@ -12,21 +12,226 @@
     },
     "list": [
       {
-        "id": 9911,
-        "time": 940,
+        "id": 2101,
+        "time": 502,
+        "type": "各停",
+        "goto": "飯能",
+        "cars": 10,
+        "doors": 4
+      },
+      {
+        "id": 2102,
+        "time": 531,
+        "type": "各停",
+        "goto": "小手指",
+        "info": {
+          "con": {
+            "at": "小手指",
+            "ty": "各停",
+            "to": "飯能"
+          }
+        },
+        "cars": 10,
+        "doors": 4
+      },
+      {
+        "id": 2103,
+        "time": 544,
+        "type": "各停",
+        "goto": "飯能",
+        "cars": 10,
+        "doors": 4
+      },
+      {
+        "id": 2104,
+        "time": 603,
+        "type": "各停",
+        "goto": "飯能",
+        "cars": 10,
+        "doors": 4
+      },
+      {
+        "id": 2105,
+        "time": 616,
+        "type": "各停",
+        "goto": "小手指",
+        "cars": 10,
+        "doors": 4,
+        "con": {
+          "at": "小手指",
+          "ty": "各停",
+          "to": "飯能"
+        }
+      },
+      {
+        "id": 2106,
+        "time": 623,
         "type": "各停",
         "goto": "小手指",
         "cars": 10,
         "doors": 4
       },
       {
-        "id": 9912,
-        "time": 943,
+        "id": 2107,
+        "time": 629,
+        "type": "各停",
+        "goto": "飯能",
+        "cars": 10,
+        "doors": 4
+      },
+      {
+        "id": 2108,
+        "time": 636,
+        "type": "各停",
+        "goto": "小手指",
+        "cars": 10,
+        "doors": 4
+      },
+      {
+        "id": 2109,
+        "time": 646,
+        "type": "各停",
+        "goto": "飯能",
+        "cars": 10,
+        "doors": 4,
+        "con": {
+          "at": "所沢",
+          "ty": "特急",
+          "to": "飯能"
+        }
+      },
+      {
+        "id": 2110,
+        "time": 647,
+        "type": "通過",
+        "goto": null,
+        "cars": null,
+        "doors": null,
+        "note": "特急飯能"
+      },
+      {
+        "id": 2111,
+        "time": 655,
+        "type": "各停",
+        "goto": "飯能",
+        "cars": 10,
+        "doors": 4
+      },
+      {
+        "id": 2112,
+        "time": 702,
+        "type": "各停",
+        "goto": "飯能",
+        "cars": 10,
+        "doors": 4
+      },
+      {
+        "id": 2113,
+        "time": 710,
+        "type": "通過",
+        "goto": null,
+        "cars": null,
+        "doors": null,
+        "note": "特急秩父"
+      },
+      {
+        "id": 2114,
+        "time": 712,
+        "type": "各停",
+        "goto": "飯能",
+        "cars": 10,
+        "doors": 4
+      },
+      {
+        "id": 2115,
+        "time": 719,
+        "type": "各停",
+        "goto": "飯能",
+        "cars": 10,
+        "doors": 4
+      },
+      {
+        "id": 2116,
+        "time": 724,
+        "type": "各停",
+        "goto": "小手指",
+        "cars": 10|8,
+        "doors": 4
+      },
+      {
+        "id": 2117,
+        "time": 728,
+        "type": "各停",
+        "goto": "飯能",
+        "cars": 10|8,
+        "doors": 4
+      },
+      {
+        "id": 2118,
+        "time": 735,
+        "type": "各停",
+        "goto": "所沢",
+        "cars": 10,
+        "doors": 4
+      },
+      {
+        "id": 2119,
+        "time": 741,
+        "type": "各停",
+        "goto": "飯能",
+        "cars": 10,
+        "doors": 4
+      },
+      {
+        "id": 2120,
+        "time": 745,
+        "type": "各停",
+        "goto": "小手指",
+        "cars": 10,
+        "doors": 4
+      },
+      {
+        "id": 2121,
+        "time": 749,
         "type": "通過",
         "goto": null,
         "cars": null,
         "doors": null,
         "note": "急行飯能"
+      },
+      {
+        "id": 2122,
+        "time": 751,
+        "type": "通過",
+        "goto": null,
+        "cars": null,
+        "doors": null,
+        "note": "特急秩父"
+      },
+      {
+        "id": 2123,
+        "time": 753, 
+        "type": "通過",
+        "goto": null,
+        "cars": null,
+        "doors": null,
+        "note": "特急池袋 疑義照会中"
+      },
+      {
+        "id": 2124,
+        "time": 754,
+        "type": "各停",
+        "goto": "小手指",
+        "cars": 10,
+        "doors": 4
+      },
+      {
+        "id": 2125,
+        "time": 758,
+        "type": "各停",
+        "goto": "所沢",
+        "cars": 10,
+        "doors": 4
       }
     ]
   }
