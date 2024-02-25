@@ -135,6 +135,8 @@ function writeFormHTML(){
         out += "<option value=''>接近位置表示</option>";
         out += "<option value=''>到着表示(停車)</option>";
         out += "<option value=''>到着表示(通過)</option>";
+        out += "<option value=''>上り終電後</option>";
+        out += "<option value=''>乗車不可</option>";
         out += "</select> ";
 
         out += "　<input type='button' value='　テロップ更新　' onclick='updateStatus("+unit+"); ' />";
@@ -490,6 +492,24 @@ function updateStatus(unit){
         //点滅表示スタート
         switchImg(unit);
     }
+    //「上り電車は終了いたしました。」
+    if(statusData[unit] == 4){
+        let out = "";
+        out += "<div id='arrivingDiv"+unit+"' style='position:absolute; left:0; top:0; width:1152px; height:72px; overflow:hidden; background-color:#000; z-index:1;'>";
+        out += "  <img id='arrivingImg"+unit+"' class='led' style='position:absolute; left:"+(approachBaseLeft)+"px; top:"+(approachBaseTop-25*6*8)+"px;' src='./resource/img/mainx8.png' alt='' />";
+        out += "</div>";
+
+        eleId("bottomLineDiv"+unit).innerHTML = out;
+    }
+    //「お乗りになれません」
+    if(statusData[unit] == 5){
+        let out = "";
+        out += "<div id='arrivingDiv"+unit+"' style='position:absolute; left:0; top:0; width:1152px; height:72px; overflow:hidden; background-color:#000; z-index:1;'>";
+        out += "  <img id='arrivingImg"+unit+"' class='led' style='position:absolute; left:"+(approachBaseLeft)+"px; top:"+(approachBaseTop-25*7*8)+"px;' src='./resource/img/mainx8.png' alt='' />";
+        out += "</div>";
+
+        eleId("bottomLineDiv"+unit).innerHTML = out;
+    }
 }
 
 let switchCount = [0, 0];
@@ -526,7 +546,7 @@ function switchImg(unit){
     }
 
     //点滅間隔
-    switchImgTimeout[unit] = setTimeout("switchCount["+unit+"]++; switchImg("+unit+")", 500);
+    switchImgTimeout[unit] = setTimeout("switchCount[" + unit + "]++; switchImg(" + unit + ")", 500);
 }
 
 
