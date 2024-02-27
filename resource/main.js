@@ -366,14 +366,14 @@ function updateLED(){
                 case getControlInfo({info:{lastTrain:"true"}}):
                     typeImgLeft[1] = typeImgLeft[0];
                     destinationImgLeft[1] = -450 * 8;
-                    eleId("destinationImg"+unit+line).style.top = -25 * 8 * 1 + "px";
+                    eleId("destinationImg"+unit+line).style.top = -25 * 8 * 2 + "px";
                     carCountImgLeft[1] = carCountImgLeft[0];
                     doorCountImgLeft[1] = doorCountImgLeft[0];
                     break;
                 case getControlInfo({info:{deptHere:"true"}}):
                     typeImgLeft[1] = typeImgLeft[0];
                     destinationImgLeft[1] = -450 * 8;
-                    eleId("destinationImg"+unit+line).style.top = -25 * 8 * 2 + "px";
+                    eleId("destinationImg"+unit+line).style.top = -25 * 8 * 1 + "px";
                     carCountImgLeft[1] = carCountImgLeft[0];
                     doorCountImgLeft[1] = doorCountImgLeft[0];
                     break;
