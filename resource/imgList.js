@@ -119,6 +119,27 @@ const getDoorI = function(value){
     }
     return getDoorI("----");
 }
+const controlInfoList = [
+    {i:0, v:"終電車"},
+    {i:1, v:"当駅始発"},
+    {i:2, v:"----"}
+]
+const getControlInfo = function(dataObj){
+    let findValue = "----";
+    if(dataObj.info) {
+        if (dataObj.info.lastTrain == "true") {
+            findValue = "終電車";
+        }
+        if (dataObj.info.deptHere == "true") {
+            findValue = "当駅始発";
+        }
+    }
+    for(const obj of controlInfoList){
+        if(obj.v === findValue){
+            return obj.i;
+        }
+    }
+}
 
 //のりば
 const platformList = [
