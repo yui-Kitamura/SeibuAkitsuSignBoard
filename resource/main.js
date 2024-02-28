@@ -289,6 +289,7 @@ let departureMinuteData = [[null, null], [null, null]];
 let carCountData = [[null, null], [null, null]];
 let doorCountData = [[null, null], [null, null]];
 let controlInfoData = [[null, null], [null, null]];
+let motChuFunc = [[null, null], [null, null]];
 
 /** フォームから入力を読み込む */
 function readForm()
@@ -339,10 +340,12 @@ function updateLED(){
             eleId("doorCountImg"+unit+line).style.top = -25 * 8 * doorCountData[unit][line] + "px";
 
             if(langId == 0 && destinationData[unit][line] == getDestI("元町・中華街")){
-                setTimeout(() => {
+                motChuFunc[unit][line] = setTimeout(() => {
                     eleId("destinationImg"+unit+line).style.top = "0";
                     eleId("destinationImg"+unit+line).style.left = -450 * 8 + "px";
                 }, 4500)
+            }else{
+                clearTimeout(motChuFunc[unit][line]);
             }
 
             //////////時刻を変更する
