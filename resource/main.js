@@ -345,6 +345,7 @@ function updateLED(){
                     eleId("destinationImg"+unit+line).style.left = -450 * 8 + "px";
                 }, 4500)
             }else{
+                eleId("destinationImg"+unit+line).style.left = -202 * 8 + "px";
                 clearTimeout(motChuFunc[unit][line]);
             }
 
@@ -375,14 +376,18 @@ function updateLED(){
                 case getControlInfo({info:{lastTrain:"true"}}):
                     typeImgLeft[1] = typeImgLeft[0];
                     destinationImgLeft[1] = -450 * 8;
-                    eleId("destinationImg"+unit+line).style.top = -25 * 8 * 2 + "px";
+                    if(langId == 1) {
+                        eleId("destinationImg" + unit + line).style.top = -25 * 8 * 2 + "px";
+                    }
                     carCountImgLeft[1] = carCountImgLeft[0];
                     doorCountImgLeft[1] = doorCountImgLeft[0];
                     break;
                 case getControlInfo({info:{deptHere:"true"}}):
                     typeImgLeft[1] = typeImgLeft[0];
                     destinationImgLeft[1] = -450 * 8;
-                    eleId("destinationImg"+unit+line).style.top = -25 * 8 * 1 + "px";
+                    if(langId == 1) {
+                        eleId("destinationImg" + unit + line).style.top = -25 * 8 * 1 + "px";
+                    }
                     carCountImgLeft[1] = carCountImgLeft[0];
                     doorCountImgLeft[1] = doorCountImgLeft[0];
                     break;
