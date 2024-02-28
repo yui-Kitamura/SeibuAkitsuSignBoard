@@ -338,6 +338,13 @@ function updateLED(){
             //ドア数
             eleId("doorCountImg"+unit+line).style.top = -25 * 8 * doorCountData[unit][line] + "px";
 
+            if(langId == 0 && destinationData[unit][line] == getDestI("元町・中華街")){
+                setTimeout(() => {
+                    eleId("destinationImg"+unit+line).style.top = "0";
+                    eleId("destinationImg"+unit+line).style.left = -450 * 8 + "px";
+                }, 4500)
+            }
+
             //////////時刻を変更する
             //時
             const departureHourBuff = departureHourData[unit][line];
@@ -360,7 +367,6 @@ function updateLED(){
             let destinationImgLeft = [-202 * 8, -323 * 8];
             let carCountImgLeft = [-763 * 8, -812 * 8];
             let doorCountImgLeft = [-868 * 8, -917 * 8];
-            debugger;
             //切り替え判定（終電車・当駅始発）
             switch (controlInfoData[unit][line]){
                 case getControlInfo({info:{lastTrain:"true"}}):
