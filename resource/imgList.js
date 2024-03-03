@@ -135,3 +135,10 @@ const platformList = [
     ["", ""]
 ];
 
+//telop.png
+const telopList = [
+    {idx:1, scroll: false, key:"blank", str:""},
+    {idx:2, scroll: false, key:"info.fast.this", str:"終点まで先着します"},
+    {idx:3, scroll: false, key:"info.via.nonstop", str:"途中止まりません"},
+    {idx:4, scroll: true,  key:"telop.yellow", str:"黄色い線の内側までおさがりください"}
+]
