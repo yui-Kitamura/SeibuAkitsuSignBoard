@@ -207,9 +207,6 @@ function getHhMm(inNum, passing){
         return {h: null, m: null};
     }
     let h = inNum / 100 | 0; //整数のみ取得
-    if(h > 24){
-        h -= 24; //24～27時対応
-    }
     const m = inNum % 100;
     return {h:h, m:m};
 }

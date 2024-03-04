@@ -12,6 +12,9 @@ function main() {
     setTimeTableData().then(r => {
 
         let hour = new Date().getHours();
+        if(0 <= hour && hour < 4){
+            hour += 24;
+        }
         let minute = new Date().getMinutes();
 
         updateFromTimeTableData(hour, minute);
