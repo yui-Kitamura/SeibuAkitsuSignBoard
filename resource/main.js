@@ -10,7 +10,11 @@ function main() {
     drawClock();
     //データをセットする
     setTimeTableData().then(r => {
-        updateFromTimeTableData(6,30); //データ入力済みのAM6:30を仮指定
+
+        let hour = new Date().getHours();
+        let minute = new Date().getMinutes();
+
+        updateFromTimeTableData(hour, minute);
         //日本語と英語の交互表示スタート
         intervalTimeSet();
         //2段目の設定反映
