@@ -340,23 +340,23 @@ function updateLED(){
             //種別
             eleId("typeImg"+unit+line).style.top = -25 * 8 * typeData[unit][line] + "px";
             //行き先
-            eleId("destinationImg"+unit+line).style.top = -25 * 8 * destinationData[unit][line] + "px";
+            eleId("destinationImg" + unit + line).style.top = -25 * 8 * destinationData[unit][line] + "px";
+            if(langId == 0 && destinationData[unit][line] == getDestI("元町・中華街")){
+                motChuFunc[unit][line] = setTimeout(() => {
+                    eleId("destinationImg" + unit + line).style.top = "0";
+                    eleId("destinationImg" + unit + line).style.left = -450 * 8 + "px";
+                }, 4500)
+            }else{
+                eleId("destinationImg"+unit+line).style.left = -202 * 8 + "px";
+                clearTimeout(motChuFunc[unit][line]);
+                motChuFunc[unit][line] = null;
+            }
+
             //両数
             eleId("carCountImg"+unit+line).style.top = -25 * 8 * carCountData[unit][line] + "px";
             //ドア数
             eleId("doorCountImg"+unit+line).style.top = -25 * 8 * doorCountData[unit][line] + "px";
 
-            if(langId == 0 && destinationData[unit][line] == getDestI("元町・中華街")){
-                if(!motChuFunc[unit][line]) {
-                    motChuFunc[unit][line] = setTimeout(() => {
-                        eleId("destinationImg" + unit + line).style.top = "0";
-                        eleId("destinationImg" + unit + line).style.left = -450 * 8 + "px";
-                    }, 4500)
-                }
-            }else{
-                eleId("destinationImg"+unit+line).style.left = -202 * 8 + "px";
-                clearTimeout(motChuFunc[unit][line]);
-            }
 
             //////////時刻を変更する
             //時
