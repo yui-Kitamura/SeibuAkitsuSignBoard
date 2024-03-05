@@ -627,8 +627,6 @@ function drawClock() {
     analogClock.o.y = analogClock.h/2 - 3;
     analogClock.r= analogClock.h * 0.8 / 2;
 
-    analogClock.context.fillStyle = "#99ff33";
-    analogClock.context.strokeStyle = "#99ff33";
     analogClock.context.font = "24px 'メイリオ'";
 
     updateClock(true);
@@ -704,6 +702,10 @@ function updateClock(isInit){
         }
 
         funcDrawClockHand(analogClock.time.h, analogClock.time.m, analogClock.time.s);
+        if(isForceSet || isUserSetTimeActive){
+            isUserSetTimeActive = true;
+            funcDrawClockHand(eleId('tHour').value, eleId('tMinute').value, 0, "#FF7F7F");
+        }
     }
 
 }
