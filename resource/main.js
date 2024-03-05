@@ -11,13 +11,7 @@ function main() {
     //データをセットする
     setTimeTableData().then(r => {
 
-        let hour = new Date().getHours();
-        if(0 <= hour && hour < 4){
-            hour += 24;
-        }
-        let minute = new Date().getMinutes();
-
-        updateFromTimeTableData(hour, minute);
+        updateFromTimeTableData();
         //日本語と英語の交互表示スタート
         intervalTimeSet();
         //2段目の設定反映
@@ -177,7 +171,13 @@ async function setTimeTableData(){
         .catch(error => console.error(error));
 }
 
-function updateFromTimeTableData(hour, minute){
+function updateFromTimeTableData(){
+    let hour = new Date().getHours();
+    if(0 <= hour && hour < 4){
+        hour += 24;
+    }
+    let minute = new Date().getMinutes();
+
     const now = hour +""+ minute;
     const nowObj = getHhMm(100*hour+minute);
     const plcHld = {time: null, type:"----", goto:"----", cars:"----", doors:"----", control:"----"};
@@ -629,7 +629,10 @@ function drawClock() {
     analogClock.context.font = "24px 'メイリオ'";
 
     updateClock(true);
-    setInterval(updateClock, 1000);
+    setInterval(()=>{
+        updateClock(false);
+        updateFromTimeTableData();
+    }, 1000);
 }
 
 function updateClock(isInit){
