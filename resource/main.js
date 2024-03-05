@@ -179,7 +179,6 @@ function updateFromTimeTableData(){
     }
     let minute = new Date().getMinutes();
 
-    const now = hour +""+ minute;
     const nowObj = getHhMm(100*hour+minute);
     const plcHld = {time: null, type:"----", goto:"----", cars:"----", doors:"----", control:"----"};
     let kudariOne = null;
