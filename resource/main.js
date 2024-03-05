@@ -384,7 +384,7 @@ function updateLED(){
             let doorCountImgLeft = [-868 * 8, -917 * 8];
             //切り替え判定（終電車・当駅始発）
             switch (controlInfoData[unit][line]){
-                case getControlInfo({info:{lastTrain:"true"}}):
+                case getControlInfo({info:{lastTrain:true}}):
                     typeImgLeft[1] = typeImgLeft[0];
                     destinationImgLeft[1] = -450 * 8;
                     if(langId == 1) {
@@ -393,7 +393,7 @@ function updateLED(){
                     carCountImgLeft[1] = carCountImgLeft[0];
                     doorCountImgLeft[1] = doorCountImgLeft[0];
                     break;
-                case getControlInfo({info:{deptHere:"true"}}):
+                case getControlInfo({info:{deptHere:true}}):
                     typeImgLeft[1] = typeImgLeft[0];
                     destinationImgLeft[1] = -450 * 8;
                     if(langId == 1) {

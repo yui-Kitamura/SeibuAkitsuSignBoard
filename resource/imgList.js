@@ -127,10 +127,10 @@ const controlInfoList = [
 const getControlInfo = function(dataObj){
     let findValue = "----";
     if(dataObj.info) {
-        if (dataObj.info.lastTrain == "true") {
+        if (dataObj.info.lastTrain === true) {
             findValue = "終電車";
         }
-        if (dataObj.info.deptHere == "true") {
+        if (dataObj.info.deptHere === true) {
             findValue = "当駅始発";
         }
     }
