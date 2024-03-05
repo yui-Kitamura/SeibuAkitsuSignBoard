@@ -347,10 +347,12 @@ function updateLED(){
             eleId("doorCountImg"+unit+line).style.top = -25 * 8 * doorCountData[unit][line] + "px";
 
             if(langId == 0 && destinationData[unit][line] == getDestI("元町・中華街")){
-                motChuFunc[unit][line] = setTimeout(() => {
-                    eleId("destinationImg"+unit+line).style.top = "0";
-                    eleId("destinationImg"+unit+line).style.left = -450 * 8 + "px";
-                }, 4500)
+                if(!motChuFunc[unit][line]) {
+                    motChuFunc[unit][line] = setTimeout(() => {
+                        eleId("destinationImg" + unit + line).style.top = "0";
+                        eleId("destinationImg" + unit + line).style.left = -450 * 8 + "px";
+                    }, 4500)
+                }
             }else{
                 eleId("destinationImg"+unit+line).style.left = -202 * 8 + "px";
                 clearTimeout(motChuFunc[unit][line]);
