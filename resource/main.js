@@ -173,11 +173,11 @@ async function setTimeTableData(){
 }
 
 function updateFromTimeTableData(){
-    let hour = new Date().getHours();
+    let hour = analogClock.time.h;
     if(0 <= hour && hour < 4){
         hour += 24;
     }
-    let minute = new Date().getMinutes();
+    let minute = analogClock.time.m;
 
     const nowObj = getHhMm(100*hour+minute);
     const plcHld = {time: null, type:"----", goto:"----", cars:"----", doors:"----", control:"----"};
@@ -610,7 +610,8 @@ let analogClock = {
     w: null,
     h: null,
     o: {x: null, y: null},
-    r: null
+    r: null,
+    time: {h: null, m: null, s: null}
 }
 function drawClock() {
     /* デジタル */
@@ -639,17 +640,21 @@ function drawClock() {
 function updateClock(isInit){
     //時
     const now = new Date();
-    const departureHourBuff = now.getHours();
-    eleId("currentTime4Img").style.top = -25 * 8 * digitDivision(departureHourBuff, 10, 10,10) + "px";
-    eleId("currentTime3Img").style.top = -25 * 8 * digitDivision(departureHourBuff, 1, 10,0) + "px";
+    analogClock.time.h = now.getHours();
+    eleId("currentTime4Img").style.top = -25 * 8 * digitDivision(analogClock.time.h, 10, 10,10) + "px";
+    eleId("currentTime3Img").style.top = -25 * 8 * digitDivision(analogClock.time.h, 1, 10,0) + "px";
     //分
-    const departureMinuteBuff = now.getMinutes();
-    eleId("currentTime2Img").style.top = -25 * 8 * digitDivision(departureMinuteBuff, 10, 10,0) + "px";
-    eleId("currentTime1Img").style.top = -25 * 8 * digitDivision(departureMinuteBuff, 1, 10,0) + "px";
+    analogClock.time.m = now.getMinutes();
+    eleId("currentTime2Img").style.top = -25 * 8 * digitDivision(analogClock.time.m, 10, 10,0) + "px";
+    eleId("currentTime1Img").style.top = -25 * 8 * digitDivision(analogClock.time.m, 1, 10,0) + "px";
 
     /* アナログ時計 */
-    const curSec = now.getSeconds();
-    if(isInit || 58 < curSec || curSec === 0 || (28 < curSec && curSec <= 30) ) {
+    analogClock.time.s = now.getSeconds();
+    analogClock.context.fillStyle = "#99ff33";
+    analogClock.context.strokeStyle = "#99ff33";
+    if(isInit || isForceSet ||
+        58 < analogClock.time.s || analogClock.time.s === 0 ||
+        (28 < analogClock.time.s && analogClock.time.s <= 30) ) {
         //clear
         analogClock.context.clearRect(0, 0, analogClock.w, analogClock.h);
         //number
@@ -679,20 +684,27 @@ function updateClock(isInit){
             analogClock.context.fillText(""+num, calcDrawPoint(nRad, 0.85).x - dx, calcDrawPoint(nRad, 0.85).y + 8);
         }
         //clock
-        const hhRad = (360 * now.getHours() / 12 + (360 / 12) * (now.getMinutes() / 60)) * Math.PI / 180;
-        analogClock.context.beginPath();
-        analogClock.context.moveTo(analogClock.o.x, analogClock.o.y);
-        analogClock.context.lineWidth = 6;
-        analogClock.context.lineTo(calcDrawPoint(hhRad, 0.6).x, calcDrawPoint(hhRad, 0.6).y);
-        analogClock.context.stroke();
-        const mmRad = (360 * now.getMinutes() / 60 + (360 / 60) * (now.getSeconds() / 60)) * Math.PI / 180;
-        analogClock.context.beginPath();
-        analogClock.context.moveTo(analogClock.o.x, analogClock.o.y);
-        analogClock.context.lineWidth = 4;
-        analogClock.context.lineTo(calcDrawPoint(mmRad).x, calcDrawPoint(mmRad).y);
-        analogClock.context.stroke();
-    }
+        const funcDrawClockHand = function(hour, minute, second, color){
+            if(color){
+                analogClock.context.fillStyle = color;
+                analogClock.context.strokeStyle = color;
+            }
+            const hhRad = (360 * hour / 12 + (360 / 12) * (minute / 60)) * Math.PI / 180;
+            analogClock.context.beginPath();
+            analogClock.context.moveTo(analogClock.o.x, analogClock.o.y);
+            analogClock.context.lineWidth = 6;
+            analogClock.context.lineTo(calcDrawPoint(hhRad, 0.6).x, calcDrawPoint(hhRad, 0.6).y);
+            analogClock.context.stroke();
+            const mmRad = (360 * minute / 60 + (360 / 60) * (second / 60)) * Math.PI / 180;
+            analogClock.context.beginPath();
+            analogClock.context.moveTo(analogClock.o.x, analogClock.o.y);
+            analogClock.context.lineWidth = 4;
+            analogClock.context.lineTo(calcDrawPoint(mmRad).x, calcDrawPoint(mmRad).y);
+            analogClock.context.stroke();
+        }
 
+        funcDrawClockHand(analogClock.time.h, analogClock.time.m, analogClock.time.s);
+    }
 
 }
 
