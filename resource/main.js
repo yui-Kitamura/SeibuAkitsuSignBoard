@@ -633,7 +633,6 @@ function drawClock() {
     updateClock(true);
     setInterval(()=>{
         updateClock(false);
-        updateFromTimeTableData();
     }, 1000);
 }
 
