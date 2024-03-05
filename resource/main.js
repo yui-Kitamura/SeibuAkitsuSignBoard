@@ -613,7 +613,8 @@ let analogClock = {
     h: null,
     o: {x: null, y: null},
     r: null,
-    time: {h: null, m: null, s: null}
+    time: {h: null, m: null, s: null},
+    real: {h: null, m: null, s: null}
 }
 function drawClock() {
     /* デジタル */
@@ -638,23 +639,39 @@ function drawClock() {
 }
 
 function updateClock(isInit, isForceSet){
-    //時
+    // 処理管理
+    if(isForceSet) {
+        isUserSetTimeActive = true;
+    }
+
+    // 時刻管理
     const now = new Date();
-    analogClock.time.h = now.getHours();
+    analogClock.real.h = now.getHours();
+    analogClock.real.m = now.getMinutes();
+    analogClock.real.s = now.getSeconds();
+    if(isUserSetTimeActive){
+        analogClock.time.h = parseInt(eleId('tHour').value);
+        analogClock.time.m = parseInt(eleId('tMinute').value);
+        analogClock.time.s = analogClock.real.s;
+    }else{
+        analogClock.time.h = analogClock.real.h;
+        analogClock.time.m = analogClock.real.m;
+        analogClock.time.s = analogClock.real.s;
+    }
+
+    //時
     eleId("currentTime4Img").style.top = -25 * 8 * digitDivision(analogClock.time.h, 10, 10,10) + "px";
     eleId("currentTime3Img").style.top = -25 * 8 * digitDivision(analogClock.time.h, 1, 10,0) + "px";
     //分
-    analogClock.time.m = now.getMinutes();
     eleId("currentTime2Img").style.top = -25 * 8 * digitDivision(analogClock.time.m, 10, 10,0) + "px";
     eleId("currentTime1Img").style.top = -25 * 8 * digitDivision(analogClock.time.m, 1, 10,0) + "px";
 
     /* アナログ時計 */
-    analogClock.time.s = now.getSeconds();
     analogClock.context.fillStyle = "#99ff33";
     analogClock.context.strokeStyle = "#99ff33";
     if(isInit || isForceSet ||
-        58 < analogClock.time.s || analogClock.time.s === 0 ||
-        (28 < analogClock.time.s && analogClock.time.s <= 30) ) {
+        58 < analogClock.real.s || analogClock.real.s === 0 ||
+        (28 < analogClock.real.s && analogClock.real.s <= 30) ) {
         //clear
         analogClock.context.clearRect(0, 0, analogClock.w, analogClock.h);
         //number
@@ -703,10 +720,9 @@ function updateClock(isInit, isForceSet){
             analogClock.context.stroke();
         }
 
-        funcDrawClockHand(analogClock.time.h, analogClock.time.m, analogClock.time.s);
-        if(isForceSet || isUserSetTimeActive){
-            isUserSetTimeActive = true;
-            funcDrawClockHand(eleId('tHour').value, eleId('tMinute').value, 0, "#FF7F7F");
+        funcDrawClockHand(analogClock.real.h, analogClock.real.m, analogClock.real.s);
+        if(isUserSetTimeActive){
+            funcDrawClockHand(analogClock.time.h, analogClock.time.m, analogClock.time.s, "#FF7F7F");
         }
     }
 
@@ -717,5 +733,29 @@ function calcDrawPoint(rad, length=1){
         x: analogClock.o.x + analogClock.r * length * Math.sin(rad),
         y: analogClock.o.y - analogClock.r * length * Math.cos(rad)
     };
+}
+
+let forceUpdateTimer;
+function forceUpdateTime(){
+    updateClock(false, true);
+    updateFromTimeTableData();
+    forceUpdateTimer = setInterval(()=>{
+        eleId('tMinute').value = analogClock.time.m + 1;
+        if(analogClock.time.m + 1 == 60){
+            eleId('tHour').value = analogClock.time.h + 1;
+            eleId('tMinute').value = 0;
+        }
+        updateClock(false, true);
+        updateFromTimeTableData();
+    },60 * 1000);
+}
+
+function removeForced(){
+    clearInterval(forceUpdateTimer);
+    isUserSetTimeActive = false;
+    updateClock(true, false);
+    updateFromTimeTableData();
+    eleId('tHour').value = "";
+    eleId('tMinute').value = "";
 }
 

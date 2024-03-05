@@ -105,6 +105,31 @@
                         <canvas id="analogClock" width="288px" height="230px" style="margin:15px;background-color:darkgreen; border-radius: 15px;"></canvas>
                     </div>
                 </div>
+                <div style="position:absolute; top:355px; left:1315px; width:296px">
+                    <form>
+                        <fieldset style="width: 100%;padding: 10px;margin:0">
+                            <input type="number" id="tHour" name="hour" min="0" max="27" style="width:40px;padding:0 0 0 10px" onkeyup="validateNumberMM(this)" >時
+                            <input type="number" id="tMinute" name="minute" min="0" max="59" style="width:40px;padding:0 0 0 10px" onkeyup="validateNumberMM(this)">分
+                            <script>
+                                function validateNumberMM(ele){
+                                    if(ele.value == ""){
+                                        return;
+                                    }
+                                    const inVal = parseInt(ele.value);
+                                    if(inVal < ele.min){
+                                        ele.value = ele.min;
+                                    }
+                                    if(ele.max < inVal){
+                                        ele.value = ele.max;
+                                    }
+                                }
+                            </script>
+                            <input type="button" value="時刻設定" onclick="forceUpdateTime()"><br/>
+                            <input type="button" value="強制設定を解除" style="margin-top:30px" onclick="removeForced()">
+                        </fieldset>
+
+                    </form>
+                </div>
             </div>
         </div>
         <hr />
