@@ -224,6 +224,40 @@
         "goto": "新木場",
         "cars": 10,
         "doors": 4
+      },
+      {
+        "id": 1026,
+        "time": 653,
+        "type": "準急",
+        "goto": "池袋",
+        "cars": 10,
+        "doors": 4
+      },
+      {
+        "id": 1027,
+        "time": 656,
+        "type": "通過",
+        "goto": null,
+        "cars": null,
+        "doors": null,
+        "note": "特急池袋"
+      },
+      {
+        "id": 1028,
+        "time": 659,
+        "type": "通過",
+        "goto": null,
+        "cars": null,
+        "doors": null,
+        "note": "急行池袋"
+      },
+      {
+        "id": 1029,
+        "time": 702,
+        "type": "快速",
+        "goto": "池袋",
+        "cars": 10,
+        "doors": 4
       }
     ]
   }
