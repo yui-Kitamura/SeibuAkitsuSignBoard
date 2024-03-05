@@ -4,6 +4,8 @@ let lineSum = 2; //ホーム発車標の段数
 let kudariTimeTable;
 let noboriTimeTable;
 
+let isUserSetTimeActive = false;
+
 function main() {
     //発車標の段数を設定する
     setUnitLine();
@@ -635,7 +637,7 @@ function drawClock() {
     }, 1000);
 }
 
-function updateClock(isInit){
+function updateClock(isInit, isForceSet){
     //時
     const now = new Date();
     analogClock.time.h = now.getHours();
