@@ -224,6 +224,657 @@
         "goto": "新木場",
         "cars": 10,
         "doors": 4
+      },
+      {
+        "id": 1026,
+        "time": 653,
+        "type": "準急",
+        "goto": "池袋",
+        "cars": 10,
+        "doors": 4
+      },
+      {
+        "id": 1027,
+        "time": 656,
+        "type": "通過",
+        "goto": null,
+        "cars": null,
+        "doors": null,
+        "note": "特急池袋"
+      },
+      {
+        "id": 1028,
+        "time": 659,
+        "type": "通過",
+        "goto": null,
+        "cars": null,
+        "doors": null,
+        "note": "急行池袋"
+      },
+      {
+        "id": 1029,
+        "time": 702,
+        "type": "快速",
+        "goto": "池袋",
+        "cars": 10,
+        "doors": 4
+      },
+      {
+        "id": 1030,
+        "time": 704,
+        "type": "準急",
+        "goto": "新木場",
+        "cars": 10,
+        "doors": 4
+      },
+      {
+        "id": 1031,
+        "time": 706,
+        "type": "通過",
+        "goto": null,
+        "cars": null,
+        "doors": null,
+        "info":"特急池袋"
+      },
+      {
+        "id": 1032,
+        "time": 709,
+        "type": "通過",
+        "goto": null,
+        "cars": null,
+        "doors": null,
+        "info": "通急池袋"
+      },
+      {
+        "id": 1033,
+        "time": 712,
+        "type": "通準",
+        "goto": "池袋",
+        "cars": 10,
+        "doors": 4
+      },
+      {
+        "id": 1034,
+        "time": 714,
+        "type": "通過",
+        "goto": null,
+        "cars": null,
+        "doors": null,
+        "info": "急行池袋"
+      },
+      {
+        "id": 1035,
+        "time": 718,
+        "type": "快速",
+        "goto": "元町・中華街",
+        "cars": 10,
+        "doors": 4,
+        "info":{
+          "f":"急行"
+        }
+      },
+      {
+        "id": 1036,
+        "time": 721,
+        "type": "準急",
+        "goto": "新木場",
+        "cars": 10,
+        "doors": 4
+      },
+      {
+        "id": 1037,
+        "time": 723,
+        "type": "通過",
+        "goto": null,
+        "cars": null,
+        "doors": null,
+        "info": "通急池袋"
+      },
+      {
+        "id": 1038,
+        "time": 726,
+        "type": "通準",
+        "goto": "池袋",
+        "cars": 10,
+        "doors": 4
+      },
+      {
+        "id": 1039,
+        "time": 729,
+        "type": "快速",
+        "goto": "元町・中華街",
+        "cars": 10,
+        "doors": 4,
+        "info":{
+          "f":"急行"
+        }
+      },
+      {
+        "id": 1040,
+        "time": 731,
+        "type": "通過",
+        "goto": null,
+        "cars": null,
+        "doors": null,
+        "info": "快急池袋"
+      },
+      {
+        "id": 1041,
+        "time": 734,
+        "type": "準急",
+        "goto": "新木場",
+        "cars": 10,
+        "doors": 4
+      },
+      {
+        "id": 1042,
+        "time": 737,
+        "type": "通過",
+        "goto": null,
+        "cars": null,
+        "doors": null,
+        "info": "通急池袋"
+      },
+      {
+        "id": 1043,
+        "time": 741,
+        "type": "通準",
+        "goto": "池袋",
+        "cars": 10,
+        "doors": 4
+      },
+      {
+        "id": 1044,
+        "time": 744,
+        "type": "通過",
+        "goto": null,
+        "cars": null,
+        "doors": null,
+        "info": "急行池袋"
+      },
+      {
+        "id": 1045,
+        "time": 747,
+        "type": "快速",
+        "goto": "元町・中華街",
+        "cars": 10,
+        "doors": 4
+      },
+      {
+        "id": 1046,
+        "time": 749,
+        "type": "準急",
+        "goto": "新木場",
+        "cars": 10,
+        "doors": 4
+      },
+      {
+        "id": 1047,
+        "time": 752,
+        "type": "通過",
+        "goto": null,
+        "cars": null,
+        "doors": null,
+        "info": "通急池袋"
+      },
+      {
+        "id": 1048,
+        "time": 754,
+        "type": "通準",
+        "goto": "池袋",
+        "cars": 10,
+        "doors": 4
+      },
+      {
+        "id": 1049,
+        "time": 757,
+        "type": "通過",
+        "goto": null,
+        "cars": null,
+        "doors": null,
+        "info": "急行池袋"
+      },
+      {
+        "id": 1050,
+        "time": 800,
+        "type": "準急",
+        "goto": "元町・中華街",
+        "cars": 10,
+        "doors": 4,
+        "info": {
+          "f": "急行"
+        }
+      },
+      {
+        "id": 1051,
+        "time": 803,
+        "type": "準急",
+        "goto": "新木場",
+        "cars": 10,
+        "doors": 4
+      },
+      {
+        "id": 1052,
+        "time": 806,
+        "type": "快速",
+        "goto": "池袋",
+        "cars": 10,
+        "doors": 4
+      },
+      {
+        "id": 1053,
+        "time": 810,
+        "type": "準急",
+        "goto": "新木場",
+        "cars": 10,
+        "doors": 4
+      },
+      {
+        "id": 1054,
+        "time": 812,
+        "type": "通過",
+        "goto": null,
+        "cars": null,
+        "doors": null,
+        "info": "特急池袋"
+      },
+      {
+        "id": 1055,
+        "time": 815,
+        "type": "通過",
+        "goto": null,
+        "cars": null,
+        "doors": null,
+        "info": "急行池袋"
+      },
+      {
+        "id": 1056,
+        "time": 819,
+        "type": "各停",
+        "goto": "新木場",
+        "cars": 10,
+        "doors": 4
+      },
+      {
+        "id": 1057,
+        "time": 821,
+        "type": "通過",
+        "goto": null,
+        "cars": null,
+        "doors": null,
+        "info": "通急池袋"
+      },
+      {
+        "id": 1058,
+        "time": 825,
+        "type": "快速",
+        "goto": "元町・中華街",
+        "cars": 10,
+        "doors": 4,
+        "info": {
+          "f": "急行"
+        }
+      },
+      {
+        "id": 1059,
+        "time": 827,
+        "type": "通過",
+        "goto": null,
+        "cars": null,
+        "doors": null,
+        "info": "特急池袋"
+      },
+      {
+        "id": 1060,
+        "time": 832,
+        "type": "準急",
+        "goto": "池袋",
+        "cars": 10,
+        "doors": 4
+      },
+      {
+        "id": 1061,
+        "time": 835,
+        "type": "通過",
+        "goto": null,
+        "cars": null,
+        "doors": null,
+        "info": "急行池袋"
+      },
+      {
+        "id": 1062,
+        "time": 839,
+        "type": "各停",
+        "goto": "元町・中華街",
+        "cars": 8,
+        "doors": 4
+      },
+      {
+        "id": 1063,
+        "time": 841,
+        "type": "通過",
+        "goto": null,
+        "cars": null,
+        "doors": null,
+        "info": "Sトレ豊洲"
+      },
+      {
+        "id": 1064,
+        "time": 846,
+        "type": "快速",
+        "goto": "池袋",
+        "cars": 10,
+        "doors": 4
+      },
+      {
+        "id": 1065,
+        "time": 848,
+        "type": "通過",
+        "goto": null,
+        "cars": null,
+        "doors": null,
+        "info": "特急池袋"
+      },
+      {
+        "id": 1066,
+        "time": 853,
+        "type": "準急",
+        "goto": "元町・中華街",
+        "cars": 10,
+        "doors": 4,
+        "info": {
+          "f": "急行"
+        }
+      },
+      {
+        "id": 1067,
+        "time": 857,
+        "type": "通過",
+        "goto": null,
+        "cars": null,
+        "doors": null,
+        "info": "急行池袋"
+      },
+      {
+        "id": 1068,
+        "time": 900,
+        "type": "準急",
+        "goto": "池袋",
+        "cars": 10,
+        "doors": 4
+      },
+      {
+        "id": 1069,
+        "time": 907,
+        "type": "快速",
+        "goto": "元町・中華街",
+        "cars": 10,
+        "doors": 4,
+        "info": {
+          "f": "急行"
+        }
+      },
+      {
+        "id": 1070,
+        "time": 913,
+        "type": "準急",
+        "goto": "池袋",
+        "cars": 10,
+        "doors": 4
+      },
+      {
+        "id": 1071,
+        "time": 917,
+        "type": "通過",
+        "goto": null,
+        "cars": null,
+        "doors": null,
+        "info": "急行池袋"
+      },
+      {
+        "id": 1072,
+        "time": 922,
+        "type": "各停",
+        "goto": "武蔵小杉",
+        "cars": 8,
+        "doors": 4
+      },
+      {
+        "id": 1073,
+        "time": 926,
+        "type": "快速",
+        "goto": "池袋",
+        "cars": 10,
+        "doors": 4
+      },
+      {
+        "id": 1074,
+        "time": 925,
+        "type": "通過",
+        "goto": null,
+        "cars": null,
+        "doors": null,
+        "info": "特急池袋"
+      },
+      {
+        "id": 1075,
+        "time": 934,
+        "type": "各停",
+        "goto": "池袋",
+        "cars": 8,
+        "doors": 4
+      },
+      {
+        "id": 1076,
+        "time": 938,
+        "type": "通過",
+        "goto": null,
+        "cars": null,
+        "doors": null,
+        "info": "急行池袋"
+      },
+      {
+        "id": 1077,
+        "time": 942,
+        "type": "準急",
+        "goto": "新木場",
+        "cars": 10,
+        "doors": 4
+      },
+      {
+        "id": 1078,
+        "time": 947,
+        "type": "通過",
+        "goto": null,
+        "cars": null,
+        "doors": null,
+        "info": "急行池袋"
+      },
+      {
+        "id": 1079,
+        "time": 951,
+        "type": "準急",
+        "goto": "元町・中華街",
+        "cars": 10,
+        "doors": 4,
+        "info": {
+          "f": "急行"
+        }
+      },
+      {
+        "id": 1080,
+        "time": 958,
+        "type": "快速",
+        "goto": "池袋",
+        "cars": 10,
+        "doors": 4
+      },
+      {
+        "id": 1081,
+        "time": 1007,
+        "type": "準急",
+        "goto": "池袋",
+        "cars": 10,
+        "doors": 4
+      },
+      {
+        "id": 1082,
+        "time": 1011,
+        "type": "通過",
+        "goto": null,
+        "cars": null,
+        "doors": null,
+        "info": "急行池袋"
+      },
+      {
+        "id": 1083,
+        "time": 1017,
+        "type": "各停",
+        "goto": "元町・中華街",
+        "cars": 8,
+        "doors": 4
+      },
+      {
+        "id": 1084,
+        "time": 1022,
+        "type": "準急",
+        "goto": "池袋",
+        "cars": 10,
+        "doors": 4
+      },
+      {
+        "id": 1085,
+        "time": 1025,
+        "type": "通過",
+        "goto": null,
+        "cars": null,
+        "doors": null,
+        "info": "特急池袋"
+      },
+      {
+        "id": 1086,
+        "time": 1028,
+        "type": "各停",
+        "goto": "元町・中華街",
+        "cars": 8,
+        "doors": 4
+      },
+      {
+        "id": 1087,
+        "time": 1033,
+        "type": "通過",
+        "goto": null,
+        "cars": null,
+        "doors": null,
+        "info": "F快元中"
+      },
+      {
+        "id": 1088,
+        "time": 1037,
+        "type": "各停",
+        "goto": "池袋",
+        "cars": 8,
+        "doors": 4
+      },
+      {
+        "id": 1089,
+        "time": 1042,
+        "type": "通過",
+        "goto": null,
+        "cars": null,
+        "doors": null
+      },
+      {
+        "id": 1090,
+        "time": 1047,
+        "type": "各停",
+        "goto": "池袋",
+        "cars": 8,
+        "doors": 4
+      },
+      {
+        "id": 1091,
+        "time": 1052,
+        "type": "通過",
+        "goto": null,
+        "cars": null,
+        "doors": null,
+        "info": "急行池袋"
+      },
+      {
+        "id": 1092,
+        "time": 1055,
+        "type": "準急",
+        "goto": "池袋",
+        "cars": 10,
+        "doors": 4
+      },
+      {
+        "id": 1093,
+        "time": 1058,
+        "type": "各停",
+        "goto": "新木場",
+        "cars": 10,
+        "doors": 4
+      },
+      {
+        "id": 1094,
+        "time": 1103,
+        "type": "通過",
+        "goto": null,
+        "cars": null,
+        "doors": null,
+        "info": "F快元中"
+      },
+      {
+        "id": 1095,
+        "time": 1107,
+        "type": "準急",
+        "goto": "池袋",
+        "cars": 10,
+        "doors": 4
+      },
+      {
+        "id": 1096,
+        "time": 1111,
+        "type": "通過",
+        "goto": null,
+        "cars": null,
+        "doors": null,
+        "info": "急行池袋"
+      },
+      {
+        "id": 1097,
+        "time": 1115,
+        "type": "各停",
+        "goto": "池袋",
+        "cars": 8,
+        "doors": 4
+      },
+      {
+        "id": 1098,
+        "time": 1122,
+        "type": "準急",
+        "goto": "池袋",
+        "cars": 10,
+        "doors": 4
+      },
+      {
+        "id": 1099,
+        "time": 1125,
+        "type": "通過",
+        "goto": null,
+        "cars": null,
+        "doors": null,
+        "info": "特急池袋"
+      },
+      {
+        "id": 1100,
+        "time": 1128,
+        "type": "各停",
+        "goto": "新木場",
+        "cars": 10,
+        "doors": 4
       }
     ]
   }
