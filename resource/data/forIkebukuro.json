@@ -1560,6 +1560,55 @@
         "goto": "池袋",
         "cars": 10,
         "doors": 4
+      },
+      {
+        "id": 1182,
+        "time": 1722,
+        "type": "各停",
+        "goto": "新木場",
+        "cars": 10,
+        "doors": 4
+      },
+      {
+        "id": 1183,
+        "time": 1725,
+        "type": "快速",
+        "goto": "池袋",
+        "cars": 10,
+        "doors": 4
+      },
+      {
+        "id": 1184,
+        "time": 1727,
+        "type": "通過",
+        "goto": null,
+        "cars": null,
+        "doors": null,
+        "info": "特急池袋"
+      },
+      {
+        "id": 1185,
+        "time": 1733,
+        "type": "準急",
+        "goto": "新木場",
+        "cars": 10,
+        "doors": 4
+      },
+      {
+        "id": 1186,
+        "time": 1737,
+        "type": "通過",
+        "goto": null,
+        "cars": null,
+        "doors": null
+      },
+      {
+        "id": 1187,
+        "time": 1741,
+        "type": "準急",
+        "goto": "池袋",
+        "cars": 10,
+        "doors": 4
       }
     ]
   }
