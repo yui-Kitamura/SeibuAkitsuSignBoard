@@ -875,6 +875,691 @@
         "goto": "新木場",
         "cars": 10,
         "doors": 4
+      },
+      {
+        "id": 1101,
+        "time": 1133,
+        "type": "通過",
+        "goto": null,
+        "cars": null,
+        "doors": null,
+        "info": "F快元中"
+      },
+      {
+        "id": 1102,
+        "time": 1137,
+        "type": "各停",
+        "goto": "池袋",
+        "cars": 8,
+        "doors": 4
+      },
+      {
+        "id": 1103,
+        "time": 1141,
+        "type": "通過",
+        "goto": null,
+        "cars": null,
+        "doors": null,
+        "info": "急行池袋"
+      },
+      {
+        "id": 1104,
+        "time": 1147,
+        "type": "各停",
+        "goto": "池袋",
+        "cars": 8,
+        "doors": 4
+      },
+      {
+        "id": 1105,
+        "time": 1151,
+        "type": "通過",
+        "goto": null,
+        "cars": null,
+        "doors": null,
+        "info": "急行池袋"
+      },
+      {
+        "id": 1106,
+        "time": 1155,
+        "type": "準急",
+        "goto": "池袋",
+        "cars": 10,
+        "doors": 4
+      },
+      {
+        "id": 1107,
+        "time": 1158,
+        "type": "各停",
+        "goto": "新木場",
+        "cars": 10,
+        "doors": 4
+      },
+      {
+        "id": 1108,
+        "time": 1203,
+        "type": "通過",
+        "goto": null,
+        "cars": null,
+        "doors": null,
+        "info": "F快元中"
+      },
+      {
+        "id": 1109,
+        "time": 1207,
+        "type": "準急",
+        "goto": "池袋",
+        "cars": 10,
+        "doors": 4
+      },
+      {
+        "id": 1110,
+        "time": 1211,
+        "type": "通過",
+        "goto": null,
+        "cars": null,
+        "doors": null,
+        "info": "急行池袋"
+      },
+      {
+        "id": 1111,
+        "time": 1215,
+        "type": "各停",
+        "goto": "池袋",
+        "cars": 8,
+        "doors": 4
+      },
+      {
+        "id": 1112,
+        "time": 1222,
+        "type": "準急",
+        "goto": "池袋",
+        "cars": 10,
+        "doors": 4
+      },
+      {
+        "id": 1113,
+        "time": 1225,
+        "type": "通過",
+        "goto": null,
+        "cars": null,
+        "doors": null,
+        "info": "特急池袋"
+      },
+      {
+        "id": 1114,
+        "time": 1228,
+        "type": "各停",
+        "goto": "新木場",
+        "cars": 10,
+        "doors": 4
+      },
+      {
+        "id": 1115,
+        "time": 1233,
+        "type": "通過",
+        "goto": null,
+        "cars": null,
+        "doors": null,
+        "info": "F快元中"
+      },
+      {
+        "id": 1116,
+        "time": 1237,
+        "type": "各停",
+        "goto": "池袋",
+        "cars": 8,
+        "doors": 4
+      },
+      {
+        "id": 1117,
+        "time": 1241,
+        "type": "通過",
+        "goto": null,
+        "cars": null,
+        "doors": null,
+        "info": "急行池袋"
+      },
+      {
+        "id": 1118,
+        "time": 1247,
+        "type": "各停",
+        "goto": "池袋",
+        "cars": 8,
+        "doors": 4
+      },
+      {
+        "id": 1119,
+        "time": 1251,
+        "type": "通過",
+        "goto": null,
+        "cars": null,
+        "doors": null,
+        "info": "急行池袋"
+      },
+      {
+        "id": 1120,
+        "time": 1255,
+        "type": "準急",
+        "goto": "池袋",
+        "cars": 10,
+        "doors": 4
+      },
+      {
+        "id": 1121,
+        "time": 1258,
+        "type": "各停",
+        "goto": "新木場",
+        "cars": 10,
+        "doors": 4
+      },
+      {
+        "id": 1122,
+        "time": 1303,
+        "type": "通過",
+        "goto": null,
+        "cars": null,
+        "doors": null,
+        "info": "F快元中"
+      },
+      {
+        "id": 1123,
+        "time": 1307,
+        "type": "準急",
+        "goto": "池袋",
+        "cars": 10,
+        "doors": 4
+      },
+      {
+        "id": 1124,
+        "time": 1311,
+        "type": "通過",
+        "goto": null,
+        "cars": null,
+        "doors": null,
+        "info": "急行池袋"
+      },
+      {
+        "id": 1125,
+        "time": 1315,
+        "type": "各停",
+        "goto": "池袋",
+        "cars": 8,
+        "doors": 4
+      },
+      {
+        "id": 1126,
+        "time": 1322,
+        "type": "準急",
+        "goto": "池袋",
+        "cars": 10,
+        "doors": 4
+      },
+      {
+        "id": 1127,
+        "time": 1325,
+        "type": "通過",
+        "goto": null,
+        "cars": null,
+        "doors": null,
+        "info": "特急池袋"
+      },
+      {
+        "id": 1128,
+        "time": 1328,
+        "type": "各停",
+        "goto": "新木場",
+        "cars": 10,
+        "doors": 4
+      },
+      {
+        "id": 1129,
+        "time": 1333,
+        "type": "通過",
+        "goto": null,
+        "cars": null,
+        "doors": null,
+        "info": "F快元中"
+      },
+      {
+        "id": 1130,
+        "time": 1337,
+        "type": "各停",
+        "goto": "池袋",
+        "cars": 8,
+        "doors": 4
+      },
+      {
+        "id": 1131,
+        "time": 1341,
+        "type": "通過",
+        "goto": null,
+        "cars": null,
+        "doors": null,
+        "info": "急行池袋"
+      },
+      {
+        "id": 1132,
+        "time": 1347,
+        "type": "各停",
+        "goto": "池袋",
+        "cars": 8,
+        "doors": 4
+      },
+      {
+        "id": 1133,
+        "time": 1351,
+        "type": "通過",
+        "goto": null,
+        "cars": null,
+        "doors": null,
+        "info": "急行池袋"
+      },
+      {
+        "id": 1134,
+        "time": 1355,
+        "type": "準急",
+        "goto": "池袋",
+        "cars": 10,
+        "doors": 4
+      },
+      {
+        "id": 1135,
+        "time": 1358,
+        "type": "各停",
+        "goto": "新木場",
+        "cars": 10,
+        "doors": 4
+      },
+      {
+        "id": 1136,
+        "time": 1403,
+        "type": "通過",
+        "goto": null,
+        "cars": null,
+        "doors": null,
+        "info": "F快元中"
+      },
+      {
+        "id": 1137,
+        "time": 1407,
+        "type": "準急",
+        "goto": "池袋",
+        "cars": 10,
+        "doors": 4
+      },
+      {
+        "id": 1138,
+        "time": 1411,
+        "type": "通過",
+        "goto": null,
+        "cars": null,
+        "doors": null,
+        "info": "急行池袋"
+      },
+      {
+        "id": 1139,
+        "time": 1415,
+        "type": "各停",
+        "goto": "池袋",
+        "cars": 8,
+        "doors": 4
+      },
+      {
+        "id": 1140,
+        "time": 1422,
+        "type": "準急",
+        "goto": "池袋",
+        "cars": 10,
+        "doors": 4
+      },
+      {
+        "id": 1141,
+        "time": 1425,
+        "type": "通過",
+        "goto": null,
+        "cars": null,
+        "doors": null,
+        "info": "特急池袋"
+      },
+      {
+        "id": 1142,
+        "time": 1428,
+        "type": "各停",
+        "goto": "新木場",
+        "cars": 10,
+        "doors": 4
+      },
+      {
+        "id": 1143,
+        "time": 1433,
+        "type": "通過",
+        "goto": null,
+        "cars": null,
+        "doors": null,
+        "info": "F快元中"
+      },
+      {
+        "id": 1144,
+        "time": 1437,
+        "type": "各停",
+        "goto": "池袋",
+        "cars": 8,
+        "doors": 4
+      },
+      {
+        "id": 1145,
+        "time": 1441,
+        "type": "通過",
+        "goto": null,
+        "cars": null,
+        "doors": null,
+        "info": "急行池袋"
+      },
+      {
+        "id": 1146,
+        "time": 1447,
+        "type": "各停",
+        "goto": "池袋",
+        "cars": 8,
+        "doors": 4
+      },
+      {
+        "id": 1147,
+        "time": 1451,
+        "type": "通過",
+        "goto": null,
+        "cars": null,
+        "doors": null,
+        "info": "急行池袋"
+      },
+      {
+        "id": 1148,
+        "time": 1455,
+        "type": "準急",
+        "goto": "池袋",
+        "cars": 10,
+        "doors": 4
+      },
+      {
+        "id": 1149,
+        "time": 1458,
+        "type": "各停",
+        "goto": "新木場",
+        "cars": 10,
+        "doors": 4
+      },
+      {
+        "id": 1150,
+        "time": 1503,
+        "type": "通過",
+        "goto": null,
+        "cars": null,
+        "doors": null,
+        "info": "F快元中"
+      },
+      {
+        "id": 1151,
+        "time": 1507,
+        "type": "準急",
+        "goto": "池袋",
+        "cars": 10,
+        "doors": 4
+      },
+      {
+        "id": 1152,
+        "time": 1511,
+        "type": "通過",
+        "goto": null,
+        "cars": null,
+        "doors": null,
+        "info": "急行池袋"
+      },
+      {
+        "id": 1153,
+        "time": 1515,
+        "type": "各停",
+        "goto": "池袋",
+        "cars": 8,
+        "doors": 4
+      },
+      {
+        "id": 1154,
+        "time": 1522,
+        "type": "準急",
+        "goto": "池袋",
+        "cars": 10,
+        "doors": 4
+      },
+      {
+        "id": 1155,
+        "time": 1525,
+        "type": "通過",
+        "goto": null,
+        "cars": null,
+        "doors": null,
+        "info": "特急池袋"
+      },
+      {
+        "id": 1156,
+        "time": 1528,
+        "type": "各停",
+        "goto": "新木場",
+        "cars": 10,
+        "doors": 4
+      },
+      {
+        "id": 1157,
+        "time": 1533,
+        "type": "通過",
+        "goto": null,
+        "cars": null,
+        "doors": null,
+        "info": "F快元中"
+      },
+      {
+        "id": 1158,
+        "time": 1537,
+        "type": "各停",
+        "goto": "池袋",
+        "cars": 8,
+        "doors": 4
+      },
+      {
+        "id": 1159,
+        "time": 1541,
+        "type": "通過",
+        "goto": null,
+        "cars": null,
+        "doors": null,
+        "info": "急行池袋"
+      },
+      {
+        "id": 1160,
+        "time": 1547,
+        "type": "準急",
+        "goto": "池袋",
+        "cars": 10,
+        "doors": 4
+      },
+      {
+        "id": 1161,
+        "time": 1552,
+        "type": "準急",
+        "goto": "池袋",
+        "cars": 10,
+        "doors": 4
+      },
+      {
+        "id": 1162,
+        "time": 1558,
+        "type": "各停",
+        "goto": "新木場",
+        "cars": 10,
+        "doors": 4
+      },
+      {
+        "id": 1163,
+        "time": 1603,
+        "type": "通過",
+        "goto": null,
+        "cars": null,
+        "doors": null,
+        "info": "F快元中"
+      },
+      {
+        "id": 1164,
+        "time": 1607,
+        "type": "準急",
+        "goto": "池袋",
+        "cars": 10,
+        "doors": 4
+      },
+      {
+        "id": 1165,
+        "time": 1611,
+        "type": "通過",
+        "goto": null,
+        "cars": null,
+        "doors": null,
+        "info": "急行池袋"
+      },
+      {
+        "id": 1166,
+        "time": 1615,
+        "type": "各停",
+        "goto": "池袋",
+        "cars": 8,
+        "doors": 4
+      },
+      {
+        "id": 1167,
+        "time": 1622,
+        "type": "準急",
+        "goto": "池袋",
+        "cars": 10,
+        "doors": 4
+      },
+      {
+        "id": 1168,
+        "time": 1625,
+        "type": "通過",
+        "goto": null,
+        "cars": null,
+        "doors": null,
+        "info": "特急池袋"
+      },
+      {
+        "id": 1169,
+        "time": 1628,
+        "type": "各停",
+        "goto": "新木場",
+        "cars": 10,
+        "doors": 4
+      },
+      {
+        "id": 1170,
+        "time": 1633,
+        "type": "通過",
+        "goto": null,
+        "cars": null,
+        "doors": null,
+        "info": "F快元中"
+      },
+      {
+        "id": 1171,
+        "time": 1638,
+        "type": "準急",
+        "goto": "池袋",
+        "cars": 10,
+        "doors": 4
+      },
+      {
+        "id": 1172,
+        "time": 1641,
+        "type": "通過",
+        "goto": null,
+        "cars": null,
+        "doors": null,
+        "info": "急行池袋"
+      },
+      {
+        "id": 1173,
+        "time": 1648,
+        "type": "準急",
+        "goto": "池袋",
+        "cars": 10,
+        "doors": 4
+      },
+      {
+        "id": 1174,
+        "time": 1651,
+        "type": "各停",
+        "goto": "元町・中華街",
+        "cars": 10,
+        "doors": 4,
+        "info": {
+          "f": "急行"
+        }
+      },
+      {
+        "id": 1175,
+        "time": 1655,
+        "type": "快速",
+        "goto": "池袋",
+        "cars": 10,
+        "doors": 4
+      },
+      {
+        "id": 1176,
+        "time": 1658,
+        "type": "通過",
+        "goto": null,
+        "cars": null,
+        "doors": null,
+        "info": "特急池袋"
+      },
+      {
+        "id": 1177,
+        "time": 1703,
+        "type": "準急",
+        "goto": "新木場",
+        "cars": 10,
+        "doors": 4
+      },
+      {
+        "id": 1178,
+        "time": 1707,
+        "type": "通過",
+        "goto": null,
+        "cars": null,
+        "doors": null,
+        "info": "急行池袋"
+      },
+      {
+        "id": 1179,
+        "time": 1710,
+        "type": "準急",
+        "goto": "池袋",
+        "cars": 10,
+        "doors": 4
+      },
+      {
+        "id": 1180,
+        "time": 1715,
+        "type": "通過",
+        "goto": null,
+        "cars": null,
+        "doors": null,
+        "info": "急行池袋"
+      },
+      {
+        "id": 1181,
+        "time": 1719,
+        "type": "準急",
+        "goto": "池袋",
+        "cars": 10,
+        "doors": 4
       }
     ]
   }
