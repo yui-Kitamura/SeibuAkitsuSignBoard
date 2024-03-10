@@ -1797,6 +1797,80 @@
         "goto": "池袋",
         "cars": 10,
         "doors": 4
+      },
+      {
+        "id": 1209,
+        "time": 1917,
+        "type": "通過",
+        "goto": null,
+        "cars": null,
+        "doors": null,
+        "info": "急行池袋"
+      },
+      {
+        "id": 1210,
+        "time": 1919,
+        "type": "準急",
+        "goto": "池袋",
+        "cars": 10,
+        "doors": 4
+      },
+      {
+        "id": 1211,
+        "time": 1924,
+        "type": "準急",
+        "goto": "池袋",
+        "cars": 10,
+        "doors": 4
+      },
+      {
+        "id": 1212,
+        "time": 1927,
+        "type": "通過",
+        "goto": null,
+        "cars": null,
+        "doors": null
+      },
+      {
+        "id": 1213,
+        "time": 1933,
+        "type": "準急",
+        "goto": "新木場",
+        "cars": 10,
+        "doors": 4
+      },
+      {
+        "id": 1214,
+        "time": 1939,
+        "type": "通過",
+        "goto": null,
+        "cars": null,
+        "doors": null,
+        "info": "急行池袋"
+      },
+      {
+        "id": 1215,
+        "time": 1942,
+        "type": "準急",
+        "goto": "池袋",
+        "cars": 10,
+        "doors": 4
+      },
+      {
+        "id": 1216,
+        "time": 1949,
+        "type": "準急",
+        "goto": "池袋",
+        "cars": 10,
+        "doors": 4
+      },
+      {
+        "id": 1217,
+        "time": 1954,
+        "type": "準急",
+        "goto": "池袋",
+        "cars": 10,
+        "doors": 4
       }
     ]
   }
