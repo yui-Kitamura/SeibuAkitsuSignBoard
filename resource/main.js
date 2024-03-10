@@ -362,7 +362,11 @@ function updateLED(){
 
             //////////時刻を変更する
             //時
-            const departureHourBuff = departureHourData[unit][line];
+            let departureHourBuff = departureHourData[unit][line];
+            if(departureHourBuff >= 24){
+                //データは27時までで生成するが、表示は0時～
+                departureHourBuff -= 24;
+            }
             eleId("departureTime4Img"+unit+line).style.top = -25 * 8 * digitDivision(departureHourBuff,10, 10, 10) + "px";
             eleId("departureTime3Img"+unit+line).style.top = -25 * 8 * digitDivision(departureHourBuff,1, 10, 0) + "px";
             //分
