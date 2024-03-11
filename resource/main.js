@@ -13,7 +13,7 @@ function main() {
     //データをセットする
     setTimeTableData().then(r => {
         updateFromTimeTableData();
-        setInterval(() => updateFromTimeTableData(), 10 * 1000);
+        setInterval(() => updateFromTimeTableData(), 10 * 1000); //10秒ごとに描画更新
 
         //日本語と英語の交互表示スタート
         intervalTimeSet();
