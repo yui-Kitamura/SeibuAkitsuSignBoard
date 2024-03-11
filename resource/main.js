@@ -181,7 +181,7 @@ function updateFromTimeTableData(){
     }
     let minute = analogClock.time.m;
 
-    const nowObj = getHhMm(100*hour+minute);
+    const nowObj = {h: hour, m: minute, s: analogClock.time.s};
     const plcHld = {time: null, type:"----", goto:"----", cars:"----", doors:"----", control:"----"};
     let kudariOne = null;
     let kudariTwo = null;
@@ -192,7 +192,10 @@ function updateFromTimeTableData(){
     const kudariTT = kudariTimeTable.timeTable.list;
     for(const tt of kudariTT){
         const hhMm = getHhMm(tt.time);
-        if(hhMm.h > nowObj.h || hhMm.h == nowObj.h && hhMm.m >= nowObj.m){
+        if(tt.type === "通過"){
+            hhMm.s = 15; //通過秒を指定
+        }
+        if(hhMm.h > nowObj.h || hhMm.h == nowObj.h && hhMm.m >= nowObj.m || hhMm.h == nowObj.h && hhMm.m == nowObj.m && hhMm.s >= nowObj.s){
             //指定時刻より後の列車データ
             if(kudariOne == null) {
                 kudariOne = tt;
@@ -222,7 +225,10 @@ function updateFromTimeTableData(){
     const noboriTT = noboriTimeTable.timeTable.list;
     for(const tt of noboriTT){
         const hhMm = getHhMm(tt.time);
-        if(hhMm.h > nowObj.h || hhMm.h == nowObj.h && hhMm.m >= nowObj.m){
+        if(tt.type === "通過"){
+            hhMm.s = 15; //通過秒を指定
+        }
+        if(hhMm.h > nowObj.h || hhMm.h == nowObj.h && hhMm.m >= nowObj.m || hhMm.h == nowObj.h && hhMm.m == nowObj.m && hhMm.s >= nowObj.s){
             //指定時刻より後の列車データ
             if(noboriOne == null) {
                 noboriOne = tt;
