@@ -2161,6 +2161,74 @@
         "info": {
           "lastTrain": true
         }
+      },
+      {
+        "id": 1252,
+        "time": 2252,
+        "type": "準急",
+        "goto": "池袋",
+        "cars": 10,
+        "doors": 4
+      },
+      {
+        "id": 1253,
+        "time": 2258,
+        "type": "通過",
+        "goto": "池袋",
+        "cars": 10,
+        "doors": 4
+      },
+      {
+        "id": 1254,
+        "time": 2302,
+        "type": "準急",
+        "goto": "池袋",
+        "cars": 10,
+        "doors": 4
+      },
+      {
+        "id": 1255,
+        "time": 2310,
+        "type": "各停",
+        "goto": "菊名",
+        "cars": 8,
+        "doors": 4
+      },
+      {
+        "id": 1256,
+        "time": 2316,
+        "type": "準急",
+        "goto": "池袋",
+        "cars": 10,
+        "doors": 4
+      },
+      {
+        "id": 1257,
+        "time": 2325,
+        "type": "準急",
+        "goto": "池袋",
+        "cars": 10,
+        "doors": 4
+      },
+      {
+        "id": 1258,
+        "time": 2328,
+        "type": "通過",
+        "goto": null,
+        "cars": null,
+        "doors": null,
+        "info": "特急池袋"
+      },
+      {
+        "id": 1259,
+        "time": 2336,
+        "type": "準急",
+        "goto": "池袋",
+        "cars": 10,
+        "doors": 4,
+        "info": {
+          "lastTrain": true
+        }
       }
     ]
   }
