@@ -13,7 +13,8 @@ const typeList = [
     {i:10,t:"S-TRAIN"},
     {i:11,t:"回送"},
     {i:12,t:"臨時"},
-    {i:13,t:"----"}
+    {i:13,t:"----"},
+    {i:14,t:"通過"}
 ];
 const getTypeI = function(name){
     for(const obj of typeList){

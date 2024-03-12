@@ -334,6 +334,7 @@ function readForm()
     }
 
     updateLED();
+    updateTelop();
 }
 
 //LEDの画像を変更する
@@ -449,6 +450,60 @@ function intervalTimeSet(){
     clearTimeout(LEDUpdateTimeout);
     LEDUpdateTimeout = setTimeout("updateLEDCount++; intervalTimeSet();", nextTime);
 }
+
+function updateTelop(){
+    //1台め（飯能方面）
+    const hnType = typeData[0][0];
+    let status = 0; //テロップ
+    let isPassing = false;
+    if(hnType == getTypeI("通過")){
+        isPassing = true;
+    }
+    if(hnType == getTypeI("回送")){
+        status = 5; //お乗りになれません
+    }
+
+    if(isPassing){
+        status = 3; //通過します
+    }
+
+    setTelopForm(0, status);
+    updateStatus(0);
+
+    //2台め（池袋方面）
+    const ikType = typeData[1][0];
+    status = 0; //テロップ
+    isPassing = false;
+    if(ikType == getTypeI("通過")){
+        isPassing = true;
+    }
+    if(ikType == getTypeI("回送")){
+        status = 5; //お乗りになれません
+    }
+
+    if(isPassing){
+        status = 3; //通過します
+    }
+
+    if(analogClock.time.h < 4){
+        status = 4; //上り終了
+    }
+
+    setTelopForm(1, status);
+    updateStatus(1);
+}
+function setTelopForm(unit, status, arvStp){
+    //テロップ文字列
+    eleId("bottomTelopInput"+unit).value = "";
+    //在線位置
+    eleId("approachPosition4Checkbox"+unit).checked = (arvStp === 4);
+    eleId("approachPosition3Checkbox"+unit).checked = (arvStp === 3);
+    eleId("approachPosition2Checkbox"+unit).checked = (arvStp === 2);
+    eleId("approachPosition1Checkbox"+unit).checked = (arvStp === 1);
+    //表示セレクタ
+    eleId("statusInput"+unit).selectedIndex = status;
+}
+
 
 let timeOrderSelectData = [null, null];
 let statusData = [null, null];
