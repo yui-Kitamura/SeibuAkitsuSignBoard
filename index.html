@@ -129,6 +129,19 @@
                         </fieldset>
 
                     </form>
+                    <form>
+                        <fieldset style="width: 100%;padding: 10px;margin:0">
+                            <label><input type="radio" name="year" value="202303" checked/>2023年3月ダイヤ</label><br>
+                            <label><input type="radio" name="year" value="202403" disabled/>2024年3月ダイヤ</label>
+                        </fieldset>
+                        <fieldset style="width: 100%;padding: 10px;margin:0">
+                            <label><input type="radio" name="diaType" value="weekday" checked/>平日</label>
+                            <label><input type="radio" name="diaType" value="weekend" disabled/>土日祝</label><br>
+                            <label><input type="radio" name="diaType" value="dayNigher" disabled/>平日ナイター</label><br>
+                            <label><input type="radio" name="diaType" value="endDay" disabled/>休日デイゲーム</label>
+                            <label><input type="radio" name="diaType" value="endNigher" disabled/>休日ナイター</label>
+                        </fieldset>
+                    </form>
                 </div>
             </div>
         </div>
@@ -150,10 +163,8 @@
         <a href="https://github.com/yui-Kitamura/SeibuAkitsuSignBoard">GitHub[yui-Kitamura/SeibuAkitsuSignBoard]</a>で公開しています
     </p>
     <p>毎分15秒列車到着(通過)、45秒発車として描画を更新しています。電光掲示板は10秒ごと、アナログ時計は30秒ごとに描画更新しています</p>
-    <ul>
-        <li>本シミュレーターはJavaScript・CSS等が正常に動作するブラウザでご覧いただけます。JavaScriptが動作しない環境では動きません。
-        <noscript style="color:red">JavaScriptが無効になっています。設定を変更してください</noscript></li>
-    </ul>
+    <p>本シミュレーターはJavaScript・CSS等が正常に動作するブラウザでご覧いただけます。JavaScriptが動作しない環境では動きません。
+        <noscript style="color:red">JavaScriptが無効になっています。設定を変更してください</noscript></p>
     <p>
         画像素材は1dot=1pxのドット打ちをした後に、<a href="https://yui-kitamura.github.io/EditDottedPicture/">EditDottedPicture</a>ツールを用いて、
         1px=8px(1px縁取り+内側塗り潰し)に変換した画像を表示に利用しています。（変換ツールのGitHub：<a
