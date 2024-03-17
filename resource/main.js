@@ -6,6 +6,8 @@ let noboriTimeTable;
 
 let isUserSetTimeActive = false;
 
+let autoUpdateFunction = null;
+
 function main() {
     //発車標の段数を設定する
     setUnitLine();
@@ -13,7 +15,7 @@ function main() {
     //データをセットする
     setTimeTableData().then(r => {
         updateFromTimeTableData();
-        setInterval(() => updateFromTimeTableData(), 10 * 1000); //10秒ごとに描画更新
+        autoUpdateFunction = setInterval(() => updateFromTimeTableData(), 10 * 1000); //10秒ごとに描画更新
 
         //日本語と英語の交互表示スタート
         intervalTimeSet();
@@ -22,6 +24,10 @@ function main() {
             updateStatus(unit);
         }
     });
+}
+
+function stopAutoUpdate(){
+    clearInterval(autoUpdateFunction);
 }
 
 //発車標の段数を設定する
