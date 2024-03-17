@@ -108,9 +108,10 @@ const getCarI = function(value){
 //ドア数
 const doorCountList = [
     {i:0, v:2, t:"2ドア"},
-    {i:1, v:4, t:"4ドア"},
-    {i:2, v:9, t:"全席指定"},
-    {i:3, v:null, t:"----"}
+    {i:1, v:3, t:"3ドア"},
+    {i:2, v:4, t:"4ドア"},
+    {i:3, v:9, t:"全席指定"},
+    {i:4, v:null, t:"----"}
 ];
 const getDoorI = function(value){
     for(const obj of doorCountList){
