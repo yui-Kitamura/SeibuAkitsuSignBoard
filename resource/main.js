@@ -49,7 +49,7 @@ function writeLineHTML(unit, line){
     out += "</div>";
     //行き先
     out += "<div id='destinationDiv"+unit+line+"' style='position:absolute; left:180px; top:0; width:360px; height:72px; overflow:hidden; background-color:#000; z-index:1;'>";
-    out += "  <img id='destinationImg"+unit+line+"' class='led' style='position:absolute; left:0; top:-0px;' src='./resource/img/mainx8.png' alt='' />";
+    out += "  <img id='destinationImg"+unit+line+"' class='led' style='position:absolute; left:-1616px; top:-0px;' src='./resource/img/mainx8.png' alt='' />";
     out += "</div>";
     //時刻
     out += "<div id='timeDiv"+unit+line+"' style='position:absolute; left:540px; top:0; width:288px; height:72px; overflow:hidden; background-color:#000; z-index:1;' >";
@@ -71,11 +71,11 @@ function writeLineHTML(unit, line){
     out += "</div>";
     //両数
     out += "<div id='carCountDiv"+unit+line+"' style='position:absolute; left:864px; top:0; width:144px; height:72px; overflow:hidden; background-color:#000; z-index:1;'>";
-    out += "  <img class='led' style='position:absolute; left:-0px; top:-0px;' id='carCountImg"+unit+line+"' src='./resource/img/mainx8.png' alt='' />";
+    out += "  <img class='led' style='position:absolute; left:-6104px; top:-0px;' id='carCountImg"+unit+line+"' src='./resource/img/mainx8.png' alt='' />";
     out += "</div>";
     //ドア数
     out += "<div id='doorCountDiv"+unit+line+"' style='position:absolute; left:1008px; top:0; width:144px; height:72px; overflow:hidden; background-color:#000; z-index:1;'>";
-    out += "  <img class='led' style='position:absolute; left:-3712px; top:-0px;' id='doorCountImg"+unit+line+"' src='./resource/img/mainx8.png' alt='' />";
+    out += "  <img class='led' style='position:absolute; left:-6944px; top:-400px;' id='doorCountImg"+unit+line+"' src='./resource/img/mainx8.png' alt='' />";
     out += "</div>";
 
     out += "";
