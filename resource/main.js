@@ -166,13 +166,15 @@ function writeFormHTML(){
 }
 
 async function setTimeTableData(){
-    await fetch('./resource/data/forHanno.json')
+    const diaYear = document.forms.diaSelector.year.value;
+    const diaType = document.forms.diaSelector.diaType.value;
+    await fetch('./resource/data/'+diaYear+'/'+diaType+'/forHanno.json')
         .then(response => response.json())
         .then(data => {
             kudariTimeTable = data;
         })
         .catch(error => console.error(error));
-    await fetch('./resource/data/forIkebukuro.json')
+    await fetch('./resource/data/'+diaYear+'/'+diaType+'/forIkebukuro.json')
         .then(response => response.json())
         .then(data => {
             noboriTimeTable = data;
