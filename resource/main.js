@@ -12,6 +12,7 @@ function main() {
     //発車標の段数を設定する
     setUnitLine();
     drawClock();
+    document.getElementById('diaSelector').addEventListener('input', setTimeTableData);
     //データをセットする
     setTimeTableData().then(r => {
         updateFromTimeTableData();
