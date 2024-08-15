@@ -551,7 +551,7 @@ function updateStatus(unit){
         }
 
         let out = "";
-        out += "  <div class='d16sqf' style=\"position:absolute; top:"+topBuff+"px; left:0; width:1152px; height:72px; font-size:72px; color:#0f0; \">";
+        out += "  <div class='d16sqf' style=\"position:absolute; top:"+topBuff+"px; left:0; width:1152px; height:72px; font-size:68px; color:#0f0; font-weight: bold; \">";
         out += "    <marquee scrollamount='5' >"; //現地のテロップは6.2秒
         out += bottomTelopData[unit];
         out += "    </marquee>";
