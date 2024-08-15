@@ -538,26 +538,29 @@ function updateStatus(unit){
 
     //テロップ
     if(statusData[unit] == 0) {
-        bottomTelopData[unit] = eleId("bottomTelopInput"+unit).value;
+        if(bottomTelopData[unit] != eleId("bottomTelopInput"+unit).value) {
+            //最新の値に更新
+            bottomTelopData[unit] = eleId("bottomTelopInput" + unit).value;
 
-        //環境によってフォントの縦位置を設定
-        let topBuff;
-        if(os == "Windows") {
-            topBuff = -1; //Windows
-        } else if(uaName == "gecko") {
-            topBuff = -3; //MacのFirefox
-        }else {
-            topBuff = -6; //Macのchrome
+            //環境によってフォントの縦位置を設定
+            let topBuff;
+            if (os == "Windows") {
+                topBuff = -1; //Windows
+            } else if (uaName == "gecko") {
+                topBuff = -3; //MacのFirefox
+            } else {
+                topBuff = -6; //Macのchrome
+            }
+
+            let out = "";
+            out += "  <div class='d16sqf' style=\"position:absolute; top:" + topBuff + "px; left:0; width:1152px; height:72px; font-size:68px; color:#0f0; font-weight: bold; \">";
+            out += "    <marquee scrollamount='5' >"; //現地のテロップは6.2秒
+            out += bottomTelopData[unit];
+            out += "    </marquee>";
+            out += "  </div>";
+
+            eleId("bottomLineDiv" + unit).innerHTML = out;
         }
-
-        let out = "";
-        out += "  <div class='d16sqf' style=\"position:absolute; top:"+topBuff+"px; left:0; width:1152px; height:72px; font-size:68px; color:#0f0; font-weight: bold; \">";
-        out += "    <marquee scrollamount='5' >"; //現地のテロップは6.2秒
-        out += bottomTelopData[unit];
-        out += "    </marquee>";
-        out += "  </div>";
-
-        eleId("bottomLineDiv"+unit).innerHTML = out;
     }
     //接近位置表示
     if(statusData[unit] == 1){
