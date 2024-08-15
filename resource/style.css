@@ -1,3 +1,8 @@
+@font-face {
+    font-family: 'AFSDot16GSQR';
+    src: url('./font/AFSDot16GSQR.ttf') format('truetype');
+}
+
 body{
     background-color:#ffffff;
 }
@@ -77,4 +82,8 @@ footer table td {
 img.led {
     zoom: 0.375; /* 3÷8 */
     filter: brightness(175%);
+}
+
+.d16sqf {
+    font-family: 'AFSDot16GSQR';
 }
