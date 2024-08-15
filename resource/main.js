@@ -503,7 +503,9 @@ function updateTelop(){
 }
 function setTelopForm(unit, status, arvStp){
     //テロップ文字列
-    eleId("bottomTelopInput"+unit).value = "";
+    if(status != 0){
+       eleId("bottomTelopInput"+unit).value = "";
+    }
     //在線位置
     eleId("approachPosition4Checkbox"+unit).checked = (arvStp === 4);
     eleId("approachPosition3Checkbox"+unit).checked = (arvStp === 3);
@@ -549,7 +551,7 @@ function updateStatus(unit){
         }
 
         let out = "";
-        out += "  <div style=\"position:absolute; top:"+topBuff+"px; left:0; width:1152px; height:72px; font-size:72px; color:#0f0; font-family:'ＭＳ ゴシック', 'Hiragino Kaku Gothic ProN', 'ヒラギノ角ゴ ProN W3', sans-serif; \">";
+        out += "  <div class='d16sqf' style=\"position:absolute; top:"+topBuff+"px; left:0; width:1152px; height:72px; font-size:72px; color:#0f0; \">";
         out += "    <marquee scrollamount='5' >"; //現地のテロップは6.2秒
         out += bottomTelopData[unit];
         out += "    </marquee>";
