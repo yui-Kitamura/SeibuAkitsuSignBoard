@@ -12,6 +12,7 @@
     <script src="./resource/main.js"></script>
     <script src="./resource/utility.js"></script>
     <script src="./resource/imgList.js"></script>
+    <script src="./resource/font/font.js"></script>
     <script>
         //OS・ユーザエージェントを判別
         judgeUA();
@@ -177,6 +178,17 @@
         <img src="./resource/img/telop.png" alt="テロップ系素材集" style="border:1px solid gray; padding: 3px;">
         <img src="./resource/font/char.png" alt="文字素材集" style="border:1px solid gray; padding: 3px;">
     </figure>
+    <fieldset><legend>文字素材表示</legend>
+        <script>
+            initCharFont();
+            function showCvtTxt(){
+                const inTxt = document.getElementById('originText').value;
+                document.getElementById('convertTextDisplay').innerHTML = getHtmlFromText(inTxt);
+            }
+        </script>
+        <input type="text" id="originText"><input type="button" value="表示" onClick="showCvtTxt()">
+        <div id="convertTextDisplay" style="height:72px"></div>
+    </fieldset>
 </section>
     <script>
         window.addEventListener('focusin', function () {
