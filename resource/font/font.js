@@ -52,7 +52,7 @@ function initCharFont(){
     fetch("./resource/font/char.txt")
         .then(response => response.text())
         .then(text => {
-            const lines = text.split("\r\n")
+            const lines = text.split("\n")
             let r = 0;
             lines.forEach((line, rowIdx) => {
                 const lineLen = line.length;
