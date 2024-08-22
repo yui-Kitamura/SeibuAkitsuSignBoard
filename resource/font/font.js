@@ -63,8 +63,8 @@ function findChar(c){
     }
     return null;
 }
-function initCharFont(){
-    fetch("./resource/font/char.txt")
+async function initCharFont(){
+     await fetch("./resource/font/char.txt")
         .then(response => response.text())
         .then(text => {
             const lines = text.split("\n")
