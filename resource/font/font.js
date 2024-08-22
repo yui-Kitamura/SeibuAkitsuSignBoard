@@ -8,19 +8,34 @@ function getHtmlFromText(origin){
         'position:absolute;display:inline-block;background-color:black;color:white" class="d16sqf">';
     origin += "";
     const inLen = origin.length;
+    let colorMode = 'green';
+    let di = 0;
     for(let i=0; i<inLen; i++){
+        if(origin.charAt(i)+origin.charAt(i+1) === '&g'){
+            colorMode = 'green';
+            i++; continue;
+        }
+        if(origin.charAt(i)+origin.charAt(i+1) === '&r'){
+            colorMode = 'red';
+            i++; continue;
+        }
+        if(origin.charAt(i)+origin.charAt(i+1) === '&o'){
+            colorMode = 'orange';
+            i++; continue;
+        }
         const cvt = findChar(origin.charAt(i));
         res += '<span style="width:72px;height:72px;position:absolute;overflow:hidden;display:inline-block;' +
-            ' left:'+ i*72 +'px">'
+            ' left:'+ di*72 +'px" class="led color '+ colorMode +'">'
         if(cvt == null){
             res += origin.charAt(i);
         }else{
-            res +=  '<img src="./resource/font/charX8.png" class="led"' +
+            res +=  '<img src="./resource/font/charX8.png" class="led color '+colorMode+'"' +
                     ' style="top:'+cvt.getImgPos().h*-8+'px;left:'+cvt.getImgPos().w*-8 +'px;' +
                     ' position:absolute;' +
                     '" alt="'+origin.charAt(i)+'" />';
         }
-        res += '</span>'
+        res += '</span>';
+        di++;
     }
     res += "</span>"
     return res;

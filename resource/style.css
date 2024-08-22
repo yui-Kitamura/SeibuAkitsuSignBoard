@@ -82,8 +82,35 @@ footer table td {
 img.led {
     zoom: 0.375; /* 3÷8 */
     filter: brightness(175%);
+    display: block;
 }
 
 .d16sqf {
     font-family: 'AFSDot16GSQR';
+}
+
+.led.color::after {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    mix-blend-mode: multiply;
+    pointer-events: none;
+}
+.char.color.red {
+    color: red;
+}
+.led.color.red::after {
+    background-color: red;
+}
+.char.color.green{
+    color: limegreen;
+}
+.led.color.green::after {
+    background-color: limegreen;
+}
+.char.color.orange{
+    color: darkorange;
+}
+.led.color.orange::after {
+    background-color: orange;
 }
