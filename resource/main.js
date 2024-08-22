@@ -9,8 +9,6 @@ let isUserSetTimeActive = false;
 let autoUpdateFunction = null;
 
 function main() {
-    //文字素材の読み込み
-    initCharFont();
     //発車標の段数を設定する
     setUnitLine();
     drawClock();

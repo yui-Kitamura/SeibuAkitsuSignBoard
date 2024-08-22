@@ -185,8 +185,16 @@
                 document.getElementById('convertTextDisplay').innerHTML = getHtmlFromText(inTxt);
             }
         </script>
-        <input type="text" id="originText"><input type="button" value="表示" onClick="showCvtTxt()">
+        <input type="text" id="originText" style="width:300px;"><input type="button" value="表示" onClick="showCvtTxt()"><span
+            > 文字列「<span class="char color orange">&o</span>」「<span class="char color red">&r</span>」「<span
+             class="char color green">&g</span>」で文字色を変えられます。</span><span>例：&nbsp;&o西武線内&gでは&r快速急行&gです。</span>
         <div id="convertTextDisplay" style="height:72px"></div>
+        <script>
+            initCharFont().then(()=> {
+                    document.getElementById('originText').value = '&o西武線内&gでは&r快速急行&gです。';
+                    showCvtTxt();
+            });
+        </script>
     </fieldset>
 </section>
     <script>
