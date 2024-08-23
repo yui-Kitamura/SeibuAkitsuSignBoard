@@ -159,3 +159,11 @@ const platformList = [
     ["", ""]
 ];
 
+//テロップ
+function getTelop(data){
+    if(data){
+        return data;
+    }
+    return "";
+}
+

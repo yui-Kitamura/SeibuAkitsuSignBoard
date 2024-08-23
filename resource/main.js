@@ -293,7 +293,8 @@ function convertTtDataToDispData(jsonTtDataItem){
         onMm: getHhMm(jsonTtDataItem.time, isPassingTrain).m,
         car: getCarI(jsonTtDataItem.cars),
         door: getDoorI(jsonTtDataItem.doors),
-        control: getControlInfo(jsonTtDataItem)
+        control: getControlInfo(jsonTtDataItem),
+        telop: getTelop(jsonTtDataItem.telop)
     };
 }
 
@@ -305,6 +306,9 @@ function writeForm(unit, line, dataObj){
     eleId("departureHourInput"+unit+line).value = dataObj.onHh;
     eleId("departureMinuteInput"+unit+line).value = dataObj.onMm;
     eleId("control"+unit+line).selectedIndex = dataObj.control;
+    if(line === 0) {
+        eleId("bottomTelopInput" + unit).value = dataObj.telop;
+    }
 }
 
 let typeData = [[null, null], [null, null]];
@@ -315,6 +319,7 @@ let carCountData = [[null, null], [null, null]];
 let doorCountData = [[null, null], [null, null]];
 let controlInfoData = [[null, null], [null, null]];
 let motChuFunc = [[null, null], [null, null]];
+let telopData = [[null],[null]];
 
 /** フォームから入力を読み込む */
 function readForm()
@@ -340,6 +345,9 @@ function readForm()
             departureMinuteData[unit][line] = inputTextNumCheck(inMinute, ""); //値が数値かどうかチェック
 
             controlInfoData[unit][line] = eleId("control"+unit+line).selectedIndex;
+            if(line === 0) {
+                telopData[unit][line] = eleId("bottomTelopInput" + unit).value;
+            }
         }
     }
 
@@ -461,7 +469,7 @@ function intervalTimeSet(){
     LEDUpdateTimeout = setTimeout("updateLEDCount++; intervalTimeSet();", nextTime);
 }
 
-function updateTelop(){
+function updateTelop(data){
     //1台め（飯能方面）
     const hnType = typeData[0][0];
     let status = 0; //テロップ
