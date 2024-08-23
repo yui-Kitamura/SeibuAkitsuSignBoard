@@ -98,19 +98,45 @@ img.led {
 }
 .char.color.red {
     color: red;
+    background-color: black;
 }
 .led.color.red::after {
     background-color: red;
 }
 .char.color.green{
     color: limegreen;
+    background-color: black;
 }
 .led.color.green::after {
     background-color: limegreen;
 }
 .char.color.orange{
     color: darkorange;
+    background-color: black;
 }
 .led.color.orange::after {
     background-color: orange;
+}
+
+div.marqueebox {
+    height: 72px;
+    overflow: hidden;
+}
+div.marquee {
+    box-sizing: border-box;
+    width: 100%;
+    overflow: hidden;
+}
+div.marquee>span {
+    display: inline-block;
+    padding-left: 100%;
+    animation: marquee linear infinite;
+}
+@keyframes marquee {
+    0% {
+        transform: translateX(100%);
+    }
+    100% {
+        transform: translateX(-200%);
+    }
 }

@@ -4,7 +4,8 @@
  * @returns {string} spanタグで囲った変換後テキスト
  */
 function getHtmlFromText(origin){
-    let res = '<span style="width:97%;height:72px;font-size:72px;' +
+    let res = '<span style="width:fit-content;height:72px;font-size:72px;' +
+        'animation-duration:'+ (origin.length>16?(origin.length>32?origin.length:32):0)/16*6.2 +'s;'+
         'position:absolute;display:inline-block;background-color:black;color:white" class="d16sqf">';
     origin += "";
     const inLen = origin.length;
@@ -27,7 +28,9 @@ function getHtmlFromText(origin){
         res += '<span style="width:72px;height:72px;position:absolute;overflow:hidden;display:inline-block;' +
             ' left:'+ di*72 +'px" class="led color '+ colorMode +'">'
         if(cvt == null){
+            res += '<span class="char color '+ colorMode +'">';
             res += origin.charAt(i);
+            res += '</span>';
         }else{
             res +=  '<img src="./resource/font/charX8.png" class="led color '+colorMode+'"' +
                     ' style="top:'+cvt.getImgPos().h*-8+'px;left:'+cvt.getImgPos().w*-8 +'px;' +

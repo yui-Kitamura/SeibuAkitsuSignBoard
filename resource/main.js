@@ -269,10 +269,11 @@ function updateFromTimeTableData(){
     const dispVal10 = convertTtDataToDispData(noboriOne);
     const dispVal11 = convertTtDataToDispData(noboriTwo);
     //result
-    console.log(dispVal00);
-    console.log(dispVal01);
-    console.log(dispVal10);
-    console.log(dispVal11);
+    console.info('-- display for now -->')
+    console.dir(dispVal00);
+    console.dir(dispVal01);
+    console.dir(dispVal10);
+    console.dir(dispVal11);
 
     writeForm(0, 0, dispVal00);
     writeForm(0, 1, dispVal01);
@@ -553,10 +554,10 @@ function updateStatus(unit){
             }
 
             let out = "";
-            out += "  <div class='d16sqf' style=\"position:absolute; top:" + topBuff + "px; left:0; width:1152px; height:72px; font-size:68px; color:#0f0; font-weight: bold; \">";
-            out += "    <marquee scrollamount='5' >"; //現地のテロップは6.2秒
-            out += bottomTelopData[unit];
-            out += "    </marquee>";
+            out += "  <div class='marqueebox d16sqf' style=\"position:absolute; top:" + topBuff + "px; left:0; width:1152px; \">";
+            out += "  <div class='marquee'>";
+            out += getHtmlFromText(bottomTelopData[unit]);
+            out += "  </div>"
             out += "  </div>";
 
             eleId("bottomLineDiv" + unit).innerHTML = out;
