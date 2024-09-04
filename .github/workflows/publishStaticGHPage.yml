@@ -42,7 +42,7 @@ jobs:
         uses: actions/deploy-pages@v3
       - name: DL artifact
         id: download
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v4.1.7
         with:
           name: github-pages
           path: _site
