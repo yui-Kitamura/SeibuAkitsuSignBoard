@@ -186,6 +186,12 @@ function getTelop(data){
         res += "&o"+data.c.to + "&gゆきにお乗継ぎができます。"
         return res;
     }
+    if(data.h){
+        //XXへお急ぎの方はあとのYYZZをご利用ください
+    }
+    if(data.m){
+        //XXではYYです
+    }
     return " "; //fallbackString
 }
 
