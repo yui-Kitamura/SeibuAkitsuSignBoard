@@ -9,10 +9,6 @@ function getHtmlFromText(origin){
         'position:absolute;display:inline-block;background-color:black;color:white" class="d16sqf">';
     origin += "";
     const inLen = origin.length;
-    if(inLen === 0) {
-        res += "　</span>";
-        return res;
-    }
     let colorMode = 'green';
     let di = 0;
     for(let i=0; i<inLen; i++){
