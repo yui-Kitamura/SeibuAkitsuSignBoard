@@ -164,6 +164,6 @@ function getTelop(data){
     if(data){
         return data;
     }
-    return "";
+    return " ";
 }
 
