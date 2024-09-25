@@ -161,9 +161,31 @@ const platformList = [
 
 //テロップ
 function getTelop(data){
-    if(data){
+    if(!data){
+        return " ";
+    }
+    if((typeof data) === 'string'){
         return data;
     }
-    return " ";
+    if(data.c){
+        //XXでYYZZゆきにお乗継できます
+        let res = "&o" + data.c.at + "&gで";
+        switch (data.c.type){
+            case "各停":
+                res += "&o各停"; break;
+            case "準急":
+                res += "&g準急"; break;
+            case "急行":
+                res += "&r急行"; break;
+            case "特急":
+                res += "&r特急"; break;
+            //TODO 朝ラッシュの通勤急行など要検証
+            default:
+                res += "&r"+data.c.type;
+        }
+        res += "&o"+data.c.to + "&gゆきにお乗継ぎができます。"
+        return res;
+    }
+    return " "; //fallbackString
 }
 
